@@ -1,156 +1,207 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Carta Otunel</title>
 
-    <script scr="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Winky+Rough:ital,wght@0,300..900;1,300..900&display=swap"
+        rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
 
+    <style>
+        body::after {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100vh;
+            width: 100vw;
+            background: url('/images/background.png') center center / cover no-repeat;
+            z-index: -1;
+        }
+
+        .font-winky {
+            font-family: 'Winky Rough', cursive;
+        }
+
+        .text-outline {
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+        }
+
+        #mobileMenu {
+            display: none;
+            position: absolute;
+            top: 4rem;
+            /* Distancia desde el botón hamburguesa */
+            right: 0;
+            background-color: rgba(0, 0, 0, 0.7);
+            /* Fondo semi-transparente */
+            color: white;
+            padding: 1rem;
+            border-radius: 8px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            /* Asegura que se muestre por encima del contenido */
+        }
+
+        #mobileMenu a {
+            display: block;
+            margin-bottom: 1rem;
+            text-align: center;
+            font-size: 1.25rem;
+        }
+    </style>
 </head>
 
-<body class="bg-gray-100">
-    <div class="bg-gray-800 text-white">
-        <nav class="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8" arial-label="Navigation">
-            <div class="relative flex items-center justify-between h16">
-                <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
-                    <button id="menu-toggle" type="button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white 
-                    hover-bg-gray-700 focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"
-                        aria-controls="mobile-menu" aria-expanded="false"></button>
-                    <span class="sr-only">Open main menu</span>
-                    <svg class="block h-6 w-6" xmlns="http://ww.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                        stroke="currentColor" aria-hidden="true">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M4 6h16M4 12h16M4 18h16"></path>
-                    </svg>
+<body class="bg-[url('/images/background.png')] bg-cover bg-center bg-no-repeat min-h-screen">
+
+    <!-- NavBar -->
+    <header class="text-white top-0 left-0 w-full z-50">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" aria-label="Navigation">
+            <div class="flex justify-between items-center h-16">
+                <img src="/images/OtunelLogo.webp" alt="Logo Otunel"
+                    class="h-12 w-12 object-cover border-2 border-white rounded-full" />
+                <!-- Menú para dispositivos de escritorio y tabletas -->
+                <div class="hidden md:flex space-x-6">
+                    <a href="carta.html" class="hover:text-gray-400">Carta</a> <!-- Esto lleva a la carta -->
+                    <a href="vinos.html" class="hover:text-gray-400">Vinos</a> <!-- Esto lleva a los vinos -->
                 </div>
             </div>
+        </nav>
+    </header>
 
-            </ul>
-    </div>
-    </div>
-    </nav>
-    <div class="tablas">
-        <div class="">
-            Tablas
-        </div>
-        <ul class="">
-            <li>Jamón Ibérico</li>
-            <li>Jamón Ibérico con queso semicurado</li>
-            <li>De Ibericos(Jamón, chorizo, salchichón y lomo)</li>
-            <li>De Quesos (Tetilla, semicurado, oveja y San Simón) co almendras y membrillo</li>
-        </ul>
+    <!-- Main Content -->
+    <main class="max-w-5xl mx-auto p-6 space-y-10 relative z-10">
 
-        <div class="">
-            Tostas
-        </div>
-        <ul class="">
-            <li>Rulo de cabra, cebolla caramelizada, bacon y nueces con salsa sweet chili y módena </li>
-            <li>Atún, pimientos de piquillo confitados, salsa de pimiento y módena </li>
-            <li>Salmón ahumado con queso fresco, brotes de ensalada, salsa de pimiento y módena </li>
-            <li>De sobrasada mallorquina, queso brie y cebolla crujiente con salsa de pimiento y módena </li>
-            <li>De Setas, jamón y tomate con aceite y perejil con salsa de pimientos y módena </li>
-            <li>Anchoas, mermelada de pimiento, tetilla y pimiento de piquillo </li>
-        </ul>
+        <!-- Sección reusable -->
+        <section class="text-gray-900 p-6 space-y-6">
 
-        <div class="">
-            Del Corral
-        </div>
-        <ul class="">
-            <li>Huevos de corral con jamón y patatas</li>
-            <li>Huevos de corral con choricitos y patatas </li>
-            <li>Huevos de corral con solomillo de cerdo, patatas y salsa de setas</li>
-            <li>Huevos de corral con secreto ibérico, patatas y jamón </li>
-            <li>Revuelto de setas con gambones</li>
-            <li>Revuelto de bacalao con piquillos </li>
-            <li>Revuelto de gulas y gambas</li>
-        </ul>
+            <!-- REUTILIZABLE PARA TODAS LAS SECCIONES -->
+            <div>
+                <h2 class="text-4xl font-bold font-winky text-center text-outline text-blue-900 mb-4">Tablas</h2>
+                <ul class="list-disc list-inside space-y-1">
+                    <li>Jamón Ibérico</li>
+                    <li>Jamón Ibérico con queso semicurado</li>
+                    <li>De Ibéricos (Jamón, chorizo, salchichón y lomo)</li>
+                    <li>De Quesos (Tetilla, semicurado, oveja y San Simón) con almendras y membrillo</li>
+                </ul>
+            </div>
 
-        <div class="">
-            Los Fritos
-        </div>
-        <ul class="">
-            <li>Chipirones en fritura de harina de maíz y ali-oli de ajo negro </li>
-            <li>Croquetas caseras (consultar variedad) </li>
-            <li>Langostinos crujientes en panko con mayonesa agridulce</li>
-            <li>Alitas de pollo con salsa de mostaza y miel </li>
-            <li>Dados de pollo salteados con manzana, salsa teriyaki, cebolla caramelizada y patatas </li>
-            <li>Patatas bravas y ali-oli</li>
-            <li>Choquitos a la plancha, aceite de ajo, perejil y ali-oli de piquillos </li>
-            <li>Tortilla de patata</li>
-        </ul>
+            <div>
+                <h2 class="text-4xl font-bold font-winky text-center text-outline text-blue-900 mb-4">Tostas</h2>
+                <ul class="list-disc list-inside space-y-1">
+                    <li>Rulo de cabra, cebolla caramelizada, bacon y nueces...</li>
+                    <li>Atún, pimientos de piquillo confitados...</li>
+                    <li>Salmón ahumado con queso fresco...</li>
+                    <li>Sobrasada mallorquina, queso brie y cebolla crujiente...</li>
+                    <li>Setas, jamón y tomate con aceite y perejil...</li>
+                    <li>Anchoas, mermelada de pimiento, tetilla y piquillo...</li>
+                </ul>
+            </div>
 
-        <div class="">
-            Seguimos picando...
-        </div>
-        <ul class="">
-            <li>Dados de salmón marinado, aceite y vinagre de manzana </li>
-            <li>Salteado de setas y gambas </li>
-            <li>Anchoas del Cantábrico sobre tomate rallado, mango y orégano</li>
-            <li>Zamburiñas a la plancha con aliño de ajo y perejil</li>
+            <div>
+                <h2 class="text-4xl font-bold font-winky text-center text-outline text-blue-900 mb-4">Del Corral</h2>
+                <ul class="list-disc list-inside space-y-1">
+                    <li>Huevos de corral con jamón y patatas</li>
+                    <li>...con choricitos y patatas</li>
+                    <li>...con solomillo y salsa de setas</li>
+                    <li>...con secreto ibérico y jamón</li>
+                    <li>Revuelto de setas con gambones</li>
+                    <li>Revuelto de bacalao con piquillos</li>
+                    <li>Revuelto de gulas y gambas</li>
+                </ul>
+            </div>
 
-        </ul>
+            <div>
+                <h2 class="text-4xl font-bold font-winky text-center text-outline text-blue-900 mb-4">Los Fritos</h2>
+                <ul class="list-disc list-inside space-y-1">
+                    <li>Chipirones en fritura de harina de maíz y ali-oli negro</li>
+                    <li>Croquetas caseras (consultar variedad)</li>
+                    <li>Langostinos crujientes en panko...</li>
+                    <li>Alitas con salsa de mostaza y miel</li>
+                    <li>Dados de pollo con manzana, teriyaki y patatas</li>
+                    <li>Patatas bravas y ali-oli</li>
+                    <li>Choquitos a la plancha con ali-oli de piquillos</li>
+                    <li>Tortilla de patata</li>
+                </ul>
+            </div>
 
-        <div class="">
-            Ensaladas
-        </div>
-        <div class="">
-            con aceite de oliva y módena
-        </div>
-        <ul class="">
-            <li>De hojas tiernas, piquillos y ventresca de bonito y espárragos</li>
-            <li>Mezclum de lechugas (con queso camembert frito y mermelada de higos)</li>
-            <li>De jamón, queso semicurado y frutos secos</li>
-            <li>Templada de vieiras y langostinos con frutos secos</li>
-        </ul>
+            <div>
+                <h2 class="text-4xl font-bold font-winky text-center text-outline text-blue-900 mb-4">Seguimos
+                    picando...</h2>
+                <ul class="list-disc list-inside space-y-1">
+                    <li>Dados de salmón marinado</li>
+                    <li>Salteado de setas y gambas</li>
+                    <li>Anchoas sobre tomate, mango y orégano</li>
+                    <li>Zamburiñas a la plancha con ajo y perejil</li>
+                </ul>
+            </div>
 
-        <div class="">
-            Del Mar
-        </div>
-        <ul class="">
-            <li>Bacalao al horno con setas y castañas</li>
-            <li>Bacalao a la parrilla con salteado de verduras al wok</li>
-            <li>Lomo de merluza a la plancha con ensalada de temporada</li>
-            <li>Tentáculo de pulpo a la parrilla</li>
-        </ul>
+            <div>
+                <h2 class="text-4xl font-bold font-winky text-center text-outline text-blue-900 mb-4">Ensaladas</h2>
+                <p class="italic mb-1 text-center">Con aceite de oliva y módena</p>
+                <ul class="list-disc list-inside space-y-1">
+                    <li>Hojas tiernas, piquillos, ventresca y espárragos</li>
+                    <li>Mezclum con camembert frito y mermelada de higos</li>
+                    <li>Jamón, queso semicurado y frutos secos</li>
+                    <li>Templada de vieiras y langostinos</li>
+                </ul>
+            </div>
 
-        <div class="">
-            De la Tierra
-        </div>
-        <ul class="">
-            <li>Picaña de vacuno a la parrilla </li>
-            <li>Entrecot de ternera gallega a la parrilla con salsa pimienta </li>
-            <li>Solomillo de ternera gallega a la parrilla </li>
-            <li>Secreto de cerdo Ibérico con salsa BBQ </li>
-            <li>Chuletón de vacuno madurado (por encargo, para 2 pers.) </li>
-            <li>Variado de carnes (Entrecot, secreto y picaña). Mínimo para 2 personas</li>
-            <li>Hamburguesa de Buey con queso cheddar, bacon y lechuga</li>
-        </ul>
+            <div>
+                <h2 class="text-4xl font-bold font-winky text-center text-outline text-blue-900 mb-4">Del Mar</h2>
+                <ul class="list-disc list-inside space-y-1">
+                    <li>Bacalao al horno con setas y castañas</li>
+                    <li>Bacalao a la parrilla con verduras al wok</li>
+                    <li>Lomo de merluza a la plancha</li>
+                    <li>Tentáculo de pulpo a la parrilla</li>
+                </ul>
+            </div>
 
-        <div class="">
-            Veganos y Vegetarianos
-        </div>
-        <ul class="">
-            <li>Verduras a la plancha (Tomate, cebolla , pimientos, calabacín, berenjenas y setas)</li>
-            <li>Salteado de verduras(Tomate, cebolla, pimientos, calabacín, berenjenas, setas, ajo y perejil)</li>
-        </ul>
+            <div>
+                <h2 class="text-4xl font-bold font-winky text-center text-outline text-blue-900 mb-4">De la Tierra</h2>
+                <ul class="list-disc list-inside space-y-1">
+                    <li>Picaña de vacuno a la parrilla</li>
+                    <li>Entrecot con salsa pimienta</li>
+                    <li>Solomillo de ternera gallega</li>
+                    <li>Secreto de cerdo ibérico con BBQ</li>
+                    <li>Chuletón madurado (por encargo)</li>
+                    <li>Variado de carnes (mínimo 2 pers.)</li>
+                    <li>Hamburguesa de Buey con cheddar y bacon</li>
+                </ul>
+            </div>
 
-        <div class="">
-            Despedida dulce
-        </div>
-        <ul class="">
-            <li>Arroz con leche</li>
-            <li>Coulant de chocolate con helado de vainilla</li>
-            <li>Tarta de queso semifría con mermelada de fresa</li>
-            <li>Tiramisú</li>
-            <li>Tarta de la abuela</li>
-            <li>Flan de café</li>
-        </ul>
-    </div>
-    </div>
+            <div>
+                <h2 class="text-4xl font-bold font-winky text-center text-outline text-blue-900 mb-4">Veganos y
+                    Vegetarianos</h2>
+                <ul class="list-disc list-inside space-y-1">
+                    <li>Verduras a la plancha</li>
+                    <li>Salteado de verduras</li>
+                </ul>
+            </div>
+
+            <div>
+                <h2 class="text-4xl font-bold font-winky text-center text-outline text-blue-900 mb-4">Despedida dulce
+                </h2>
+                <ul class="list-disc list-inside space-y-1">
+                    <li>Arroz con leche</li>
+                    <li>Coulant de chocolate</li>
+                    <li>Tarta de queso con fresa</li>
+                    <li>Tiramisú</li>
+                    <li>Tarta de la abuela</li>
+                    <li>Flan de café</li>
+                </ul>
+            </div>
+        </section>
+
+    </main>
+
+
+
 </body>
-
-<script src="https://cdn.tailwindcss.com"></script>
 
 </html>

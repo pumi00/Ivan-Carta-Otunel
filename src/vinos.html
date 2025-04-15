@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vinos Otunel</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Winky+Rough:ital,wght@0,300..900;1,300..900&display=swap"
+        rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+        /* ... tus estilos ... */
+    </style>
+</head>
+
+<body class="bg-[url('/images/background.png')] bg-cover bg-center bg-no-repeat min-h-screen">
+
+    <!-- NavBar -->
+    <header class="text-white top-0 left-0 w-full z-50">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" aria-label="Navigation">
+            <div class="flex justify-between items-center h-16">
+                <img src="/images/OtunelLogo.webp" alt="Logo Otunel"
+                    class="h-12 w-12 object-cover border-2 border-white rounded-full" />
+                <!-- Menú para dispositivos de escritorio y tabletas -->
+                <div class="hidden md:flex space-x-6">
+                    <a href="carta.html" class="hover:text-gray-400">Carta</a> <!-- Esto lleva a la carta -->
+                    <a href="vinos.html" class="hover:text-gray-400">Vinos</a>
+                    <!-- Esto lleva a los vinos (estás en vinos, por lo que lo deshabilitas o no hace falta) -->
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-5xl mx-auto p-6 space-y-10 relative z-10">
+
+        <!-- Contenido de los vinos -->
+        <section class="text-gray-900 p-6 space-y-6">
+            <h2 class="text-4xl font-bold font-winky text-center text-outline text-blue-900 mb-4">Vinos</h2>
+            <div>
+                <h3 class="text-2xl font-bold mb-2">Vinos Tintos</h3>
+                <ul class="list-disc list-inside space-y-1">
+                    <li>Vino Tinto Reserva</li>
+                    <li>Vino Tinto Crianza</li>
+                    <li>Vino Tinto Joven</li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="text-2xl font-bold mb-2">Vinos Blancos</h3>
+                <ul class="list-disc list-inside space-y-1">
+                    <li>Vino Blanco Chardonnay</li>
+                    <li>Vino Blanco Verdejo</li>
+                    <li>Vino Blanco Sauvignon Blanc</li>
+                </ul>
+            </div>
+        </section>
+
+    </main>
+</body>
+
+</html>
