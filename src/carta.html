@@ -13,6 +13,11 @@
     <script src="https://cdn.tailwindcss.com"></script>
 
     <style>
+        body {
+            background: url('/images/background.png') center center / cover no-repeat;
+            min-height: 100vh;
+        }
+
         body::after {
             content: "";
             position: fixed;
@@ -27,181 +32,313 @@
         .font-winky {
             font-family: 'Winky Rough', cursive;
         }
-
-        .text-outline {
-            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-        }
-
-        #mobileMenu {
-            display: none;
-            position: absolute;
-            top: 4rem;
-            /* Distancia desde el botón hamburguesa */
-            right: 0;
-            background-color: rgba(0, 0, 0, 0.7);
-            /* Fondo semi-transparente */
-            color: white;
-            padding: 1rem;
-            border-radius: 8px;
-            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-            z-index: 1000;
-            /* Asegura que se muestre por encima del contenido */
-        }
-
-        #mobileMenu a {
-            display: block;
-            margin-bottom: 1rem;
-            text-align: center;
-            font-size: 1.25rem;
-        }
     </style>
 </head>
 
 <body class="bg-[url('/images/background.png')] bg-cover bg-center bg-no-repeat min-h-screen">
+    <div id="fadeContent" class="fade-container">
 
-    <!-- NavBar -->
-    <header class="text-black top-0 left-0 w-full z-50 font-winky font-size-4xl">
-        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" aria-label="Navigation">
-            <div class="flex justify-between items-center h-16">
-                <img src="/images/OtunelLogo.webp" alt="Logo Otunel"
-                    class="h-12 w-12 object-cover border-2 border-white rounded-full" />
+        <!-- NavBar -->
+        <header class="text-black top-0 left-0 w-full z-50 font-winky font-size-4xl">
+            <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" aria-label="Navigation">
+                <div class="flex justify-between items-center h-16">
+                    <img src="/images/OtunelLogo.webp" alt="Logo Otunel"
+                        class="h-12 w-12 object-cover border-2 border-white rounded-full" />
 
-                <!-- Menú para dispositivos de escritorio y tabletas -->
-                <div class="flex space-x-6">
-                    <a href="carta.html" class="hover:text-black-400">Carta</a> <!-- Esto lleva a la carta -->
-                    <a href="vinos.html" class="hover:text-black-400">Vinos</a> <!-- Esto lleva a los vinos -->
+                    <!-- Menú para dispositivos de escritorio y tabletas -->
+                    <div class="flex space-x-6">
+                        <a href="carta.html" class="hover:text-black-400">Carta</a> <!-- Esto lleva a la carta -->
+                        <a href="vinos.html" class="hover:text-black-400">Vinos</a> <!-- Esto lleva a los vinos -->
+                    </div>
                 </div>
-            </div>
-        </nav>
-    </header>
+            </nav>
+        </header>
 
-    <!-- Main Content -->
-    <main class="max-w-5xl mx-auto p-6 space-y-10 relative z-10">
+        <!-- Main Content -->
+        <main class="max-w-5xl mx-auto p-6 space-y-10 relative z-10">
 
-        <!-- Sección reusable -->
-        <section class="text-gray-900 p-6 space-y-6">
+            <!-- Sección reusable -->
+            <section class="text-gray-900 p-6 space-y-6">
 
-            <!-- REUTILIZABLE PARA TODAS LAS SECCIONES -->
-            <div>
-                <h2 class="text-4xl font-bold font-winky text-center text-outline text-blue-900 mb-4">Tablas</h2>
-                <ul class="list-disc list-inside space-y-1">
-                    <li>Jamón Ibérico</li>
-                    <li>Jamón Ibérico con queso semicurado</li>
-                    <li>De Ibéricos (Jamón, chorizo, salchichón y lomo)</li>
-                    <li>De Quesos (Tetilla, semicurado, oveja y San Simón) con almendras y membrillo</li>
-                </ul>
-            </div>
-
-            <div>
-                <h2 class="text-4xl font-bold font-winky text-center text-outline text-blue-900 mb-4">Tostas</h2>
-                <ul class="list-disc list-inside space-y-1">
-                    <li>Rulo de cabra, cebolla caramelizada, bacon y nueces...</li>
-                    <li>Atún, pimientos de piquillo confitados...</li>
-                    <li>Salmón ahumado con queso fresco...</li>
-                    <li>Sobrasada mallorquina, queso brie y cebolla crujiente...</li>
-                    <li>Setas, jamón y tomate con aceite y perejil...</li>
-                    <li>Anchoas, mermelada de pimiento, tetilla y piquillo...</li>
-                </ul>
-            </div>
-
-            <div>
-                <h2 class="text-4xl font-bold font-winky text-center text-outline text-blue-900 mb-4">Del Corral</h2>
-                <ul class="list-disc list-inside space-y-1">
-                    <li>Huevos de corral con jamón y patatas</li>
-                    <li>...con choricitos y patatas</li>
-                    <li>...con solomillo y salsa de setas</li>
-                    <li>...con secreto ibérico y jamón</li>
-                    <li>Revuelto de setas con gambones</li>
-                    <li>Revuelto de bacalao con piquillos</li>
-                    <li>Revuelto de gulas y gambas</li>
-                </ul>
-            </div>
-
-            <div>
-                <h2 class="text-4xl font-bold font-winky text-center text-outline text-blue-900 mb-4">Los Fritos</h2>
-                <ul class="list-disc list-inside space-y-1">
-                    <li>Chipirones en fritura de harina de maíz y ali-oli negro</li>
-                    <li>Croquetas caseras (consultar variedad)</li>
-                    <li>Langostinos crujientes en panko...</li>
-                    <li>Alitas con salsa de mostaza y miel</li>
-                    <li>Dados de pollo con manzana, teriyaki y patatas</li>
-                    <li>Patatas bravas y ali-oli</li>
-                    <li>Choquitos a la plancha con ali-oli de piquillos</li>
-                    <li>Tortilla de patata</li>
-                </ul>
-            </div>
-
-            <div>
-                <h2 class="text-4xl font-bold font-winky text-center text-outline text-blue-900 mb-4">Seguimos
-                    picando...</h2>
-                <ul class="list-disc list-inside space-y-1">
-                    <li>Dados de salmón marinado</li>
-                    <li>Salteado de setas y gambas</li>
-                    <li>Anchoas sobre tomate, mango y orégano</li>
-                    <li>Zamburiñas a la plancha con ajo y perejil</li>
-                </ul>
-            </div>
-
-            <div>
-                <h2 class="text-4xl font-bold font-winky text-center text-outline text-blue-900 mb-4">Ensaladas</h2>
-                <p class="italic mb-1 text-center">Con aceite de oliva y módena</p>
-                <ul class="list-disc list-inside space-y-1">
-                    <li>Hojas tiernas, piquillos, ventresca y espárragos</li>
-                    <li>Mezclum con camembert frito y mermelada de higos</li>
-                    <li>Jamón, queso semicurado y frutos secos</li>
-                    <li>Templada de vieiras y langostinos</li>
-                </ul>
-            </div>
-
-            <div>
-                <h2 class="text-4xl font-bold font-winky text-center text-outline text-blue-900 mb-4">Del Mar</h2>
-                <ul class="list-disc list-inside space-y-1">
-                    <li>Bacalao al horno con setas y castañas</li>
-                    <li>Bacalao a la parrilla con verduras al wok</li>
-                    <li>Lomo de merluza a la plancha</li>
-                    <li>Tentáculo de pulpo a la parrilla</li>
-                </ul>
-            </div>
-
-            <div>
-                <h2 class="text-4xl font-bold font-winky text-center text-outline text-blue-900 mb-4">De la Tierra</h2>
-                <ul class="list-disc list-inside space-y-1">
-                    <li>Picaña de vacuno a la parrilla</li>
-                    <li>Entrecot con salsa pimienta</li>
-                    <li>Solomillo de ternera gallega</li>
-                    <li>Secreto de cerdo ibérico con BBQ</li>
-                    <li>Chuletón madurado (por encargo)</li>
-                    <li>Variado de carnes (mínimo 2 pers.)</li>
-                    <li>Hamburguesa de Buey con cheddar y bacon</li>
-                </ul>
-            </div>
-
-            <div>
-                <h2 class="text-4xl font-bold font-winky text-center text-outline text-blue-900 mb-4">Veganos y
-                    Vegetarianos</h2>
-                <ul class="list-disc list-inside space-y-1">
-                    <li>Verduras a la plancha</li>
-                    <li>Salteado de verduras</li>
-                </ul>
-            </div>
-
-            <div>
-                <h2 class="text-4xl font-bold font-winky text-center text-outline text-blue-900 mb-4">Despedida dulce
-                </h2>
-                <ul class="list-disc list-inside space-y-1">
-                    <li>Arroz con leche</li>
-                    <li>Coulant de chocolate</li>
-                    <li>Tarta de queso con fresa</li>
-                    <li>Tiramisú</li>
-                    <li>Tarta de la abuela</li>
-                    <li>Flan de café</li>
-                </ul>
-            </div>
-        </section>
-
-    </main>
+                <!-- REUTILIZABLE PARA TODAS LAS SECCIONES -->
+                <div>
+                    <h2 class="text-4xl font-bold font-winky text-center text-blue-900 mb-4">Tablas</h2>
+                    <ul class="space-y-2 text-base">
+                        <li class="grid grid-cols-[1fr_auto] gap-4 border-b border-gray-200 pb-1">
+                            <span>Jamón Ibérico</span>
+                            <span class="whitespace-nowrap">18,00</span>
+                        </li>
+                        <li class="grid grid-cols-[1fr_auto] gap-4 border-b border-gray-200 pb-1">
+                            <span>Jamón Ibérico con queso semicurado</span>
+                            <span class="whitespace-nowrap">20,00</span>
+                        </li>
+                        <li class="grid grid-cols-[1fr_auto] gap-4 border-b border-gray-200 pb-1">
+                            <span>De Ibéricos (Jamón, chorizo, salchichón y lomo)</span>
+                            <span class="whitespace-nowrap">18,00</span>
+                        </li>
+                        <li class="grid grid-cols-[1fr_auto] gap-4 border-b border-gray-200 pb-1">
+                            <span>De Quesos (Tetilla, semicurado, oveja y San Simón) con almendras y membrillo</span>
+                            <span class="whitespace-nowrap">15,00</span>
+                        </li>
+                    </ul>
+                </div>
 
 
+                <div>
+                    <h2 class="text-4xl font-bold font-winky text-center text-blue-900 mb-4">Tostas</h2>
+                    <ul class="space-y-2 text-base">
+                        <li class="grid grid-cols-[1fr_auto] gap-4 border-b border-gray-200 pb-1">
+                            <span>Rulo de cabra, cebolla caramelizada, bacon y nueces...</span>
+                            <span class="whitespace-nowrap">8,00</span>
+                        </li>
+                        <li class="grid grid-cols-[1fr_auto] gap-4 border-b border-gray-200 pb-1">
+                            <span>Atún, pimientos de piquillo confitados, salsa de pimiento y módena </span>
+                            <span class="whitespace-nowrap">8,00</span>
+                        </li>
+                        <li class="grid grid-cols-[1fr_auto] gap-4 border-b border-gray-200 pb-1">
+                            <span>Salmón ahumado con queso fresco, brotes de ensalada, salsa de pimiento y módena
+                            </span>
+                            <span class="whitespace-nowrap">8,00</span>
+                        </li>
+                        <li class="grid grid-cols-[1fr_auto] gap-4 border-b border-gray-200 pb-1">
+                            <span>De sobrasada mallorquina, queso brie y cebolla crujiente con salsa de pimiento y
+                                módena</span>
+                            <span class="whitespace-nowrap">8,00</span>
+                        </li>
+                        <li class="grid grid-cols-[1fr_auto] gap-4 border-b border-gray-200 pb-1">
+                            <span>Anchoas, mermelada de pimiento, tetilla y pimiento de piquillo </span>
+                            <span class="whitespace-nowrap">9,00</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h2 class="text-4xl font-bold font-winky text-center text-blue-900 mb-4">Del Corral</h2>
+                    <ul class="space-y-2 text-base">
+                        <li class="grid grid-cols-[1fr_auto] gap-4 border-b border-gray-200 pb-1">
+                            <span>Huevos de corral con jamón y patatas</span>
+                            <span class="whitespace-nowrap">10,00</span>
+                        </li>
+                        <li class="grid grid-cols-[1fr_auto] gap-4 border-b border-gray-200 pb-1">
+                            <span>Huevos de corral con choricitos y patatas </span>
+                            <span class="whitespace-nowrap">10,00</span>
+                        </li>
+                        <li class="grid grid-cols-[1fr_auto] gap-4 border-b border-gray-200 pb-1">
+                            <span>Huevos de corral con solomillo de cerdo, patatas y salsa de setas</span>
+                            <span class="whitespace-nowrap">11,00</span>
+                        </li>
+                        <li class="grid grid-cols-[1fr_auto] gap-4 border-b border-gray-200 pb-1">
+                            <span>Huevos de corral con secreto ibérico, patatas y jamón </span>
+                            <span class="whitespace-nowrap">11,50</span>
+                        </li>
+                        <li class="grid grid-cols-[1fr_auto] gap-4 border-b border-gray-200 pb-1">
+                            <span>Revuelto de setas con gambones</span>
+                            <span class="whitespace-nowrap">9,00</span>
+                        </li>
+                        <li class="grid grid-cols-[1fr_auto] gap-4 border-b border-gray-200 pb-1">
+                            <span>Revuelto de bacalao con piquillos </span>
+                            <span class="whitespace-nowrap">9,00</span>
+                        </li>
+                        <li class="grid grid-cols-[1fr_auto] gap-4 border-b border-gray-200 pb-1">
+                            <span>Revuelto de gulas y gambas </span>
+                            <span class="whitespace-nowrap">9,00</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h2 class="text-4xl font-bold font-winky text-center text-blue-900 mb-4">Los Fritos</h2>
+                    <ul class="space-y-2 text-base">
+                        <li class="grid grid-cols-[1fr_auto] gap-4 border-b border-gray-200 pb-1">
+                            <span>Chipirones en fritura de harina de maíz y ali-oli de ajo negro </span>
+                            <span class="whitespace-nowrap">12,00</span>
+                        </li>
+                        <li class="grid grid-cols-[1fr_auto] gap-4 border-b border-gray-200 pb-1">
+                            <span>Croquetas caseras (consultar variedad) </span>
+                            <span class="whitespace-nowrap">9,00</span>
+                        </li>
+                        <li class="grid grid-cols-[1fr_auto] gap-4 border-b border-gray-200 pb-1">
+                            <span>Langostinos crujientes en panko con mayonesa agridulce</span>
+                            <span class="whitespace-nowrap">10,00</span>
+                        </li>
+                        <li class="grid grid-cols-[1fr_auto] gap-4 border-b border-gray-200 pb-1">
+                            <span>Alitas de pollo con salsa de mostaza y miel </span>
+                            <span class="whitespace-nowrap">8,00</span>
+                        </li>
+                        <li class="grid grid-cols-[1fr_auto] gap-4 border-b border-gray-200 pb-1">
+                            <span>Dados de pollo salteados con manzana, salsa teriyaki, cebolla caramelizada y patatas
+                            </span>
+                            <span class="whitespace-nowrap">10,00</span>
+                        </li>
+                        <li class="grid grid-cols-[1fr_auto] gap-4 border-b border-gray-200 pb-1">
+                            <span>Patatas bravas y ali-oli</span>
+                            <span class="whitespace-nowrap">5,00</span>
+                        </li>
+                        <li class="grid grid-cols-[1fr_auto] gap-4 border-b border-gray-200 pb-1">
+                            <span>Choquitos a la plancha, aceite de ajo, perejil
+                                y ali-oli de piquillos </span>
+                            <span class="whitespace-nowrap">12,50</span>
+                        </li>
+                        <li class="grid grid-cols-[1fr_auto] gap-4 border-b border-gray-200 pb-1">
+                            <span>Tortilla de patatas</span>
+                            <span class="whitespace-nowrap">7,50</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h2 class="text-4xl font-bold font-winky text-center text-blue-900 mb-4">Seguimos picando...</h2>
+                    <ul class="space-y-2 text-base">
+                        <li class="grid grid-cols-[1fr_auto] gap-4 border-b border-gray-200 pb-1">
+                            <span>Dados de salmón marinado, aceite y vinagre de manzana </span>
+                            <span class="whitespace-nowrap">13,00</span>
+                        </li>
+                        <li class="grid grid-cols-[1fr_auto] gap-4 border-b border-gray-200 pb-1">
+                            <span>Salteado de setas y gambas </span>
+                            <span class="whitespace-nowrap">11,00</span>
+                        </li>
+                        <li class="grid grid-cols-[1fr_auto] gap-4 border-b border-gray-200 pb-1">
+                            <span>Anchoas del Cantábrico sobre tomate rallado, mango y orégano</span>
+                            <span class="whitespace-nowrap">16,00</span>
+                        </li>
+                        <li class="grid grid-cols-[1fr_auto] gap-4 border-b border-gray-200 pb-1">
+                            <span>Zamburiñas a la plancha con aliño de ajo y perejil</span>
+                            <span class="whitespace-nowrap">18,00</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h2 class="text-4xl font-bold font-winky text-center text-blue-900 mb-4">Ensaladas</h2>
+                    <p class="italic mb-1 text-center">Con aceite de oliva y módena</p>
+                    <ul class="space-y-2 text-base">
+                        <li class="grid grid-cols-[1fr_auto] gap-4 border-b border-gray-200 pb-1">
+                            <span>De hojas tiernas, piquillos y ventresca de bonito y espárragos</span>
+                            <span class="whitespace-nowrap">12,00</span>
+                        </li>
+                        <li class="grid grid-cols-[1fr_auto] gap-4 border-b border-gray-200 pb-1">
+                            <span>Mezclum de lechugas (con queso camembert frito y mermelada de higos)</span>
+                            <span class="whitespace-nowrap">10,00</span>
+                        </li>
+                        <li class="grid grid-cols-[1fr_auto] gap-4 border-b border-gray-200 pb-1">
+                            <span>De jamón, queso semicurado y frutos secos</span>
+                            <span class="whitespace-nowrap">10,00</span>
+                        </li>
+                        <li class="grid grid-cols-[1fr_auto] gap-4 border-b border-gray-200 pb-1">
+                            <span>Templada de vieiras y langostinos con frutos secos</span>
+                            <span class="whitespace-nowrap">16,00</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h2 class="text-4xl font-bold font-winky text-center text-blue-900 mb-4">Del Mar</h2>
+                    <ul class="space-y-2 text-base">
+                        <li class="grid grid-cols-[1fr_auto] gap-4 border-b border-gray-200 pb-1">
+                            <span>Bacalao al horno con setas y castañas</span>
+                            <span class="whitespace-nowrap">19,00</span>
+                        </li>
+                        <li class="grid grid-cols-[1fr_auto] gap-4 border-b border-gray-200 pb-1">
+                            <span>Bacalao a la parrilla con salteado de verduras al wok</span>
+                            <span class="whitespace-nowrap">18,00</span>
+                        </li>
+                        <li class="grid grid-cols-[1fr_auto] gap-4 border-b border-gray-200 pb-1">
+                            <span>Lomo de merluza a la plancha con ensalada de temporada</span>
+                            <span class="whitespace-nowrap">14,00</span>
+                        </li>
+                        <li class="grid grid-cols-[1fr_auto] gap-4 border-b border-gray-200 pb-1">
+                            <span>Tentáculo de pulpo a la parrilla</span>
+                            <span class="whitespace-nowrap">18,00</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h2 class="text-4xl font-bold font-winky text-center text-blue-900 mb-4">De la Tierra</h2>
+                    <ul class="space-y-2 text-base">
+                        <li class="grid grid-cols-[1fr_auto] gap-4 border-b border-gray-200 pb-1">
+                            <span>Picaña de vacuno a la parrilla </span>
+                            <span class="whitespace-nowrap">18,00</span>
+                        </li>
+                        <li class="grid grid-cols-[1fr_auto] gap-4 border-b border-gray-200 pb-1">
+                            <span>Entrecot de ternera gallega a la parrilla con salsa pimienta</span>
+                            <span class="whitespace-nowrap">18,00</span>
+                        </li>
+                        <li class="grid grid-cols-[1fr_auto] gap-4 border-b border-gray-200 pb-1">
+                            <span>Solomillo de ternera gallega a la parrilla </span>
+                            <span class="whitespace-nowrap">20,00</span>
+                        </li>
+                        <li class="grid grid-cols-[1fr_auto] gap-4 border-b border-gray-200 pb-1">
+                            <span>Secreto de cerdo Ibérico con salsa BBQ </span>
+                            <span class="whitespace-nowrap">14,00</span>
+                        </li>
+                        <li class="grid grid-cols-[1fr_auto] gap-4 border-b border-gray-200 pb-1">
+                            <span>Chuletón de vacuno madurado (por encargo, para 2 pers.) </span>
+                            <span class="whitespace-nowrap">S/Peso</span>
+                        </li>
+                        <li class="grid grid-cols-[1fr_auto] gap-4 border-b border-gray-200 pb-1">
+                            <span>Variado de carnes (Entrecot, secreto y picaña)
+                                Mínimo para 2 personas</span>
+                            <span class="whitespace-nowrap">40,00</span>
+                        </li>
+                        <li class="grid grid-cols-[1fr_auto] gap-4 border-b border-gray-200 pb-1">
+                            <span>Hamburguesa de Buey con queso cheddar, bacon y lechuga</span>
+                            <span class="whitespace-nowrap">9,00</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h2 class="text-4xl font-bold font-winky text-center text-blue-900 mb-4">Veganos y
+                        Vegetarianos</h2>
+                    <ul class="space-y-2 text-base">
+                        <li class="grid grid-cols-[1fr_auto] gap-4 border-b border-gray-200 pb-1">
+                            <span>Verduras a la plancha (Tomate, cebolla, pimientos, calabacin, berenjena y
+                                setas)</span>
+                            <span class="whitespace-nowrap">10,75</span>
+                        </li>
+                        <li class="grid grid-cols-[1fr_auto] gap-4 border-b border-gray-200 pb-1">
+                            <span>Salteado de verduras (Tomate, cebolla, pimientos, calabacin, berenjena, setas, ajo y
+                                perejil)</span>
+                            <span class="whitespace-nowrap">10,75</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h2 class="text-4xl font-bold font-winky text-center text-blue-900 mb-4">Despedida dulce
+                    </h2>
+                    <ul class="space-y-2 text-base">
+                        <li class="grid grid-cols-[1fr_auto] gap-4 border-b border-gray-200 pb-1">
+                            <span>Arroz con leche</span>
+                            <span class="whitespace-nowrap">3,50</span>
+                        </li>
+                        <li class="grid grid-cols-[1fr_auto] gap-4 border-b border-gray-200 pb-1">
+                            <span>Coulant de chocolate con helado de vainilla</span>
+                            <span class="whitespace-nowrap">4,75</span>
+                        </li>
+                        <li class="grid grid-cols-[1fr_auto] gap-4 border-b border-gray-200 pb-1">
+                            <span>Tarta de queso semifría con mermelada de fresa</span>
+                            <span class="whitespace-nowrap">3,75</span>
+                        </li>
+                        <li class="grid grid-cols-[1fr_auto] gap-4 border-b border-gray-200 pb-1">
+                            <span>Tiramisú</span>
+                            <span class="whitespace-nowrap">4,75</span>
+                        </li>
+                        <li class="grid grid-cols-[1fr_auto] gap-4 border-b border-gray-200 pb-1">
+                            <span>Tarta de la abuela</span>
+                            <span class="whitespace-nowrap">4,00</span>
+                        </li>
+                        <li class="grid grid-cols-[1fr_auto] gap-4 border-b border-gray-200 pb-1">
+                            <span>Flan de café</span>
+                            <span class="whitespace-nowrap">3,00</span>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+        </main>
+    </div>
 
 </body>
 
