@@ -59,6 +59,10 @@
         .font-winky {
             font-family: 'Winky Rough', cursive;
         }
+
+        #navbar-buttons {
+            font-size: 25px;
+        }
     </style>
 </head>
 
@@ -72,7 +76,7 @@
                     class="h-12 w-12 object-cover border-2 border-white rounded-full" />
 
                 <!-- Menú para dispositivos de escritorio y tabletas -->
-                <div class="flex space-x-6 text-lg">
+                <div id="navbar-buttons" class="flex space-x-6">
                     <button onclick="showSection('carta')" class="hover:text-gray-500">Carta</button>
                     <button onclick="showSection('vinos')" class="hover:text-gray-500">Vinos</button>
                 </div>
@@ -857,7 +861,7 @@
                 </li>
             </ul>
 
-            <h2 class="text-4xl font-bold font-winky text-center text-blue-900 mb-4 m-10">Ribeiro Blanco
+            <h2 class="text-4xl font-bold font-winky text-center text-blue-900 mb-10 m-10">Ribeiro Blanco
             </h2>
             <ul>
                 <li class="grid grid-cols-[1fr_auto] gap-4 border-b border-gray-200 pb-1">
@@ -868,7 +872,7 @@
                     <span>Cotarello</span>
                     <span class="whitespace-nowrap">15,00</span>
                 </li>
-                <li class="grid grid-cols-[1fr_auto] gap-4 border-b border-gray-200 pb-1">
+                <li class="grid grid-cols-[1fr_auto] gap-4 border-b border-gray-200 pb-1 mb-4">
                     <span>Cotarello Albariño Barrica</span>
                     <span class="whitespace-nowrap">15,00</span>
                 </li>
@@ -876,13 +880,33 @@
         </section>
 
 
-        <footer>
-            <a href="https://www.instagram.com/otuneltapasponteareas?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
-                target="_blank">
+        <footer class="contents justify-center px-8 py-6 bg-gray-100 text-sm m-20">
+            <div class="flex justify-center m-4 space-x-3">
+                <img src="https://cdn-icons-png.flaticon.com/512/597/597177.png" alt="Teléfono" class="w-5 h-5">
+                <span>+34 986 641 757</span>
+            </div>
+
+            <div class="flex justify-center m-4 space-x-3">
+                <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebok" class="w-5 h-5">
+                <a href="https://www.facebook.com/Otuneltapas/?locale=es_ES" target="_blank"
+                    class="hover:underline text-gray-800">
+                    O Tunel Ponteareas
+                </a>
+            </div>
+
+            <div class=" flex justify-center m-4 space-x-3">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram"
-                    class="instagram-logo">
-            </a>
+                    class="w-6 h-6">
+                <a href="https://www.instagram.com/otuneltapasponteareas?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+                    target="_blank" class="hover:underline text-gray-800">
+                    @otuneltapasponteareas
+                </a>
+            </div>
+
+
+
         </footer>
+
     </main>
 
 
