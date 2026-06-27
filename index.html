@@ -1,314 +1,1006 @@
-
-
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>O Tunel — En Mantenimiento</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
-    <style>
-        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>O Tunel — Carta</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@300;400;500&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 
-        :root {
-            --cream:   #f7f3ec;
-            --ink:     #1c1610;
-            --ink-mid: #4a3f33;
-            --ink-muted: #8a7a6a;
-            --gold:    #b8995a;
-            --gold-light: #d4b87a;
-        }
+  <!-- ===== Estilos de la barra de navegación rápida por secciones =====
+       Autocontenidos para no depender de cambios en style.css.
+       Si prefieres, puedes mover este bloque a style.css y ajustar
+       las variables --nav-* a la paleta real del sitio. -->
+  <style>
+    :root {
+      --tunnel-stone: #1b1611;
+      --tunnel-stone-deep: #120e0a;
+      --tunnel-ember: #c9a35c;
+      --tunnel-ember-dim: rgba(201, 163, 92, 0.4);
+      --tunnel-parchment: #efe6d4;
+      --tunnel-parchment-dim: rgba(239, 230, 212, 0.52);
+    }
 
-        html, body {
-            height: 100%;
-        }
+    .section-nav-bar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 999;
+      background: linear-gradient(to bottom, var(--tunnel-stone), var(--tunnel-stone-deep));
+      border-bottom: 1px solid var(--tunnel-ember-dim);
+    }
 
-        body {
-            background-color: var(--cream);
-            color: var(--ink);
-            font-family: 'Jost', sans-serif;
-            font-weight: 300;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            min-height: 100vh;
-            padding: 2rem;
-            overflow: hidden;
-        }
+    /* Empuja el resto del contenido lo justo para que la barra fija no lo tape.
+       El valor exacto lo calcula el JS según la altura real de la barra. */
 
-        /* Subtle grain texture */
-        body::before {
-            content: '';
-            position: fixed;
-            inset: 0;
-            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
-            pointer-events: none;
-            z-index: 0;
-        }
+    .section-nav {
+      display: none;
+      overflow-x: auto;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+      padding: 0 1.25rem;
+    }
 
-        .container {
-            position: relative;
-            z-index: 1;
-            text-align: center;
-            max-width: 560px;
-            width: 100%;
-            animation: fadeUp 1.2s ease both;
-        }
+    .section-nav::-webkit-scrollbar {
+      display: none;
+    }
 
-        @keyframes fadeUp {
-            from { opacity: 0; transform: translateY(24px); }
-            to   { opacity: 1; transform: translateY(0); }
-        }
+    .section-nav.is-visible {
+      display: block;
+    }
 
-        /* Top ornament */
-        .ornament {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 12px;
-            margin-bottom: 2.5rem;
-            animation: fadeUp 1.2s ease 0.1s both;
-        }
+    .section-nav-track {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      white-space: nowrap;
+      min-width: 100%;
+      padding: 0.9rem 0 0.6rem;
+    }
 
-        .ornament-line {
-            width: 80px;
-            height: 1px;
-            background: linear-gradient(to right, transparent, var(--gold));
-        }
-        .ornament-line:last-child {
-            background: linear-gradient(to left, transparent, var(--gold));
-        }
+    .section-nav-btn {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+      background: none;
+      border: none;
+      color: var(--tunnel-parchment-dim);
+      padding: 0.15rem 0;
+      margin: 0 0.7rem;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: color 0.3s ease;
+    }
 
-        .ornament-diamond {
-            width: 8px;
-            height: 8px;
-            background: var(--gold);
-            transform: rotate(45deg);
-        }
+    .section-nav-btn:first-child {
+      margin-left: 0;
+    }
 
-        /* Logo / title */
-        h1 {
-            font-family: 'Cormorant Garamond', serif;
-            font-weight: 400;
-            font-size: clamp(3.5rem, 10vw, 5.5rem);
-            letter-spacing: 0.12em;
-            color: var(--ink);
-            line-height: 1;
-            margin-bottom: 0.4rem;
-            animation: fadeUp 1.2s ease 0.2s both;
-        }
+    .section-nav-btn:hover {
+      color: var(--tunnel-parchment);
+    }
 
-        .subtitle {
-            font-family: 'Jost', sans-serif;
-            font-weight: 300;
-            font-size: 0.78rem;
-            letter-spacing: 0.35em;
-            text-transform: uppercase;
-            color: var(--gold);
-            margin-bottom: 3rem;
-            animation: fadeUp 1.2s ease 0.3s both;
-        }
+    .section-nav-btn.is-active {
+      color: var(--tunnel-ember);
+    }
 
-        /* Divider */
-        .divider {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 14px;
-            margin-bottom: 3rem;
-            animation: fadeUp 1.2s ease 0.4s both;
-        }
+    .nav-sep {
+      color: var(--tunnel-ember-dim);
+      font-size: 0.5rem;
+      position: relative;
+      top: -2px;
+    }
 
-        .divider-line {
-            flex: 1;
-            max-width: 120px;
-            height: 1px;
-            background: var(--gold);
-            opacity: 0.4;
-        }
+    .nav-indicator {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      height: 1px;
+      width: 0;
+      background: var(--tunnel-ember);
+      box-shadow: 0 0 6px var(--tunnel-ember-dim);
+      transition: transform 0.35s cubic-bezier(.65, 0, .35, 1), width 0.35s cubic-bezier(.65, 0, .35, 1);
+    }
 
-        .divider-symbol {
-            color: var(--gold);
-            font-size: 0.7rem;
-            letter-spacing: 0.1em;
-        }
+    @media (min-width: 760px) {
+      .section-nav {
+        overflow-x: visible;
+        text-align: center;
+      }
 
-        /* Main message */
-        .message-block {
-            animation: fadeUp 1.2s ease 0.5s both;
-            margin-bottom: 3rem;
-        }
+      .section-nav-track {
+        display: inline-flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        width: auto;
+        min-width: 0;
+      }
+    }
 
-        .message-title {
-            font-family: 'Cormorant Garamond', serif;
-            font-style: italic;
-            font-size: clamp(1.4rem, 4vw, 1.9rem);
-            font-weight: 300;
-            color: var(--ink-mid);
-            line-height: 1.4;
-            margin-bottom: 1.2rem;
-        }
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
 
-        .message-body {
-            font-size: 0.88rem;
-            letter-spacing: 0.04em;
-            color: var(--ink-muted);
-            line-height: 1.8;
-        }
+      .nav-indicator {
+        transition: none;
+      }
+    }
 
-        /* Contact links */
-        .contact {
-            animation: fadeUp 1.2s ease 0.65s both;
-            margin-bottom: 3rem;
-        }
-
-        .contact-label {
-            font-size: 0.7rem;
-            letter-spacing: 0.3em;
-            text-transform: uppercase;
-            color: var(--gold);
-            margin-bottom: 1.2rem;
-        }
-
-        .contact-links {
-            display: flex;
-            flex-direction: column;
-            gap: 0.6rem;
-            align-items: center;
-        }
-
-        .contact-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            font-size: 0.85rem;
-            letter-spacing: 0.06em;
-            color: var(--ink-mid);
-            text-decoration: none;
-            transition: color 0.25s;
-        }
-
-        .contact-link:hover {
-            color: var(--gold);
-        }
-
-        .contact-link img {
-            width: 14px;
-            height: 14px;
-            opacity: 0.55;
-            filter: sepia(1) saturate(0.5) brightness(0.7);
-        }
-
-        /* Bottom ornament */
-        .bottom-ornament {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-            animation: fadeUp 1.2s ease 0.75s both;
-        }
-
-        .bottom-ornament-line {
-            width: 40px;
-            height: 1px;
-            background: var(--gold);
-            opacity: 0.35;
-        }
-
-        .bottom-ornament-dot {
-            width: 4px;
-            height: 4px;
-            border-radius: 50%;
-            background: var(--gold);
-            opacity: 0.5;
-        }
-
-        .footer-copy {
-            margin-top: 1.8rem;
-            font-size: 0.72rem;
-            letter-spacing: 0.2em;
-            text-transform: uppercase;
-            color: var(--ink-muted);
-            opacity: 0.6;
-            animation: fadeUp 1.2s ease 0.85s both;
-        }
-
-        /* Animated dots on the title line */
-        .dots {
-            display: inline-block;
-            overflow: hidden;
-            vertical-align: bottom;
-        }
-
-        .dots span {
-            display: inline-block;
-            animation: blink 1.4s infinite;
-        }
-        .dots span:nth-child(2) { animation-delay: 0.2s; }
-        .dots span:nth-child(3) { animation-delay: 0.4s; }
-
-        @keyframes blink {
-            0%, 80%, 100% { opacity: 0; }
-            40% { opacity: 1; }
-        }
-    </style>
+    /* El título de cada sección queda siempre por debajo de la barra fija,
+       aunque su altura cambie según el dispositivo. La variable la fija el JS. */
+    [data-section] {
+      scroll-margin-top: var(--scroll-offset, 90px);
+    }
+  </style>
 </head>
+
 <body>
 
-<div class="container">
-
-    <div class="ornament">
-        <div class="ornament-line"></div>
-        <div class="ornament-diamond"></div>
-        <div class="ornament-line"></div>
-    </div>
-
-    <h1>O Tunel</h1>
-    <p class="subtitle">Ponteareas &nbsp;·&nbsp; Tapas &amp; Vinos</p>
-
-    <div class="divider">
-        <div class="divider-line"></div>
-        <span class="divider-symbol">✦</span>
-        <div class="divider-line"></div>
-    </div>
-
-    <div class="message-block">
-        <p class="message-title">Estamos preparando algo mejor<span class="dots"><span>.</span><span>.</span><span>.</span></span></p>
-        <p class="message-body">
-            Nuestra carta online está momentáneamente en mantenimiento.<br>
-            Volveremos enseguida con todas las novedades.
-        </p>
-    </div>
-
-    <div class="contact">
-        <p class="contact-label">Mientras tanto, contáctanos</p>
-        <div class="contact-links">
-            <a href="tel:+34986641757" class="contact-link">
-                <img src="https://cdn-icons-png.flaticon.com/512/597/597177.png" alt="Teléfono">
-                +34 986 641 757
-            </a>
-            <a href="https://www.facebook.com/Otuneltapas/?locale=es_ES" target="_blank" class="contact-link">
-                <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook">
-                O Tunel Ponteareas
-            </a>
-            <a href="https://www.instagram.com/otuneltapasponteareas" target="_blank" class="contact-link">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram">
-                @otuneltapasponteareas
-            </a>
+  <!-- HERO -->
+  <header class="hero">
+    <div class="hero-inner">
+      <div class="hero-ornament">
+        <div class="hero-line"></div>
+        <div class="hero-diamond"></div>
+        <div class="hero-line"></div>
+      </div>
+      <h1 class="hero-logo">O Tunel</h1>
+      <p class="hero-sub">Ponteareas &nbsp;·&nbsp; Tapas &amp; Vinos</p>
+      <nav class="nav-wrap">
+        <div class="nav-tabs">
+          <button class="nav-tab active" data-page="carta">Carta</button>
+          <button class="nav-tab" data-page="vinos">Vinos</button>
         </div>
+      </nav>
     </div>
+  </header>
 
-    <div class="bottom-ornament">
-        <div class="bottom-ornament-line"></div>
-        <div class="bottom-ornament-dot"></div>
-        <div class="bottom-ornament-line"></div>
+  <!-- BARRA DE NAVEGACIÓN RÁPIDA POR SECCIONES -->
+  <div class="section-nav-bar" id="sectionNavBar">
+    <nav class="section-nav is-visible" data-page-nav="carta" aria-label="Secciones de la carta">
+      <div class="section-nav-track">
+        <button class="section-nav-btn" data-target="tablas">Tablas</button>
+        <span class="nav-sep" aria-hidden="true">✦</span>
+        <button class="section-nav-btn" data-target="tostas">Tostas</button>
+        <span class="nav-sep" aria-hidden="true">✦</span>
+        <button class="section-nav-btn" data-target="del-corral">Del Corral</button>
+        <span class="nav-sep" aria-hidden="true">✦</span>
+        <button class="section-nav-btn" data-target="los-fritos">Los Fritos</button>
+        <span class="nav-sep" aria-hidden="true">✦</span>
+        <button class="section-nav-btn" data-target="seguimos-picando">Seguimos picando</button>
+        <span class="nav-sep" aria-hidden="true">✦</span>
+        <button class="section-nav-btn" data-target="ensaladas">Ensaladas</button>
+        <span class="nav-sep" aria-hidden="true">✦</span>
+        <button class="section-nav-btn" data-target="del-mar">Del Mar</button>
+        <span class="nav-sep" aria-hidden="true">✦</span>
+        <button class="section-nav-btn" data-target="de-la-tierra">De la Tierra</button>
+        <span class="nav-sep" aria-hidden="true">✦</span>
+        <button class="section-nav-btn" data-target="veganos-vegetarianos">Veganos</button>
+        <span class="nav-sep" aria-hidden="true">✦</span>
+        <button class="section-nav-btn" data-target="despedida-dulce">Postres</button>
+        <span class="nav-indicator" aria-hidden="true"></span>
+      </div>
+    </nav>
+    <nav class="section-nav" data-page-nav="vinos" aria-label="Secciones de vinos">
+      <div class="section-nav-track">
+        <button class="section-nav-btn" data-target="blancos-gallegos">Blancos Gallegos</button>
+        <span class="nav-sep" aria-hidden="true">✦</span>
+        <button class="section-nav-btn" data-target="tintos-gallegos">Tintos Gallegos</button>
+        <span class="nav-sep" aria-hidden="true">✦</span>
+        <button class="section-nav-btn" data-target="champanes">Champanes</button>
+        <span class="nav-sep" aria-hidden="true">✦</span>
+        <button class="section-nav-btn" data-target="ribera-del-duero">Ribera del Duero</button>
+        <span class="nav-sep" aria-hidden="true">✦</span>
+        <button class="section-nav-btn" data-target="toro">Toro</button>
+        <span class="nav-sep" aria-hidden="true">✦</span>
+        <button class="section-nav-btn" data-target="castilla-leon">Castilla y León</button>
+        <span class="nav-sep" aria-hidden="true">✦</span>
+        <button class="section-nav-btn" data-target="riojas">Riojas</button>
+        <span class="nav-indicator" aria-hidden="true"></span>
+      </div>
+    </nav>
+  </div>
+
+  <main>
+
+    <!-- ═══════════════ CARTA ═══════════════ -->
+    <div id="carta" class="page active">
+
+      <section class="menu-section" id="tablas" data-section>
+        <h2 class="section-title">Tablas</h2>
+        <div class="section-rule"><span>✦</span></div>
+        <ul class="item-list">
+          <li class="item">
+            <span class="item-name">Jamón Ibérico</span>
+            <span class="item-price">19,50</span>
+          </li>
+          <li class="item">
+            <span class="item-name">Jamón Ibérico con queso semicurado
+              <span class="allergens"><img src="/alergenos/simbolo alergeno lacteos.png" alt="Lácteos"><img
+                  src="/alergenos/simbolo alergeno soja.png" alt="Soja"></span>
+            </span>
+            <span class="item-price">22,00</span>
+          </li>
+          <li class="item">
+            <span class="item-name">De Ibéricos (Jamón, chorizo, salchichón y lomo)</span>
+            <span class="item-price">19,50</span>
+          </li>
+          <li class="item">
+            <span class="item-name">De Quesos (Tetilla, semicurado, San Simón con almendras y membrillo)
+              <span class="allergens"><img src="/alergenos/simbolo alergeno lacteos.png" alt="Lácteos"><img
+                  src="/alergenos/simbolo alergeno soja.png" alt="Soja"></span>
+            </span>
+            <span class="item-price">17,50</span>
+          </li>
+        </ul>
+      </section>
+
+      <section class="menu-section" id="tostas" data-section>
+        <h2 class="section-title">Tostas</h2>
+        <div class="section-rule"><span>✦</span></div>
+        <ul class="item-list">
+          <li class="item">
+            <span class="item-name">Rulo de cabra, cebolla caramelizada, beicon y nueces, salsa sweet chili y módena
+              <span class="allergens">
+                <img src="/alergenos/simbolo alergeno soja.png" alt="Soja">
+                <img src="/alergenos/simbolo alergeno frutos secos.png" alt="Frutos secos">
+                <img src="/alergenos/simbolo alergeno lacteos.png" alt="Lácteos">
+              </span>
+            </span>
+            <span class="item-price">9,00</span>
+          </li>
+          <li class="item">
+            <span class="item-name">Atún, pimientos de piquillo confitados, salsa de pimientos y módena
+              <span class="allergens">
+                <img src="/alergenos/simbolo pescado alergenos.png" alt="Pescado">
+              </span>
+            </span>
+            <span class="item-price">9,00</span>
+          </li>
+          <li class="item">
+            <span class="item-name">Salmón ahumado, queso fresco, brotes de ensalada, salsa de pimientos y módena
+              <span class="allergens">
+                <img src="/alergenos/simbolo pescado alergenos.png" alt="Pescado">
+                <img src="/alergenos/simbolo alergeno lacteos.png" alt="Lácteos">
+              </span>
+            </span>
+            <span class="item-price">9,00</span>
+          </li>
+          <li class="item">
+            <span class="item-name">Sobrasada mallorquina, brie, cebolla crujiente, salsa de pimientos y módena
+              <span class="allergens">
+                <img src="/alergenos/simbolo alergeno lacteos.png" alt="Lácteos">
+                <img src="/alergenos/simbolo alergeno cereales.png" alt="Cereales">
+                <img src="/alergenos/simbolo alergeno huevos.png" alt="Huevos">
+              </span>
+            </span>
+            <span class="item-price">9,00</span>
+          </li>
+          <li class="item">
+            <span class="item-name">Anchoas, mermelada de pimientos, tetilla y pimientos de piquillo
+              <span class="allergens">
+                <img src="/alergenos/simbolo alergeno altramuces.png" alt="Altramuces">
+                <img src="/alergenos/simbolo alergeno lacteos.png" alt="Lácteos">
+              </span>
+            </span>
+            <span class="item-price">9,50</span>
+          </li>
+          <li class="item">
+            <span class="item-name">Setas, jamón y tomate con aceite y perejil, salsa de pimientos y módena</span>
+            <span class="item-price">9,00</span>
+          </li>
+        </ul>
+      </section>
+
+      <section class="menu-section" id="del-corral" data-section>
+        <h2 class="section-title">Del Corral</h2>
+        <div class="section-rule"><span>✦</span></div>
+        <ul class="item-list">
+          <li class="item">
+            <span class="item-name">Huevos de corral con jamón y patatas</span>
+            <span class="item-price">11,00</span>
+          </li>
+          <li class="item">
+            <span class="item-name">Huevos de corral con choricitos y patatas
+              <span class="allergens"><img src="/alergenos/simbolo alergeno huevos.png" alt="Huevos"></span>
+            </span>
+            <span class="item-price">11,00</span>
+          </li>
+          <li class="item">
+            <span class="item-name">Huevos de corral con solomillo de cerdo ibérico, patatas y salsa de setas
+              <span class="allergens"><img src="/alergenos/simbolo alergeno cereales.png" alt="Cereales"><img
+                  src="/alergenos/simbolo alergeno lacteos.png" alt="Lácteos"><img
+                  src="/alergenos/simbolo alergeno huevos.png" alt="Huevos"></span>
+            </span>
+            <span class="item-price">12,50</span>
+          </li>
+          <li class="item">
+            <span class="item-name">Huevos de corral con secreto ibérico, patatas y jamón
+              <span class="allergens"><img src="/alergenos/simbolo alergeno huevos.png" alt="Huevos"></span>
+            </span>
+            <span class="item-price">12,50</span>
+          </li>
+          <li class="item">
+            <span class="item-name">Revuelto de setas con gambones
+              <span class="allergens"><img src="/alergenos/simbolo alergeno crustaceo.png" alt="Crustáceos"><img
+                  src="/alergenos/simbolo alergeno huevos.png" alt="Huevos"></span>
+            </span>
+            <span class="item-price">9,75</span>
+          </li>
+          <li class="item">
+            <span class="item-name">Revuelto de bacalao con piquillo
+              <span class="allergens"><img src="/alergenos/simbolo alergeno huevos.png" alt="Huevos"><img
+                  src="/alergenos/simbolo pescado alergenos.png" alt="Pescado"></span>
+            </span>
+            <span class="item-price">9,75</span>
+          </li>
+          <li class="item">
+            <span class="item-name">Revuelto de gulas y gambas
+              <span class="allergens"><img src="/alergenos/simbolo alergeno crustaceo.png" alt="Crustáceos"><img
+                  src="/alergenos/simbolo alergeno huevos.png" alt="Huevos"></span>
+            </span>
+            <span class="item-price">10,00</span>
+          </li>
+        </ul>
+      </section>
+
+      <section class="menu-section" id="los-fritos" data-section>
+        <h2 class="section-title">Los Fritos</h2>
+        <div class="section-rule"><span>✦</span></div>
+        <ul class="item-list">
+          <li class="item">
+            <span class="item-name">Chipirones en fritura de harina de maíz y ali-oli de ajo negro
+              <span class="allergens"><img src="/alergenos/simbolo alergeno cereales.png" alt="Cereales"><img
+                  src="/alergenos/simbolo alergeno frutos secos.png" alt="Frutos secos"></span>
+            </span>
+            <span class="item-price">12,75</span>
+          </li>
+          <li class="item">
+            <span class="item-name">Croquetas caseras (consultar variedad)
+              <span class="allergens"><img src="/alergenos/simbolo alergeno cereales.png" alt="Cereales"><img
+                  src="/alergenos/simbolo alergeno huevos.png" alt="Huevos"><img
+                  src="/alergenos/simbolo alergeno lacteos.png" alt="Lácteos"><img
+                  src="/alergenos/simbolo alergeno sesamo.png" alt="Sésamo"></span>
+            </span>
+            <span class="item-price">9,00</span>
+          </li>
+          <li class="item">
+            <span class="item-name">Langostinos crujientes en panko con mayonesa agridulce
+              <span class="allergens"><img src="/alergenos/simbolo alergeno cereales.png" alt="Cereales"><img
+                  src="/alergenos/simbolo alergeno crustaceo.png" alt="Crustáceos"><img
+                  src="/alergenos/simbolo alergeno huevos.png" alt="Huevos"></span>
+            </span>
+            <span class="item-price">10,75</span>
+          </li>
+          <li class="item">
+            <span class="item-name">Alitas de pollo con salsa de mostaza y miel
+              <span class="allergens"><img src="/alergenos/simbolo alergeno cereales.png" alt="Cereales"><img
+                  src="/alergenos/simbolo alergeno huevos.png" alt="Huevos"><img
+                  src="/alergenos/simbolo alergeno mostaza.png" alt="Mostaza"></span>
+            </span>
+            <span class="item-price">9,00</span>
+          </li>
+          <li class="item">
+            <span class="item-name">Dados de pollo salteados, manzana, salsa teriyaki, cebolla caramelizada y patatas
+              <span class="allergens"><img src="/alergenos/simbolo alergeno sesamo.png" alt="Sésamo"><img
+                  src="/alergenos/simbolo alergeno soja.png" alt="Soja"></span>
+            </span>
+            <span class="item-price">12,00</span>
+          </li>
+          <li class="item">
+            <span class="item-name">Patatas bravas y ali-oli
+              <span class="allergens"><img src="/alergenos/simbolo alergeno huevos.png" alt="Huevos"></span>
+            </span>
+            <span class="item-price">5,75</span>
+          </li>
+          <li class="item">
+            <span class="item-name">Choquitos a la plancha, aceite de ajo y perejil y ali-oli de pimientos
+              <span class="allergens"><img src="/alergenos/simbolo alergeno huevos.png" alt="Huevos"><img
+                  src="/alergenos/simbolo alergeno lacteos.png" alt="Lácteos"><img
+                  src="/alergenos/simbolo alergeno moluscos.png" alt="Moluscos"></span>
+            </span>
+            <span class="item-price">13,50</span>
+          </li>
+          <li class="item">
+            <span class="item-name">Tortilla de patatas
+              <span class="allergens"><img src="/alergenos/simbolo alergeno huevos.png" alt="Huevos"></span>
+            </span>
+            <span class="item-price">9,75</span>
+          </li>
+        </ul>
+      </section>
+
+      <section class="menu-section" id="seguimos-picando" data-section>
+        <h2 class="section-title">Seguimos picando…</h2>
+        <div class="section-rule"><span>✦</span></div>
+        <ul class="item-list">
+          <li class="item">
+            <span class="item-name">Salteado de setas y gambas
+              <span class="allergens"><img src="/alergenos/simbolo alergeno crustaceo.png" alt="Crustáceos"><img
+                  src="/alergenos/simbolo alergeno sesamo.png" alt="Sésamo"><img
+                  src="/alergenos/simbolo alergeno soja.png" alt="Soja"></span>
+            </span>
+            <span class="item-price">13,00</span>
+          </li>
+          <li class="item">
+            <span class="item-name">Anchoas del Cantábrico sobre tomate rallado y orégano
+              <span class="allergens"><img src="/alergenos/simbolo alergeno crustaceo.png" alt="Crustáceos"><img
+                  src="/alergenos/simbolo pescado alergenos.png" alt="Pescado"></span>
+            </span>
+            <span class="item-price">16,00</span>
+          </li>
+          <li class="item">
+            <span class="item-name">Vieras del Pacífico a la plancha con aliño de ajo y perejil
+              <span class="allergens"><img src="/alergenos/simbolo alergeno crustaceo.png" alt="Crustáceos"><img
+                  src="/alergenos/simbolo alergeno moluscos.png" alt="Moluscos"></span>
+            </span>
+            <span class="item-price">18,00</span>
+          </li>
+          <li class="item">
+            <span class="item-name">Cazuelita de setas y gambas al ajillo
+              <span class="allergens"><img src="/alergenos/simbolo alergeno crustaceo.png" alt="Crustáceos"><img
+                  src="/alergenos/simbolo alergeno sesamo.png" alt="Sésamo"><img
+                  src="/alergenos/simbolo alergeno soja.png" alt="Soja"></span>
+            </span>
+            <span class="item-price">14,75</span>
+          </li>
+        </ul>
+      </section>
+
+      <section class="menu-section" id="ensaladas" data-section>
+        <h2 class="section-title">Ensaladas</h2>
+        <p class="section-note">Con aceite de oliva y vinagre de módena</p>
+        <div class="section-rule"><span>✦</span></div>
+        <ul class="item-list">
+          <li class="item">
+            <span class="item-name">De hojas tiernas, piquillos y ventresca de bonito y espárragos
+              <span class="allergens"><img src="/alergenos/simbolo pescado alergenos.png" alt="Pescado"></span>
+            </span>
+            <span class="item-price">14,00</span>
+          </li>
+          <li class="item">
+            <span class="item-name">Mezclum de lechugas (con queso camembert frito y mermelada de higos)
+              <span class="allergens"><img src="/alergenos/simbolo alergeno cacahuetes.png" alt="Cacahuetes"><img
+                  src="/alergenos/simbolo alergeno lacteos.png" alt="Lácteos"></span>
+            </span>
+            <span class="item-price">11,50</span>
+          </li>
+          <li class="item">
+            <span class="item-name">De jamón, queso semicurado y frutos secos
+              <span class="allergens"><img src="/alergenos/simbolo alergeno frutos secos.png" alt="Frutos secos"><img
+                  src="/alergenos/simbolo alergeno lacteos.png" alt="Lácteos"></span>
+            </span>
+            <span class="item-price">12,00</span>
+          </li>
+          <li class="item">
+            <span class="item-name">Templada de vieiras del Atlántico y langostinos con frutos secos
+              <span class="allergens"><img src="/alergenos/simbolo alergeno moluscos.png" alt="Moluscos"><img
+                  src="/alergenos/simbolo alergeno crustaceo.png" alt="Crustáceos"></span>
+            </span>
+            <span class="item-price">17,50</span>
+          </li>
+        </ul>
+      </section>
+
+      <section class="menu-section" id="del-mar" data-section>
+        <h2 class="section-title">Del Mar</h2>
+        <div class="section-rule"><span>✦</span></div>
+        <ul class="item-list">
+          <li class="item">
+            <span class="item-name">Bacalao al horno con setas y castañas
+              <span class="allergens"><img src="/alergenos/simbolo pescado alergenos.png" alt="Pescado"></span>
+            </span>
+            <span class="item-price">23,50</span>
+          </li>
+          <li class="item">
+            <span class="item-name">Bacalao a la parrilla con salteado de verduras al wok
+              <span class="allergens"><img src="/alergenos/simbolo pescado alergenos.png" alt="Pescado"></span>
+            </span>
+            <span class="item-price">21,50</span>
+          </li>
+          <li class="item">
+            <span class="item-name">Lomo de merluza a la plancha con ensalada de temporada
+              <span class="allergens"><img src="/alergenos/simbolo alergeno moluscos.png" alt="Moluscos"><img
+                  src="/alergenos/simbolo pescado alergenos.png" alt="Pescado"></span>
+            </span>
+            <span class="item-price">16,50</span>
+          </li>
+          <li class="item">
+            <span class="item-name">Tentáculo de pulpo a la parrilla
+              <span class="allergens"><img src="/alergenos/simbolo alergeno moluscos.png" alt="Moluscos"><img
+                  src="/alergenos/simbolo pescado alergenos.png" alt="Pescado"></span>
+            </span>
+            <span class="item-price">19,75</span>
+          </li>
+        </ul>
+      </section>
+
+      <section class="menu-section" id="de-la-tierra" data-section>
+        <h2 class="section-title">De la Tierra</h2>
+        <div class="section-rule"><span>✦</span></div>
+        <ul class="item-list">
+          <li class="item">
+            <span class="item-name">Picaña de vacuno a la parrilla</span>
+            <span class="item-price">19,75</span>
+          </li>
+          <li class="item">
+            <span class="item-name">Entrecot de ternera gallega a la parrilla con salsa a la pimienta
+              <span class="allergens"><img src="/alergenos/simbolo alergeno apio.png" alt="Apio"><img
+                  src="/alergenos/simbolo alergeno cereales.png" alt="Cereales"><img
+                  src="/alergenos/simbolo alergeno huevos.png" alt="Huevos"><img
+                  src="/alergenos/simbolo alergeno lacteos.png" alt="Lácteos"><img
+                  src="/alergenos/simbolo alergeno soja.png" alt="Soja"></span>
+            </span>
+            <span class="item-price">19,75</span>
+          </li>
+          <li class="item">
+            <span class="item-name">Secreto de cerdo ibérico con salsa BBQ
+              <span class="allergens"><img src="/alergenos/simbolo alergeno apio.png" alt="Apio"><img
+                  src="/alergenos/simbolo alergeno mostaza.png" alt="Mostaza"></span>
+            </span>
+            <span class="item-price">15,50</span>
+          </li>
+          <li class="item">
+            <span class="item-name">Chuletón de vacuno mayor <em class="item-note">(por encargo)</em></span>
+            <span class="item-price">S/Peso</span>
+          </li>
+          <li class="item">
+            <span class="item-name">Variado de carnes: Entrecot, secreto y picaña <em class="item-note">(mín. 2
+                personas)</em></span>
+            <span class="item-price">43,50</span>
+          </li>
+          <li class="item">
+            <span class="item-name">Hamburguesa de buey con queso cheddar, beicon y lechuga
+              <span class="allergens"><img src="/alergenos/simbolo alergeno cereales.png" alt="Cereales"><img
+                  src="/alergenos/simbolo alergeno frutos secos.png" alt="Frutos secos"><img
+                  src="/alergenos/simbolo alergeno huevos.png" alt="Huevos"><img
+                  src="/alergenos/simbolo alergeno lacteos.png" alt="Lácteos"><img
+                  src="/alergenos/simbolo alergeno sesamo.png" alt="Sésamo"><img
+                  src="/alergenos/simbolo alergeno sulfitos.png" alt="Sulfitos"></span>
+            </span>
+            <span class="item-price">9,75</span>
+          </li>
+          <li class="item">
+            <span class="item-name">Pan por persona</span>
+            <span class="item-price">0,85</span>
+          </li>
+        </ul>
+      </section>
+
+      <section class="menu-section" id="veganos-vegetarianos" data-section>
+        <h2 class="section-title">Veganos y Vegetarianos</h2>
+        <div class="section-rule"><span>✦</span></div>
+        <ul class="item-list">
+          <li class="item">
+            <span class="item-name">Verduras a la plancha (tomate, cebolla, pimientos, calabacín y setas)</span>
+            <span class="item-price">12,75</span>
+          </li>
+          <li class="item">
+            <span class="item-name">Salteado de verduras (tomate, cebolla, pimientos, calabacín, berenjena, setas, ajo y
+              perejil)</span>
+            <span class="item-price">13,75</span>
+          </li>
+        </ul>
+      </section>
+
+      <section class="menu-section" id="despedida-dulce" data-section>
+        <h2 class="section-title">Despedida Dulce</h2>
+        <div class="section-rule"><span>✦</span></div>
+        <ul class="item-list">
+          <li class="item">
+            <span class="item-name">Arroz con leche <span class="allergens"><img
+                  src="/alergenos/simbolo alergeno cereales.png" alt="Cereales"><img
+                  src="/alergenos/simbolo alergeno frutos secos.png" alt="Frutos secos"><img
+                  src="/alergenos/simbolo alergeno lacteos.png" alt="Lácteos"></span></span>
+            <span class="item-price">4,50</span>
+          </li>
+          <li class="item">
+            <span class="item-name">Coulant de chocolate con helado de vainilla <span class="allergens"><img
+                  src="/alergenos/simbolo alergeno cereales.png" alt="Cereales"><img
+                  src="/alergenos/simbolo alergeno frutos secos.png" alt="Frutos secos"><img
+                  src="/alergenos/simbolo alergeno lacteos.png" alt="Lácteos"><img
+                  src="/alergenos/simbolo alergeno huevos.png" alt="Huevos"><img
+                  src="/alergenos/simbolo alergeno sesamo.png" alt="Sésamo"><img
+                  src="/alergenos/simbolo alergeno soja.png" alt="Soja"></span></span>
+            <span class="item-price">5,75</span>
+          </li>
+          <li class="item">
+            <span class="item-name">Tarta de queso semifría con mermelada de fresa <span class="allergens"><img
+                  src="/alergenos/simbolo alergeno cereales.png" alt="Cereales"><img
+                  src="/alergenos/simbolo alergeno lacteos.png" alt="Lácteos"><img
+                  src="/alergenos/simbolo alergeno soja.png" alt="Soja"></span></span>
+            <span class="item-price">4,75</span>
+          </li>
+          <li class="item">
+            <span class="item-name">Tiramisú <span class="allergens"><img src="/alergenos/simbolo alergeno cereales.png"
+                  alt="Cereales"><img src="/alergenos/simbolo alergeno frutos secos.png" alt="Frutos secos"><img
+                  src="/alergenos/simbolo alergeno lacteos.png" alt="Lácteos"><img
+                  src="/alergenos/simbolo alergeno huevos.png" alt="Huevos"><img
+                  src="/alergenos/simbolo alergeno sesamo.png" alt="Sésamo"><img
+                  src="/alergenos/simbolo alergeno soja.png" alt="Soja"></span></span>
+            <span class="item-price">6,75</span>
+          </li>
+          <li class="item">
+            <span class="item-name">Tarta de la abuela <span class="allergens"><img
+                  src="/alergenos/simbolo alergeno cereales.png" alt="Cereales"><img
+                  src="/alergenos/simbolo alergeno frutos secos.png" alt="Frutos secos"><img
+                  src="/alergenos/simbolo alergeno lacteos.png" alt="Lácteos"><img
+                  src="/alergenos/simbolo alergeno huevos.png" alt="Huevos"></span></span>
+            <span class="item-price">5,75</span>
+          </li>
+          <li class="item">
+            <span class="item-name">Flan de café <span class="allergens"><img
+                  src="/alergenos/simbolo alergeno lacteos.png" alt="Lácteos"><img
+                  src="/alergenos/simbolo alergeno huevos.png" alt="Huevos"></span></span>
+            <span class="item-price">4,50</span>
+          </li>
+        </ul>
+      </section>
+
+      <!-- ALLERGEN LEGEND -->
+      <div class="allergen-legend" data-section>
+        <h3>Referencia de Alérgenos</h3>
+        <div class="allergen-grid">
+          <div class="allergen-item"><img src="/alergenos/simbolo alergeno altramuces.png" alt="">Altramuces</div>
+          <div class="allergen-item"><img src="/alergenos/simbolo alergeno apio.png" alt="">Apio</div>
+          <div class="allergen-item"><img src="/alergenos/simbolo alergeno cacahuetes.png" alt="">Cacahuetes</div>
+          <div class="allergen-item"><img src="/alergenos/simbolo alergeno cereales.png" alt="">Cereales con gluten
+          </div>
+          <div class="allergen-item"><img src="/alergenos/simbolo alergeno crustaceo.png" alt="">Crustáceos</div>
+          <div class="allergen-item"><img src="/alergenos/simbolo alergeno frutos secos.png" alt="">Frutos secos</div>
+          <div class="allergen-item"><img src="/alergenos/simbolo alergeno huevos.png" alt="">Huevos</div>
+          <div class="allergen-item"><img src="/alergenos/simbolo alergeno lacteos.png" alt="">Lácteos</div>
+          <div class="allergen-item"><img src="/alergenos/simbolo alergeno moluscos.png" alt="">Moluscos</div>
+          <div class="allergen-item"><img src="/alergenos/simbolo alergeno mostaza.png" alt="">Mostaza</div>
+          <div class="allergen-item"><img src="/alergenos/simbolo alergeno sesamo.png" alt="">Sésamo</div>
+          <div class="allergen-item"><img src="/alergenos/simbolo alergeno soja.png" alt="">Soja</div>
+          <div class="allergen-item"><img src="/alergenos/simbolo alergeno sulfitos.png" alt="">Sulfitos</div>
+          <div class="allergen-item"><img src="/alergenos/simbolo pescado alergenos.png" alt="">Pescado</div>
+        </div>
+        <p class="allergen-note">Diríjase a nuestro personal si desea información relativa a la presencia de alérgenos
+          en nuestros productos.</p>
+      </div>
+
+    </div><!-- /carta -->
+
+
+    <!-- ═══════════════ VINOS ═══════════════ -->
+    <div id="vinos" class="page">
+
+      <section class="menu-section" id="blancos-gallegos" data-section>
+        <h2 class="section-title wine-region-title">Blancos Gallegos</h2>
+        <div class="section-rule"><span>✦</span></div>
+
+        <h3 class="wine-subregion">Monterrei</h3>
+        <ul class="item-list">
+          <li class="item"><span class="item-name">3 Mentiras</span><span class="item-price">16,50</span></li>
+          <li class="item"><span class="item-name">Ladairo Godello</span><span class="item-price">16,50</span></li>
+          <li class="item"><span class="item-name">Crego Monaguillo</span><span class="item-price">16,50</span></li>
+        </ul>
+
+        <h3 class="wine-subregion">Valdeorras</h3>
+        <ul class="item-list">
+          <li class="item"><span class="item-name">O Luar do Sil</span><span class="item-price">19,50</span></li>
+          <li class="item"><span class="item-name">O Luar do Sil sobre Lías</span><span class="item-price">27,50</span>
+          </li>
+          <li class="item"><span class="item-name">Godeval</span><span class="item-price">19,50</span></li>
+        </ul>
+
+        <h3 class="wine-subregion">Bierzo</h3>
+        <ul class="item-list">
+          <li class="item"><span class="item-name">Valtuille La Val</span><span class="item-price">26,50</span></li>
+        </ul>
+
+        <h3 class="wine-subregion">Albariños</h3>
+        <ul class="item-list">
+          <li class="item"><span class="item-name">Goda</span><span class="item-price">19,50</span></li>
+          <li class="item"><span class="item-name">Albamar</span><span class="item-price">20,50</span></li>
+          <li class="item"><span class="item-name">Davide</span><span class="item-price">26,50</span></li>
+          <li class="item"><span class="item-name">El Perfeccionista</span><span class="item-price">65,00</span></li>
+          <li class="item"><span class="item-name">Sentidiño</span><span class="item-price">17,50</span></li>
+        </ul>
+
+        <h3 class="wine-subregion">Ribeiros</h3>
+        <ul class="item-list">
+          <li class="item"><span class="item-name">Viña Costeira Treixadura</span><span class="item-price">16,50</span>
+          </li>
+          <li class="item"><span class="item-name">Colección 68</span><span class="item-price">19,50</span></li>
+          <li class="item"><span class="item-name">Vilerma</span><span class="item-price">19,50</span></li>
+        </ul>
+      </section>
+
+      <section class="menu-section" id="tintos-gallegos" data-section>
+        <h2 class="section-title wine-region-title">Tintos Gallegos</h2>
+        <div class="section-rule"><span>✦</span></div>
+
+        <h3 class="wine-subregion">Mencías</h3>
+        <ul class="item-list">
+          <li class="item"><span class="item-name">Crego Monaguillo Monterrei</span><span
+              class="item-price">16,50</span></li>
+          <li class="item"><span class="item-name">Ladairo Monterrei</span><span class="item-price">16,50</span></li>
+          <li class="item"><span class="item-name">3 Mentiras Monterrei</span><span class="item-price">16,50</span></li>
+          <li class="item"><span class="item-name">Valtuille Bierzo</span><span class="item-price">17,50</span></li>
+          <li class="item"><span class="item-name">Vilerma <em class="item-note">(tinto)</em></span><span
+              class="item-price">Consultar</span></li>
+          <li class="item"><span class="item-name">Attis Souson Rías Baixas</span><span
+              class="item-price">Consultar</span></li>
+          <li class="item"><span class="item-name">Cotarello Ribeiro <em class="item-note">(tinto)</em></span><span
+              class="item-price">Consultar</span></li>
+        </ul>
+      </section>
+
+      <section class="menu-section" id="champanes" data-section>
+        <h2 class="section-title wine-region-title">Champanes</h2>
+        <div class="section-rule"><span>✦</span></div>
+        <ul class="item-list">
+          <li class="item"><span class="item-name">Laurent Perrier Blanc de Blancs</span><span
+              class="item-price">120,00</span></li>
+          <li class="item"><span class="item-name">Heritage Blanc</span><span class="item-price">40,00</span></li>
+          <li class="item"><span class="item-name">Gramona</span><span class="item-price">45,00</span></li>
+        </ul>
+      </section>
+
+      <section class="menu-section" id="ribera-del-duero" data-section>
+        <h2 class="section-title wine-region-title">Ribera del Duero</h2>
+        <div class="section-rule"><span>✦</span></div>
+        <ul class="item-list">
+          <li class="item"><span class="item-name">Aalto</span><span class="item-price">46,00</span></li>
+          <li class="item"><span class="item-name">Aalto PS</span><span class="item-price">95,00</span></li>
+          <li class="item"><span class="item-name">Abadía Retuerta Selección</span><span class="item-price">42,50</span>
+          </li>
+          <li class="item"><span class="item-name">Cair Finca Aguilera</span><span class="item-price">40,00</span></li>
+          <li class="item"><span class="item-name">Carramimbre Roble</span><span class="item-price">16,50</span></li>
+          <li class="item"><span class="item-name">822</span><span class="item-price">18,50</span></li>
+          <li class="item"><span class="item-name">Casa Rojo</span><span class="item-price">19,50</span></li>
+          <li class="item"><span class="item-name">Emilio Moro</span><span class="item-price">30,00</span></li>
+          <li class="item"><span class="item-name">Francisco Barona</span><span class="item-price">43,00</span></li>
+          <li class="item"><span class="item-name">Francisco Barona Finca Las Dueñas</span><span
+              class="item-price">85,00</span></li>
+          <li class="item"><span class="item-name">Garmón</span><span class="item-price">45,00</span></li>
+          <li class="item"><span class="item-name">Luis Sanz Gran RVA</span><span class="item-price">125,00</span></li>
+          <li class="item"><span class="item-name">Malleolus</span><span class="item-price">40,00</span></li>
+          <li class="item"><span class="item-name">Resalso Roble</span><span class="item-price">17,50</span></li>
+          <li class="item"><span class="item-name">Teófilo Reyes</span><span class="item-price">35,00</span></li>
+          <li class="item"><span class="item-name">Valduero I Cepa</span><span class="item-price">40,00</span></li>
+          <li class="item"><span class="item-name">Santa María</span><span class="item-price">18,50</span></li>
+          <li class="item"><span class="item-name">Quinta Sardonia</span><span class="item-price">43,00</span></li>
+          <li class="item"><span class="item-name">Valbuena 5º</span><span class="item-price">150,00</span></li>
+          <li class="item"><span class="item-name">Sed de Caña</span><span class="item-price">90,00</span></li>
+          <li class="item"><span class="item-name">La Felisa Emilio Moro</span><span class="item-price">35,00</span>
+          </li>
+          <li class="item"><span class="item-name">Malleolus Valderramiro</span><span class="item-price">99,00</span>
+          </li>
+          <li class="item"><span class="item-name">Doroteo Pago de los Capellanes</span><span
+              class="item-price">Consultar</span></li>
+          <li class="item"><span class="item-name">Dehesa Canónigos Solideo</span><span class="item-price">46,50</span>
+          </li>
+          <li class="item"><span class="item-name">Pago Carraovejas</span><span class="item-price">45,00</span></li>
+          <li class="item"><span class="item-name">Arzuaga Crianza</span><span class="item-price">35,00</span></li>
+          <li class="item"><span class="item-name">Arzuaga Reserva Especial</span><span class="item-price">65,00</span>
+          </li>
+          <li class="item"><span class="item-name">PSI</span><span class="item-price">49,50</span></li>
+          <li class="item"><span class="item-name">Un Sueño Pago de los Capellanes</span><span
+              class="item-price">55,00</span></li>
+          <li class="item"><span class="item-name">Raza Carmelo Rodero</span><span class="item-price">45,00</span></li>
+          <li class="item"><span class="item-name">A&amp;M Asenjo Manso</span><span class="item-price">45,00</span></li>
+          <li class="item"><span class="item-name">Silvanus</span><span class="item-price">29,75</span></li>
+          <li class="item"><span class="item-name">Convento San Francisco</span><span class="item-price">26,75</span>
+          </li>
+        </ul>
+      </section>
+
+      <section class="menu-section" id="toro" data-section>
+        <h2 class="section-title wine-region-title">Toro</h2>
+        <div class="section-rule"><span>✦</span></div>
+        <ul class="item-list">
+          <li class="item"><span class="item-name">La Rejadora</span><span class="item-price">16,75</span></li>
+          <li class="item"><span class="item-name">Buen Rollo</span><span class="item-price">17,50</span></li>
+          <li class="item"><span class="item-name">Prima</span><span class="item-price">30,00</span></li>
+          <li class="item"><span class="item-name">Pintia</span><span class="item-price">75,00</span></li>
+          <li class="item"><span class="item-name">Platón</span><span class="item-price">38,00</span></li>
+          <li class="item"><span class="item-name">San Román</span><span class="item-price">37,00</span></li>
+          <li class="item"><span class="item-name">Cartago</span><span class="item-price">89,00</span></li>
+          <li class="item"><span class="item-name">Latarce</span><span class="item-price">38,75</span></li>
+        </ul>
+      </section>
+
+      <section class="menu-section" id="castilla-leon" data-section>
+        <h2 class="section-title wine-region-title">Castilla y León</h2>
+        <div class="section-rule"><span>✦</span></div>
+        <ul class="item-list">
+          <li class="item"><span class="item-name">Mauro</span><span class="item-price">55,00</span></li>
+          <li class="item"><span class="item-name">Mauro VS</span><span class="item-price">85,00</span></li>
+          <li class="item"><span class="item-name">Tomás Postigo 3 Año</span><span class="item-price">44,00</span></li>
+          <li class="item"><span class="item-name">Tomás Postigo 5º Año</span><span class="item-price">75,00</span></li>
+          <li class="item"><span class="item-name">Tomás Postigo Rebollo Magnum</span><span
+              class="item-price">130,85</span></li>
+          <li class="item"><span class="item-name">Tomás Postigo Vinificación Integral Magnum</span><span
+              class="item-price">210,00</span></li>
+          <li class="item"><span class="item-name">Terreus</span><span class="item-price">115,00</span></li>
+        </ul>
+      </section>
+
+      <section class="menu-section" id="riojas" data-section>
+        <h2 class="section-title wine-region-title">Riojas</h2>
+        <div class="section-rule"><span>✦</span></div>
+        <ul class="item-list">
+          <li class="item"><span class="item-name">Amador Medrano Terras</span><span class="item-price">15,50</span>
+          </li>
+          <li class="item"><span class="item-name">Amador Medrano Los Sotillos</span><span
+              class="item-price">17,75</span></li>
+          <li class="item"><span class="item-name">Amador Medrano Las Aguzaderas</span><span
+              class="item-price">20,75</span></li>
+          <li class="item"><span class="item-name">El Maquinista</span><span class="item-price">16,75</span></li>
+          <li class="item"><span class="item-name">Añares</span><span class="item-price">16,50</span></li>
+          <li class="item"><span class="item-name">Añares Crianza</span><span class="item-price">16,75</span></li>
+          <li class="item"><span class="item-name">Ramón Bilbao</span><span class="item-price">16,50</span></li>
+          <li class="item"><span class="item-name">Luis Cañas Crianza</span><span class="item-price">19,50</span></li>
+          <li class="item"><span class="item-name">Luis Cañas Reserva</span><span class="item-price">25,75</span></li>
+          <li class="item"><span class="item-name">Macán Oro</span><span class="item-price">Consultar</span></li>
+          <li class="item"><span class="item-name">Macán Clásico</span><span class="item-price">Consultar</span></li>
+        </ul>
+      </section>
+
+    </div><!-- /vinos -->
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-ornament">
+        <span class="f-line"></span>
+        <span class="f-dot"></span>
+        <span class="f-line"></span>
+      </div>
+      <div class="footer-links">
+        <a href="tel:+34986641757" class="footer-link">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path
+              d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.99 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.9 1.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9a16 16 0 0 0 6.29 6.29l1.05-1.05a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7a2 2 0 0 1 1.72 2.03z" />
+          </svg>
+          +34 986 641 757
+        </a>
+        <a href="https://www.facebook.com/Otuneltapas/?locale=es_ES" target="_blank" class="footer-link">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+          </svg>
+          O Tunel Ponteareas
+        </a>
+        <a href="https://www.instagram.com/otuneltapasponteareas" target="_blank" class="footer-link">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+            stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+          </svg>
+          @otuneltapasponteareas
+        </a>
+      </div>
+      <p class="footer-copy">O Tunel · Ponteareas · Galicia</p>
     </div>
+  </footer>
 
-    <p class="footer-copy">O Tunel · Ponteareas · Galicia</p>
+  <script src="main.js"></script>
 
-</div>
+  <!-- ===== Lógica de la barra de navegación rápida por secciones ===== -->
+  <script>
+    (function () {
+      var navBar = document.getElementById('sectionNavBar');
+      if (!navBar) return;
 
+      var navsByPage = {};
+      navBar.querySelectorAll('[data-page-nav]').forEach(function (nav) {
+        navsByPage[nav.dataset.pageNav] = nav;
+      });
+
+      function setActiveButton(nav, btn) {
+        nav.querySelectorAll('.section-nav-btn').forEach(function (b) {
+          b.classList.remove('is-active');
+        });
+        if (btn) btn.classList.add('is-active');
+      }
+
+      // Desliza el subrayado dorado hasta la etiqueta activa de esa nav
+      function updateIndicator(nav) {
+        if (!nav) return;
+        var track = nav.querySelector('.section-nav-track');
+        var indicator = nav.querySelector('.nav-indicator');
+        var active = track ? track.querySelector('.section-nav-btn.is-active') : null;
+        if (!track || !indicator || !active) return;
+        var trackRect = track.getBoundingClientRect();
+        var btnRect = active.getBoundingClientRect();
+        indicator.style.width = btnRect.width + 'px';
+        indicator.style.transform = 'translateX(' + (btnRect.left - trackRect.left) + 'px)';
+      }
+
+      // Por defecto, el primer apartado de cada nav queda marcado como activo
+      Object.keys(navsByPage).forEach(function (key) {
+        var nav = navsByPage[key];
+        setActiveButton(nav, nav.querySelector('.section-nav-btn'));
+      });
+
+      function showNavFor(page) {
+        Object.keys(navsByPage).forEach(function (key) {
+          navsByPage[key].classList.toggle('is-visible', key === page);
+        });
+        // El indicador se recalcula tras hacerse visible, porque mientras
+        // estaba en display:none su ancho real era 0
+        requestAnimationFrame(function () { updateIndicator(navsByPage[page]); });
+      }
+
+      // Página activa al cargar (toma la que ya tenga .page.active en el DOM)
+      var initialPage = (document.querySelector('.page.active') || {}).id || 'carta';
+      showNavFor(initialPage);
+
+      // Sincroniza con las pestañas Carta / Vinos ya existentes
+      document.querySelectorAll('.nav-tab').forEach(function (tab) {
+        tab.addEventListener('click', function () {
+          if (tab.dataset.page) showNavFor(tab.dataset.page);
+        });
+      });
+
+      // Calcula la altura real de la barra (fija) y la usa para:
+      // 1) empujar todo el contenido hacia abajo (padding-top del body)
+      // 2) que el título de cada sección no quede tapado al hacer scroll
+      function computeScrollOffset() {
+        var offset = navBar.offsetHeight;
+        document.documentElement.style.setProperty('--nav-bar-height', offset + 'px');
+        document.documentElement.style.setProperty('--scroll-offset', (offset + 12) + 'px');
+      }
+
+      computeScrollOffset();
+      window.addEventListener('resize', function () {
+        computeScrollOffset();
+        Object.keys(navsByPage).forEach(function (key) {
+          if (navsByPage[key].classList.contains('is-visible')) updateIndicator(navsByPage[key]);
+        });
+      });
+      window.addEventListener('orientationchange', computeScrollOffset);
+
+      // Al pulsar una etiqueta: la marca activa, mueve el indicador y
+      // desplaza la página. scrollIntoView respeta el scroll-margin-top
+      // de la sección, así el título queda siempre visible.
+      navBar.querySelectorAll('.section-nav-btn').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          var nav = btn.closest('.section-nav');
+          setActiveButton(nav, btn);
+          updateIndicator(nav);
+          var target = document.getElementById(btn.dataset.target);
+          if (!target) return;
+          computeScrollOffset();
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+      });
+
+      // Mientras el usuario hace scroll, marca la etiqueta de la sección
+      // visible y desliza el indicador hasta ella
+      var sections = document.querySelectorAll('[data-section][id]');
+      var observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (!entry.isIntersecting) return;
+          var btn = navBar.querySelector('.section-nav-btn[data-target="' + entry.target.id + '"]');
+          if (!btn) return;
+          var nav = btn.closest('.section-nav');
+          setActiveButton(nav, btn);
+          updateIndicator(nav);
+          btn.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+        });
+      }, { rootMargin: '-20% 0px -65% 0px', threshold: 0 });
+
+      sections.forEach(function (sec) { observer.observe(sec); });
+    })();
+  </script>
 </body>
+
 </html>
