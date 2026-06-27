@@ -12,10 +12,6 @@
     rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 
-  <!-- ===== Estilos de la barra de navegación rápida por secciones =====
-       Autocontenidos para no depender de cambios en style.css.
-       Si prefieres, puedes mover este bloque a style.css y ajustar
-       las variables --nav-* a la paleta real del sitio. -->
   <style>
     :root {
       --tunnel-stone: #1b1611;
@@ -35,9 +31,6 @@
       background: linear-gradient(to bottom, var(--tunnel-stone), var(--tunnel-stone-deep));
       border-bottom: 1px solid var(--tunnel-ember-dim);
     }
-
-    /* Empuja el resto del contenido lo justo para que la barra fija no lo tape.
-       El valor exacto lo calcula el JS según la altura real de la barra. */
 
     .section-nav {
       display: none;
@@ -135,15 +128,13 @@
       }
     }
 
-    /* El título de cada sección queda siempre por debajo de la barra fija,
-       aunque su altura cambie según el dispositivo. La variable la fija el JS. */
     [data-section] {
       scroll-margin-top: var(--scroll-offset, 90px);
     }
   </style>
 </head>
 
-<body>
+<body class="page-carta">
 
   <!-- HERO -->
   <header class="hero">
@@ -653,8 +644,7 @@
           <div class="allergen-item"><img src="/alergenos/simbolo alergeno altramuces.png" alt="">Altramuces</div>
           <div class="allergen-item"><img src="/alergenos/simbolo alergeno apio.png" alt="">Apio</div>
           <div class="allergen-item"><img src="/alergenos/simbolo alergeno cacahuetes.png" alt="">Cacahuetes</div>
-          <div class="allergen-item"><img src="/alergenos/simbolo alergeno cereales.png" alt="">Cereales con gluten
-          </div>
+          <div class="allergen-item"><img src="/alergenos/simbolo alergeno cereales.png" alt="">Cereales con gluten</div>
           <div class="allergen-item"><img src="/alergenos/simbolo alergeno crustaceo.png" alt="">Crustáceos</div>
           <div class="allergen-item"><img src="/alergenos/simbolo alergeno frutos secos.png" alt="">Frutos secos</div>
           <div class="allergen-item"><img src="/alergenos/simbolo alergeno huevos.png" alt="">Huevos</div>
@@ -666,8 +656,6 @@
           <div class="allergen-item"><img src="/alergenos/simbolo alergeno sulfitos.png" alt="">Sulfitos</div>
           <div class="allergen-item"><img src="/alergenos/simbolo pescado alergenos.png" alt="">Pescado</div>
         </div>
-        <p class="allergen-note">Diríjase a nuestro personal si desea información relativa a la presencia de alérgenos
-          en nuestros productos.</p>
       </div>
 
     </div><!-- /carta -->
@@ -690,8 +678,7 @@
         <h3 class="wine-subregion">Valdeorras</h3>
         <ul class="item-list">
           <li class="item"><span class="item-name">O Luar do Sil</span><span class="item-price">19,50</span></li>
-          <li class="item"><span class="item-name">O Luar do Sil sobre Lías</span><span class="item-price">27,50</span>
-          </li>
+          <li class="item"><span class="item-name">O Luar do Sil sobre Lías</span><span class="item-price">27,50</span></li>
           <li class="item"><span class="item-name">Godeval</span><span class="item-price">19,50</span></li>
         </ul>
 
@@ -711,8 +698,7 @@
 
         <h3 class="wine-subregion">Ribeiros</h3>
         <ul class="item-list">
-          <li class="item"><span class="item-name">Viña Costeira Treixadura</span><span class="item-price">16,50</span>
-          </li>
+          <li class="item"><span class="item-name">Viña Costeira Treixadura</span><span class="item-price">16,50</span></li>
           <li class="item"><span class="item-name">Colección 68</span><span class="item-price">19,50</span></li>
           <li class="item"><span class="item-name">Vilerma</span><span class="item-price">19,50</span></li>
         </ul>
@@ -724,17 +710,13 @@
 
         <h3 class="wine-subregion">Mencías</h3>
         <ul class="item-list">
-          <li class="item"><span class="item-name">Crego Monaguillo Monterrei</span><span
-              class="item-price">16,50</span></li>
+          <li class="item"><span class="item-name">Crego Monaguillo Monterrei</span><span class="item-price">16,50</span></li>
           <li class="item"><span class="item-name">Ladairo Monterrei</span><span class="item-price">16,50</span></li>
           <li class="item"><span class="item-name">3 Mentiras Monterrei</span><span class="item-price">16,50</span></li>
           <li class="item"><span class="item-name">Valtuille Bierzo</span><span class="item-price">17,50</span></li>
-          <li class="item"><span class="item-name">Vilerma <em class="item-note">(tinto)</em></span><span
-              class="item-price">Consultar</span></li>
-          <li class="item"><span class="item-name">Attis Souson Rías Baixas</span><span
-              class="item-price">Consultar</span></li>
-          <li class="item"><span class="item-name">Cotarello Ribeiro <em class="item-note">(tinto)</em></span><span
-              class="item-price">Consultar</span></li>
+          <li class="item"><span class="item-name">Vilerma <em class="item-note">(tinto)</em></span><span class="item-price">Consultar</span></li>
+          <li class="item"><span class="item-name">Attis Souson Rías Baixas</span><span class="item-price">Consultar</span></li>
+          <li class="item"><span class="item-name">Cotarello Ribeiro <em class="item-note">(tinto)</em></span><span class="item-price">Consultar</span></li>
         </ul>
       </section>
 
@@ -742,8 +724,7 @@
         <h2 class="section-title wine-region-title">Champanes</h2>
         <div class="section-rule"><span>✦</span></div>
         <ul class="item-list">
-          <li class="item"><span class="item-name">Laurent Perrier Blanc de Blancs</span><span
-              class="item-price">120,00</span></li>
+          <li class="item"><span class="item-name">Laurent Perrier Blanc de Blancs</span><span class="item-price">120,00</span></li>
           <li class="item"><span class="item-name">Heritage Blanc</span><span class="item-price">40,00</span></li>
           <li class="item"><span class="item-name">Gramona</span><span class="item-price">45,00</span></li>
         </ul>
@@ -755,16 +736,14 @@
         <ul class="item-list">
           <li class="item"><span class="item-name">Aalto</span><span class="item-price">46,00</span></li>
           <li class="item"><span class="item-name">Aalto PS</span><span class="item-price">95,00</span></li>
-          <li class="item"><span class="item-name">Abadía Retuerta Selección</span><span class="item-price">42,50</span>
-          </li>
+          <li class="item"><span class="item-name">Abadía Retuerta Selección</span><span class="item-price">42,50</span></li>
           <li class="item"><span class="item-name">Cair Finca Aguilera</span><span class="item-price">40,00</span></li>
           <li class="item"><span class="item-name">Carramimbre Roble</span><span class="item-price">16,50</span></li>
           <li class="item"><span class="item-name">822</span><span class="item-price">18,50</span></li>
           <li class="item"><span class="item-name">Casa Rojo</span><span class="item-price">19,50</span></li>
           <li class="item"><span class="item-name">Emilio Moro</span><span class="item-price">30,00</span></li>
           <li class="item"><span class="item-name">Francisco Barona</span><span class="item-price">43,00</span></li>
-          <li class="item"><span class="item-name">Francisco Barona Finca Las Dueñas</span><span
-              class="item-price">85,00</span></li>
+          <li class="item"><span class="item-name">Francisco Barona Finca Las Dueñas</span><span class="item-price">85,00</span></li>
           <li class="item"><span class="item-name">Garmón</span><span class="item-price">45,00</span></li>
           <li class="item"><span class="item-name">Luis Sanz Gran RVA</span><span class="item-price">125,00</span></li>
           <li class="item"><span class="item-name">Malleolus</span><span class="item-price">40,00</span></li>
@@ -775,26 +754,19 @@
           <li class="item"><span class="item-name">Quinta Sardonia</span><span class="item-price">43,00</span></li>
           <li class="item"><span class="item-name">Valbuena 5º</span><span class="item-price">150,00</span></li>
           <li class="item"><span class="item-name">Sed de Caña</span><span class="item-price">90,00</span></li>
-          <li class="item"><span class="item-name">La Felisa Emilio Moro</span><span class="item-price">35,00</span>
-          </li>
-          <li class="item"><span class="item-name">Malleolus Valderramiro</span><span class="item-price">99,00</span>
-          </li>
-          <li class="item"><span class="item-name">Doroteo Pago de los Capellanes</span><span
-              class="item-price">Consultar</span></li>
-          <li class="item"><span class="item-name">Dehesa Canónigos Solideo</span><span class="item-price">46,50</span>
-          </li>
+          <li class="item"><span class="item-name">La Felisa Emilio Moro</span><span class="item-price">35,00</span></li>
+          <li class="item"><span class="item-name">Malleolus Valderramiro</span><span class="item-price">99,00</span></li>
+          <li class="item"><span class="item-name">Doroteo Pago de los Capellanes</span><span class="item-price">Consultar</span></li>
+          <li class="item"><span class="item-name">Dehesa Canónigos Solideo</span><span class="item-price">46,50</span></li>
           <li class="item"><span class="item-name">Pago Carraovejas</span><span class="item-price">45,00</span></li>
           <li class="item"><span class="item-name">Arzuaga Crianza</span><span class="item-price">35,00</span></li>
-          <li class="item"><span class="item-name">Arzuaga Reserva Especial</span><span class="item-price">65,00</span>
-          </li>
+          <li class="item"><span class="item-name">Arzuaga Reserva Especial</span><span class="item-price">65,00</span></li>
           <li class="item"><span class="item-name">PSI</span><span class="item-price">49,50</span></li>
-          <li class="item"><span class="item-name">Un Sueño Pago de los Capellanes</span><span
-              class="item-price">55,00</span></li>
+          <li class="item"><span class="item-name">Un Sueño Pago de los Capellanes</span><span class="item-price">55,00</span></li>
           <li class="item"><span class="item-name">Raza Carmelo Rodero</span><span class="item-price">45,00</span></li>
           <li class="item"><span class="item-name">A&amp;M Asenjo Manso</span><span class="item-price">45,00</span></li>
           <li class="item"><span class="item-name">Silvanus</span><span class="item-price">29,75</span></li>
-          <li class="item"><span class="item-name">Convento San Francisco</span><span class="item-price">26,75</span>
-          </li>
+          <li class="item"><span class="item-name">Convento San Francisco</span><span class="item-price">26,75</span></li>
         </ul>
       </section>
 
@@ -821,10 +793,8 @@
           <li class="item"><span class="item-name">Mauro VS</span><span class="item-price">85,00</span></li>
           <li class="item"><span class="item-name">Tomás Postigo 3 Año</span><span class="item-price">44,00</span></li>
           <li class="item"><span class="item-name">Tomás Postigo 5º Año</span><span class="item-price">75,00</span></li>
-          <li class="item"><span class="item-name">Tomás Postigo Rebollo Magnum</span><span
-              class="item-price">130,85</span></li>
-          <li class="item"><span class="item-name">Tomás Postigo Vinificación Integral Magnum</span><span
-              class="item-price">210,00</span></li>
+          <li class="item"><span class="item-name">Tomás Postigo Rebollo Magnum</span><span class="item-price">130,85</span></li>
+          <li class="item"><span class="item-name">Tomás Postigo Vinificación Integral Magnum</span><span class="item-price">210,00</span></li>
           <li class="item"><span class="item-name">Terreus</span><span class="item-price">115,00</span></li>
         </ul>
       </section>
@@ -833,12 +803,9 @@
         <h2 class="section-title wine-region-title">Riojas</h2>
         <div class="section-rule"><span>✦</span></div>
         <ul class="item-list">
-          <li class="item"><span class="item-name">Amador Medrano Terras</span><span class="item-price">15,50</span>
-          </li>
-          <li class="item"><span class="item-name">Amador Medrano Los Sotillos</span><span
-              class="item-price">17,75</span></li>
-          <li class="item"><span class="item-name">Amador Medrano Las Aguzaderas</span><span
-              class="item-price">20,75</span></li>
+          <li class="item"><span class="item-name">Amador Medrano Terras</span><span class="item-price">15,50</span></li>
+          <li class="item"><span class="item-name">Amador Medrano Los Sotillos</span><span class="item-price">17,75</span></li>
+          <li class="item"><span class="item-name">Amador Medrano Las Aguzaderas</span><span class="item-price">20,75</span></li>
           <li class="item"><span class="item-name">El Maquinista</span><span class="item-price">16,75</span></li>
           <li class="item"><span class="item-name">Añares</span><span class="item-price">16,50</span></li>
           <li class="item"><span class="item-name">Añares Crianza</span><span class="item-price">16,75</span></li>
@@ -893,7 +860,6 @@
 
   <script src="main.js"></script>
 
-  <!-- ===== Lógica de la barra de navegación rápida por secciones ===== -->
   <script>
     (function () {
       var navBar = document.getElementById('sectionNavBar');
@@ -911,7 +877,6 @@
         if (btn) btn.classList.add('is-active');
       }
 
-      // Desliza el subrayado dorado hasta la etiqueta activa de esa nav
       function updateIndicator(nav) {
         if (!nav) return;
         var track = nav.querySelector('.section-nav-track');
@@ -924,7 +889,7 @@
         indicator.style.transform = 'translateX(' + (btnRect.left - trackRect.left) + 'px)';
       }
 
-      // Por defecto, el primer apartado de cada nav queda marcado como activo
+      // Marca el primer botón de cada nav como activo por defecto
       Object.keys(navsByPage).forEach(function (key) {
         var nav = navsByPage[key];
         setActiveButton(nav, nav.querySelector('.section-nav-btn'));
@@ -934,25 +899,20 @@
         Object.keys(navsByPage).forEach(function (key) {
           navsByPage[key].classList.toggle('is-visible', key === page);
         });
-        // El indicador se recalcula tras hacerse visible, porque mientras
-        // estaba en display:none su ancho real era 0
         requestAnimationFrame(function () { updateIndicator(navsByPage[page]); });
       }
 
-      // Página activa al cargar (toma la que ya tenga .page.active en el DOM)
+      // Página activa al cargar
       var initialPage = (document.querySelector('.page.active') || {}).id || 'carta';
       showNavFor(initialPage);
 
-      // Sincroniza con las pestañas Carta / Vinos ya existentes
+      // Sincroniza con las pestañas Carta / Vinos
       document.querySelectorAll('.nav-tab').forEach(function (tab) {
         tab.addEventListener('click', function () {
           if (tab.dataset.page) showNavFor(tab.dataset.page);
         });
       });
 
-      // Calcula la altura real de la barra (fija) y la usa para:
-      // 1) empujar todo el contenido hacia abajo (padding-top del body)
-      // 2) que el título de cada sección no quede tapado al hacer scroll
       function computeScrollOffset() {
         var offset = navBar.offsetHeight;
         document.documentElement.style.setProperty('--nav-bar-height', offset + 'px');
@@ -968,9 +928,6 @@
       });
       window.addEventListener('orientationchange', computeScrollOffset);
 
-      // Al pulsar una etiqueta: la marca activa, mueve el indicador y
-      // desplaza la página. scrollIntoView respeta el scroll-margin-top
-      // de la sección, así el título queda siempre visible.
       navBar.querySelectorAll('.section-nav-btn').forEach(function (btn) {
         btn.addEventListener('click', function () {
           var nav = btn.closest('.section-nav');
@@ -983,8 +940,6 @@
         });
       });
 
-      // Mientras el usuario hace scroll, marca la etiqueta de la sección
-      // visible y desliza el indicador hasta ella
       var sections = document.querySelectorAll('[data-section][id]');
       var observer = new IntersectionObserver(function (entries) {
         entries.forEach(function (entry) {
@@ -1001,6 +956,7 @@
       sections.forEach(function (sec) { observer.observe(sec); });
     })();
   </script>
+
 </body>
 
 </html>
