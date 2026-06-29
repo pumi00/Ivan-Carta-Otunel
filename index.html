@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" class="day-mode">
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -220,6 +220,7 @@
       <li class="item"><span class="item-name">Chuletón de vacuno mayor <em class="item-note">(por encargo)</em></span><span class="item-price">S/Peso</span></li>
       <li class="item"><span class="item-name">Variado de carnes: Entrecot, secreto y picaña <em class="item-note">(mín. 2 personas)</em></span><span class="item-price">43,50</span></li>
       <li class="item"><span class="item-name">Hamburguesa de buey con queso cheddar, beicon y lechuga <span class="allergens"><img src="/alergenos/simbolo alergeno cereales.png" alt="Cereales"><img src="/alergenos/simbolo alergeno frutos secos.png" alt="Frutos secos"><img src="/alergenos/simbolo alergeno huevos.png" alt="Huevos"><img src="/alergenos/simbolo alergeno lacteos.png" alt="Lácteos"><img src="/alergenos/simbolo alergeno sesamo.png" alt="Sésamo"><img src="/alergenos/simbolo alergeno sulfitos.png" alt="Sulfitos"></span></span><span class="item-price">9,75</span></li>
+      <li class="item"><span class="item-name">Pan por persona</span><span class="item-price">0,85</span></li>
     </ul>
   </section>
 
@@ -264,11 +265,6 @@
       <div class="allergen-item"><img src="/alergenos/simbolo pescado alergenos.png" alt="">Pescado</div>
     </div>
   </div>
-  <div>
-      <ul>
-          <li class="item"><span class="item-name">Pan por persona</span><span class="item-price">0,85</span></li>
-      </ul>
-    </div>
 
 </div><!-- /carta -->
 
@@ -1597,7 +1593,7 @@
   var btn = document.getElementById('themeToggle');
   var html = document.documentElement;
   var saved = localStorage.getItem('otunel-theme');
-  if (saved === 'day') html.classList.add('day-mode');
+  if (saved === 'night') html.classList.remove('day-mode');
 
   btn.addEventListener('click', function () {
     var isDay = html.classList.toggle('day-mode');
