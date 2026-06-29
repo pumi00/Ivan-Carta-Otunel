@@ -9,50 +9,30 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 <style>
-:root {
-  --tunnel-stone: #1b1611;
-  --tunnel-stone-deep: #120e0a;
-  --tunnel-ember: #c9a35c;
-  --tunnel-ember-dim: rgba(201, 163, 92, 0.4);
-  --tunnel-parchment: #efe6d4;
-  --tunnel-parchment-dim: rgba(239, 230, 212, 0.52);
-}
-.section-nav-bar {
-  position: fixed; top: 0; left: 0; width: 100%; z-index: 999;
-  background: linear-gradient(to bottom, var(--tunnel-stone), var(--tunnel-stone-deep));
-  border-bottom: 1px solid var(--tunnel-ember-dim);
-}
-.section-nav { display: none; overflow-x: auto; scrollbar-width: none; -ms-overflow-style: none; padding: 0 1.25rem; }
-.section-nav::-webkit-scrollbar { display: none; }
-.section-nav.is-visible { display: block; }
-.section-nav-track { position: relative; display: inline-flex; align-items: center; white-space: nowrap; min-width: 100%; padding: 0.9rem 0 0.6rem; }
-.section-nav-btn { font-family: 'Inter', sans-serif; font-size: 0.72rem; font-weight: 500; letter-spacing: 0.09em; text-transform: uppercase; background: none; border: none; color: var(--tunnel-parchment-dim); padding: 0.15rem 0; margin: 0 0.7rem; cursor: pointer; white-space: nowrap; transition: color 0.3s ease; }
-.section-nav-btn:first-child { margin-left: 0; }
-.section-nav-btn:hover { color: var(--tunnel-parchment); }
-.section-nav-btn.is-active { color: var(--tunnel-ember); }
-.nav-sep { color: var(--tunnel-ember-dim); font-size: 0.5rem; position: relative; top: -2px; }
-.nav-indicator { position: absolute; bottom: 0; left: 0; height: 1px; width: 0; background: var(--tunnel-ember); box-shadow: 0 0 6px var(--tunnel-ember-dim); transition: transform 0.35s cubic-bezier(.65,0,.35,1), width 0.35s cubic-bezier(.65,0,.35,1); }
-/* Descripción de uva */
-.wine-grape {
-  font-family: 'Cormorant Garamond', serif;
-  font-style: italic;
-  font-size: 0.78rem;
-  color: var(--tunnel-ember);
-  opacity: 0.85;
-  display: block;
-  margin-top: 0.18rem;
-  font-weight: 300;
-  letter-spacing: 0.02em;
-}
-@media (min-width: 760px) {
-  .section-nav { overflow-x: visible; text-align: center; }
-  .section-nav-track { display: inline-flex; flex-wrap: wrap; justify-content: center; width: auto; min-width: 0; }
-}
-@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .nav-indicator { transition: none; } }
+/* Solo lo que depende de JS en tiempo real */
 [data-section] { scroll-margin-top: var(--scroll-offset, 90px); }
 </style>
 </head>
 <body class="page-carta">
+
+<button class="theme-toggle" id="themeToggle" aria-label="Cambiar modo día/noche" title="Modo día / noche">
+  <!-- Icono luna (modo noche activo) -->
+  <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+  </svg>
+  <!-- Icono sol (modo día activo) -->
+  <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="12" cy="12" r="5"/>
+    <line x1="12" y1="1"  x2="12" y2="3"/>
+    <line x1="12" y1="21" x2="12" y2="23"/>
+    <line x1="4.22" y1="4.22"  x2="5.64" y2="5.64"/>
+    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+    <line x1="1"  y1="12" x2="3"  y2="12"/>
+    <line x1="21" y1="12" x2="23" y2="12"/>
+    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+    <line x1="18.36" y1="5.64"  x2="19.78" y2="4.22"/>
+  </svg>
+</button>
 
 <header class="hero">
   <div class="hero-inner">
@@ -186,13 +166,13 @@
     <div class="section-rule"><span>✦</span></div>
     <ul class="item-list">
       <li class="item"><span class="item-name">Chipirones en fritura de harina de maíz y ali-oli de ajo negro <span class="allergens"><img src="/alergenos/simbolo alergeno cereales.png" alt="Cereales"><img src="/alergenos/simbolo alergeno frutos secos.png" alt="Frutos secos"></span></span><span class="item-price">12,75</span></li>
-      <li class="item"><span class="item-name">Croquetas caseras (consultar variedad) <span class="allergens"><img src="/alergenos/simbolo alergeno cereales.png" alt="Cereales"><img src="/alergenos/simbolo alergeno huevos.png" alt="Huevos"><img src="/alergenos/simbolo alergeno lacteos.png" alt="Lácteos"><img src="/alergenos/simbolo alergeno sesamo.png" alt="Sésamo"></span></span><span class="item-price">10,00</span></li>
+      <li class="item"><span class="item-name">Croquetas caseras (consultar variedad) <span class="allergens"><img src="/alergenos/simbolo alergeno cereales.png" alt="Cereales"><img src="/alergenos/simbolo alergeno huevos.png" alt="Huevos"><img src="/alergenos/simbolo alergeno lacteos.png" alt="Lácteos"><img src="/alergenos/simbolo alergeno sesamo.png" alt="Sésamo"></span></span><span class="item-price">9,00</span></li>
       <li class="item"><span class="item-name">Langostinos crujientes en panko con mayonesa agridulce <span class="allergens"><img src="/alergenos/simbolo alergeno cereales.png" alt="Cereales"><img src="/alergenos/simbolo alergeno crustaceo.png" alt="Crustáceos"><img src="/alergenos/simbolo alergeno huevos.png" alt="Huevos"></span></span><span class="item-price">10,75</span></li>
       <li class="item"><span class="item-name">Alitas de pollo con salsa de mostaza y miel <span class="allergens"><img src="/alergenos/simbolo alergeno cereales.png" alt="Cereales"><img src="/alergenos/simbolo alergeno huevos.png" alt="Huevos"><img src="/alergenos/simbolo alergeno mostaza.png" alt="Mostaza"></span></span><span class="item-price">9,00</span></li>
       <li class="item"><span class="item-name">Dados de pollo salteados, manzana, salsa teriyaki, cebolla caramelizada y patatas <span class="allergens"><img src="/alergenos/simbolo alergeno sesamo.png" alt="Sésamo"><img src="/alergenos/simbolo alergeno soja.png" alt="Soja"></span></span><span class="item-price">12,00</span></li>
       <li class="item"><span class="item-name">Patatas bravas y ali-oli <span class="allergens"><img src="/alergenos/simbolo alergeno huevos.png" alt="Huevos"></span></span><span class="item-price">5,75</span></li>
       <li class="item"><span class="item-name">Choquitos a la plancha, aceite de ajo y perejil y ali-oli de pimientos <span class="allergens"><img src="/alergenos/simbolo alergeno huevos.png" alt="Huevos"><img src="/alergenos/simbolo alergeno lacteos.png" alt="Lácteos"><img src="/alergenos/simbolo alergeno moluscos.png" alt="Moluscos"></span></span><span class="item-price">13,50</span></li>
-      <li class="item"><span class="item-name">Tortilla de patatas <span class="allergens"><img src="/alergenos/simbolo alergeno huevos.png" alt="Huevos"></span></span><span class="item-price">8,75</span></li>
+      <li class="item"><span class="item-name">Tortilla de patatas <span class="allergens"><img src="/alergenos/simbolo alergeno huevos.png" alt="Huevos"></span></span><span class="item-price">9,75</span></li>
     </ul>
   </section>
 
@@ -223,10 +203,10 @@
     <h2 class="section-title">Del Mar</h2>
     <div class="section-rule"><span>✦</span></div>
     <ul class="item-list">
-      <li class="item"><span class="item-name">Bacalao al horno con setas y castañas <span class="allergens"><img src="/alergenos/simbolo pescado alergenos.png" alt="Pescado"></span></span><span class="item-price">19,00</span></li>
-      <li class="item"><span class="item-name">Bacalao a la parrilla con salteado de verduras al wok <span class="allergens"><img src="/alergenos/simbolo pescado alergenos.png" alt="Pescado"></span></span><span class="item-price">18,00</span></li>
-      <li class="item"><span class="item-name">Lomo de merluza a la plancha con ensalada de temporada <span class="allergens"><img src="/alergenos/simbolo alergeno moluscos.png" alt="Moluscos"><img src="/alergenos/simbolo pescado alergenos.png" alt="Pescado"></span></span><span class="item-price">14,00</span></li>
-      <li class="item"><span class="item-name">Tentáculo de pulpo a la parrilla <span class="allergens"><img src="/alergenos/simbolo alergeno moluscos.png" alt="Moluscos"><img src="/alergenos/simbolo pescado alergenos.png" alt="Pescado"></span></span><span class="item-price">18,00</span></li>
+      <li class="item"><span class="item-name">Bacalao al horno con setas y castañas <span class="allergens"><img src="/alergenos/simbolo pescado alergenos.png" alt="Pescado"></span></span><span class="item-price">23,50</span></li>
+      <li class="item"><span class="item-name">Bacalao a la parrilla con salteado de verduras al wok <span class="allergens"><img src="/alergenos/simbolo pescado alergenos.png" alt="Pescado"></span></span><span class="item-price">21,50</span></li>
+      <li class="item"><span class="item-name">Lomo de merluza a la plancha con ensalada de temporada <span class="allergens"><img src="/alergenos/simbolo alergeno moluscos.png" alt="Moluscos"><img src="/alergenos/simbolo pescado alergenos.png" alt="Pescado"></span></span><span class="item-price">16,50</span></li>
+      <li class="item"><span class="item-name">Tentáculo de pulpo a la parrilla <span class="allergens"><img src="/alergenos/simbolo alergeno moluscos.png" alt="Moluscos"><img src="/alergenos/simbolo pescado alergenos.png" alt="Pescado"></span></span><span class="item-price">19,75</span></li>
     </ul>
   </section>
 
@@ -234,12 +214,13 @@
     <h2 class="section-title">De la Tierra</h2>
     <div class="section-rule"><span>✦</span></div>
     <ul class="item-list">
-      <li class="item"><span class="item-name">Picaña de vacuno a la parrilla</span><span class="item-price">18,00</span></li>
-      <li class="item"><span class="item-name">Entrecot de ternera gallega a la parrilla con salsa a la pimienta <span class="allergens"><img src="/alergenos/simbolo alergeno apio.png" alt="Apio"><img src="/alergenos/simbolo alergeno cereales.png" alt="Cereales"><img src="/alergenos/simbolo alergeno huevos.png" alt="Huevos"><img src="/alergenos/simbolo alergeno lacteos.png" alt="Lácteos"><img src="/alergenos/simbolo alergeno soja.png" alt="Soja"></span></span><span class="item-price">18,00</span></li>
+      <li class="item"><span class="item-name">Picaña de vacuno a la parrilla</span><span class="item-price">19,75</span></li>
+      <li class="item"><span class="item-name">Entrecot de ternera gallega a la parrilla con salsa a la pimienta <span class="allergens"><img src="/alergenos/simbolo alergeno apio.png" alt="Apio"><img src="/alergenos/simbolo alergeno cereales.png" alt="Cereales"><img src="/alergenos/simbolo alergeno huevos.png" alt="Huevos"><img src="/alergenos/simbolo alergeno lacteos.png" alt="Lácteos"><img src="/alergenos/simbolo alergeno soja.png" alt="Soja"></span></span><span class="item-price">19,75</span></li>
       <li class="item"><span class="item-name">Secreto de cerdo ibérico con salsa BBQ <span class="allergens"><img src="/alergenos/simbolo alergeno apio.png" alt="Apio"><img src="/alergenos/simbolo alergeno mostaza.png" alt="Mostaza"></span></span><span class="item-price">15,50</span></li>
       <li class="item"><span class="item-name">Chuletón de vacuno mayor <em class="item-note">(por encargo)</em></span><span class="item-price">S/Peso</span></li>
       <li class="item"><span class="item-name">Variado de carnes: Entrecot, secreto y picaña <em class="item-note">(mín. 2 personas)</em></span><span class="item-price">43,50</span></li>
       <li class="item"><span class="item-name">Hamburguesa de buey con queso cheddar, beicon y lechuga <span class="allergens"><img src="/alergenos/simbolo alergeno cereales.png" alt="Cereales"><img src="/alergenos/simbolo alergeno frutos secos.png" alt="Frutos secos"><img src="/alergenos/simbolo alergeno huevos.png" alt="Huevos"><img src="/alergenos/simbolo alergeno lacteos.png" alt="Lácteos"><img src="/alergenos/simbolo alergeno sesamo.png" alt="Sésamo"><img src="/alergenos/simbolo alergeno sulfitos.png" alt="Sulfitos"></span></span><span class="item-price">9,75</span></li>
+      <li class="item"><span class="item-name">Pan por persona</span><span class="item-price">0,85</span></li>
     </ul>
   </section>
 
@@ -248,7 +229,7 @@
     <div class="section-rule"><span>✦</span></div>
     <ul class="item-list">
       <li class="item"><span class="item-name">Verduras a la plancha (tomate, cebolla, pimientos, calabacín y setas)</span><span class="item-price">12,75</span></li>
-      <li class="item"><span class="item-name">Salteado de verduras (tomate, cebolla, pimientos, calabacín, berenjena, setas, ajo y perejil)</span><span class="item-price">12,75</span></li>
+      <li class="item"><span class="item-name">Salteado de verduras (tomate, cebolla, pimientos, calabacín, berenjena, setas, ajo y perejil)</span><span class="item-price">13,75</span></li>
     </ul>
   </section>
 
@@ -285,11 +266,6 @@
     </div>
   </div>
 
-  <div class="pan-precio">
-      <ul>
-        <li class="item"><span class="item-name">Pan por persona</span><span class="item-price">0,85</span></li>
-      </ul>
-    </div>
 </div><!-- /carta -->
 
 <!-- ═══════════════ VINOS ═══════════════ -->
@@ -1610,6 +1586,19 @@
   }, { rootMargin: '-20% 0px -65% 0px', threshold: 0 });
 
   sections.forEach(function (sec) { observer.observe(sec); });
+})();
+
+/* ── MODO DÍA / NOCHE ── */
+(function () {
+  var btn = document.getElementById('themeToggle');
+  var html = document.documentElement;
+  var saved = localStorage.getItem('otunel-theme');
+  if (saved === 'day') html.classList.add('day-mode');
+
+  btn.addEventListener('click', function () {
+    var isDay = html.classList.toggle('day-mode');
+    localStorage.setItem('otunel-theme', isDay ? 'day' : 'night');
+  });
 })();
 </script>
 </body>

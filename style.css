@@ -1,74 +1,157 @@
-/* ─── TOKENS ─── */
+/* ═══════════════════════════════════════════════════════
+   O TUNEL — STYLESHEET COMPLETO
+   Modo noche (defecto) + modo día (.day-mode en <html>)
+═══════════════════════════════════════════════════════ */
+
+/* ── TOKENS NOCHE ── */
 :root {
-  --bg: #0d0d0d;
-  --surface: #161616;
-  --surface2: #1e1e1e;
-  --border: rgba(255, 255, 255, 0.08);
-  --border-gold: rgba(184, 147, 90, 0.30);
-  --cream: #f5f0e8;
-  --muted: rgba(245, 240, 232, 0.45);
-  --faint: rgba(245, 240, 232, 0.18);
-  --gold: #c9a96e;
-  --gold-dim: rgba(201, 169, 110, 0.55);
-  --gold-bg: rgba(201, 169, 110, 0.08);
-  --radius: 16px;
-  --radius-sm: 10px;
+  /* paleta base */
+  --bg:            #0d0d0d;
+  --surface:       #161616;
+  --surface2:      #1e1e1e;
+  --border:        rgba(255,255,255,0.08);
+  --border-gold:   rgba(184,147,90,0.30);
+  --cream:         #f5f0e8;
+  --muted:         rgba(245,240,232,0.50);
+  --faint:         rgba(245,240,232,0.18);
+  --gold:          #c9a96e;
+  --gold-dim:      rgba(201,169,110,0.55);
+  --gold-bg:       rgba(201,169,110,0.08);
+  --radius:        16px;
+  --radius-sm:     10px;
+
+  /* semánticos */
+  --color-bg:         #0d0d0d;
+  --color-hero-bg:    rgba(13,13,13,0.95);
+  --color-nav-bg:     rgba(13,13,13,0.97);
+  --color-text:       #f5f0e8;
+  --color-text-muted: rgba(245,240,232,0.50);
+  --color-price:      #c9a96e;
+  --color-gold:       #c9a96e;
+  --color-gold-dim:   rgba(201,169,110,0.40);
+  --color-border:     rgba(255,255,255,0.08);
+  --color-surface:    #161616;
+  --color-surface2:   #1e1e1e;
+  --color-footer-bg:  #161616;
+
+  /* toggle */
+  --toggle-bg:     rgba(201,169,110,0.18);
+  --toggle-border: rgba(201,169,110,0.55);
+  --toggle-shadow: rgba(0,0,0,0.45);
 }
 
-main{
-    padding-top: calc(var(--nav-bar-height) + 2rem);
+/* ── TOKENS DÍA — como la foto de referencia ── */
+html.day-mode {
+  --bg:            #f0e8d8;
+  --surface:       #faf5ec;
+  --surface2:      #ede5d6;
+  --border:        rgba(160,110,50,0.14);
+  --border-gold:   rgba(124,45,45,0.22);
+  --cream:         #1e1208;
+  --muted:         rgba(40,22,6,0.52);
+  --faint:         rgba(40,22,6,0.28);
+  --gold:          #7c2d2d;
+  --gold-dim:      rgba(124,45,45,0.50);
+  --gold-bg:       rgba(124,45,45,0.06);
+
+  --color-bg:         #f0e8d8;
+  --color-hero-bg:    rgba(240,232,216,0.97);
+  --color-nav-bg:     rgba(240,232,216,0.98);
+  --color-text:       #1e1208;
+  --color-text-muted: rgba(40,22,6,0.52);
+  --color-price:      #7c2d2d;
+  --color-gold:       #7c2d2d;
+  --color-gold-dim:   rgba(124,45,45,0.45);
+  --color-border:     rgba(160,110,50,0.14);
+  --color-surface:    #faf5ec;
+  --color-surface2:   #ede5d6;
+  --color-footer-bg:  #e8dfc8;
+
+  --toggle-bg:     rgba(124,45,45,0.10);
+  --toggle-border: rgba(124,45,45,0.50);
+  --toggle-shadow: rgba(80,20,20,0.15);
 }
 
-/* ─── RESET ─── */
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-html {
-  scroll-behavior: smooth;
-}
+/* ── RESET ── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
 
 body {
   font-family: 'Inter', sans-serif;
   font-weight: 300;
-  background: var(--bg);
-  color: var(--cream);
+  background-color: var(--color-bg);
+  background-repeat: repeat;
+  background-size: 460px;
+  background-attachment: fixed;
+  color: var(--color-text);
   min-height: 100vh;
   -webkit-font-smoothing: antialiased;
-  transition: background 0.6s ease;
+  transition: background-color 0.4s ease, color 0.4s ease;
 }
 
+/* NOCHE — overlay oscuro al 88% sobre imagen */
+body.page-carta {
+  background-image:
+    linear-gradient(rgba(13,13,13,0.82), rgba(13,13,13,0.82)),
+    url('images/bg-carta.png');
+  background-color: #0d0d0d;
+}
 body.page-vinos {
-  background-image: linear-gradient(rgba(13, 13, 13, 0.80), rgba(13, 13, 13, 0.80)), url('images/bg-vinos.jpg');
-  background-repeat: repeat;
-  background-size: 340px;
+  background-image:
+    linear-gradient(rgba(13,13,13,0.82), rgba(13,13,13,0.82)),
+    url('images/bg-vinos.jpg');
+  background-color: #0d0d0d;
 }
 
-body.page-carta{
-    background-image:
-        linear-gradient(rgba(13,13,13,.80), rgba(13,13,13,.80)),
-        url("../images/bg-carta.png");
-
-    background-repeat: repeat;
-    background-size: 340px;
+/* DÍA — overlay crema al 85% sobre imagen */
+html.day-mode body.page-carta {
+  background-image:
+    linear-gradient(rgba(240,232,216,0.78), rgba(240,232,216,0.78)),
+    url('images/bg-tapas.png');
+  background-color: #f0e8d8;
+}
+html.day-mode body.page-vinos {
+  background-image:
+    linear-gradient(rgba(240,232,216,0.78), rgba(240,232,216,0.78)),
+    url('images/bg-vinos.png');
+  background-color: #f0e8d8;
 }
 
-/* ─── HERO ─── */
+/* ── BOTÓN DÍA/NOCHE ── */
+.theme-toggle {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  z-index: 2000;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  border: 2px solid var(--toggle-border);
+  background: var(--color-surface);
+  box-shadow: 0 4px 20px var(--toggle-shadow), 0 0 0 1px var(--toggle-border);
+  cursor: pointer;
+  font-size: 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease, box-shadow 0.3s ease, background 0.4s ease;
+}
+.theme-toggle:hover {
+  transform: scale(1.12);
+  box-shadow: 0 6px 24px var(--toggle-shadow), 0 0 0 2px var(--toggle-border);
+}
+
+/* ── HERO ── */
 .hero {
-  background: var(--bg);
-  text-align: center;
-  padding: 0;
   position: sticky;
   top: 0;
   z-index: 100;
-  border-bottom: 1px solid var(--border);
+  text-align: center;
+  border-bottom: 1px solid var(--color-border);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  background: rgba(13, 13, 13, 0.92);
+  background: var(--color-hero-bg);
+  transition: background 0.4s ease;
 }
 
 .hero-inner {
@@ -95,21 +178,14 @@ body.page-carta{
 .hero-diamond {
   width: 6px;
   height: 6px;
-  background: var(--gold);
+  background: var(--color-gold);
   transform: rotate(45deg);
   animation: spin-in 0.9s ease both;
 }
 
 @keyframes spin-in {
-  from {
-    opacity: 0;
-    transform: rotate(0deg) scale(0);
-  }
-
-  to {
-    opacity: 1;
-    transform: rotate(45deg) scale(1);
-  }
+  from { opacity: 0; transform: rotate(0deg) scale(0); }
+  to   { opacity: 1; transform: rotate(45deg) scale(1); }
 }
 
 .hero-logo {
@@ -117,10 +193,11 @@ body.page-carta{
   font-size: clamp(2.8rem, 8vw, 4.8rem);
   font-weight: 300;
   letter-spacing: 0.08em;
-  color: var(--cream);
+  color: var(--color-text);
   line-height: 1;
   margin-bottom: 0.4rem;
   animation: fadeDown 0.7s ease 0.1s both;
+  transition: color 0.4s ease;
 }
 
 .hero-sub {
@@ -128,12 +205,13 @@ body.page-carta{
   font-weight: 400;
   letter-spacing: 0.32em;
   text-transform: uppercase;
-  color: var(--gold);
+  color: var(--color-gold);
   margin-bottom: 1.8rem;
   animation: fadeDown 0.7s ease 0.2s both;
+  transition: color 0.4s ease;
 }
 
-/* ─── NAV TABS ─── */
+/* ── NAV TABS ── */
 .nav-wrap {
   display: flex;
   justify-content: center;
@@ -143,10 +221,11 @@ body.page-carta{
 .nav-tabs {
   display: inline-flex;
   gap: 3px;
-  background: var(--surface);
-  border: 1px solid var(--border);
+  background: var(--color-surface2);
+  border: 1px solid var(--color-border);
   border-radius: 100px;
   padding: 4px;
+  transition: background 0.4s ease, border-color 0.4s ease;
 }
 
 .nav-tab {
@@ -155,7 +234,7 @@ body.page-carta{
   font-weight: 400;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--muted);
+  color: var(--color-text-muted);
   background: transparent;
   border: none;
   cursor: pointer;
@@ -166,151 +245,137 @@ body.page-carta{
 }
 
 .nav-tab.active {
-  background: var(--gold);
-  color: #0d0d0d;
+  background: var(--color-gold);
+  color: #f5efe2;
   font-weight: 500;
 }
 
-.nav-tab:hover:not(.active) {
-  color: var(--cream);
+.nav-tab:hover:not(.active) { color: var(--color-text); }
+
+/* ── BARRA DE SECCIONES FIJA ── */
+.section-nav-bar {
+  position: fixed;
+  top: 0; left: 0; width: 100%;
+  z-index: 999;
+  background: var(--color-nav-bg);
+  border-bottom: 1px solid var(--color-gold-dim);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  transition: background 0.4s ease;
 }
 
-/* ─── SUBNAV WRAP ─── */
-.subnav-wrap {
-  margin-top: 0.8rem;
-  overflow: hidden;
-  max-width: 100%;
-  animation: fadeDown 0.7s ease 0.4s both;
-}
-
-.subnav {
+.section-nav {
   display: none;
-  gap: 8px;
-  justify-content: flex-start;
   overflow-x: auto;
-  padding: 4px 12px 10px;
-  margin: 0 -12px -6px;
-  scroll-behavior: smooth;
-  -webkit-overflow-scrolling: touch;
-}
-
-/* Hide scrollbar for Chrome, Safari and Opera */
-.subnav::-webkit-scrollbar {
-  display: none;
-}
-
-/* Hide scrollbar for IE, Edge and Firefox */
-.subnav {
-  -ms-overflow-style: none;
-  /* IE and Edge */
   scrollbar-width: none;
-  /* Firefox */
+  -ms-overflow-style: none;
+  padding: 0 1.25rem;
+}
+.section-nav::-webkit-scrollbar { display: none; }
+.section-nav.is-visible { display: block; }
+
+.section-nav-track {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  white-space: nowrap;
+  min-width: 100%;
+  padding: 0.9rem 0 0.6rem;
 }
 
-@media (min-width: 768px) {
-  .subnav {
-    justify-content: center;
-    flex-wrap: wrap;
-    padding-bottom: 4px;
-    margin: 0;
-  }
-}
-
-.subnav.active {
-  display: flex;
-}
-
-.subnav-link {
+.section-nav-btn {
   font-family: 'Inter', sans-serif;
   font-size: 0.72rem;
-  font-weight: 400;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--muted);
-  background: var(--surface2);
-  border: 1px solid var(--border);
-  text-decoration: none;
-  cursor: pointer;
-  padding: 0.4rem 0.9rem;
-  border-radius: 100px;
-  transition: all 0.25s ease;
-  white-space: nowrap;
-}
-
-.subnav-link.active {
-  background: var(--gold-bg);
-  border-color: var(--gold);
-  color: var(--gold);
   font-weight: 500;
-  box-shadow: 0 0 10px rgba(201, 169, 110, 0.12);
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  background: none;
+  border: none;
+  color: var(--color-text-muted);
+  padding: 0.15rem 0;
+  margin: 0 0.7rem;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: color 0.3s ease;
+}
+.section-nav-btn:first-child { margin-left: 0; }
+.section-nav-btn:hover { color: var(--color-text); }
+.section-nav-btn.is-active { color: var(--color-gold); }
+
+.nav-sep {
+  color: var(--color-gold-dim);
+  font-size: 0.5rem;
+  position: relative;
+  top: -2px;
 }
 
-.subnav-link:hover:not(.active) {
-  color: var(--cream);
-  border-color: rgba(255, 255, 255, 0.2);
-  background: rgba(255, 255, 255, 0.03);
+.nav-indicator {
+  position: absolute;
+  bottom: 0; left: 0;
+  height: 1px; width: 0;
+  background: var(--color-gold);
+  box-shadow: 0 0 6px var(--color-gold-dim);
+  transition: transform 0.35s cubic-bezier(.65,0,.35,1), width 0.35s cubic-bezier(.65,0,.35,1);
 }
 
-/* ─── PAGE TRANSITIONS ─── */
-.page {
-  display: none;
+@media (min-width: 760px) {
+  .section-nav { overflow-x: visible; text-align: center; }
+  .section-nav-track { display: inline-flex; flex-wrap: wrap; justify-content: center; width: auto; min-width: 0; }
 }
 
-.page.active {
-  display: block;
-}
-
-.page.entering {
-  animation: pageIn 0.4s ease both;
-}
+/* ── PAGE TRANSITIONS ── */
+.page { display: none; }
+.page.active { display: block; }
+.page.entering { animation: pageIn 0.4s ease both; }
 
 @keyframes pageIn {
-  from {
-    opacity: 0;
-    transform: translateY(12px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
 
-/* ─── MAIN ─── */
+/* ── MAIN ── */
 main {
   max-width: 860px;
   margin: 0 auto;
   padding: 3rem 1.25rem 6rem;
+  padding-top: calc(var(--nav-bar-height, 44px) + 2rem);
 }
 
-/* ─── MENU SECTION ─── */
+/* ── MENU SECTION ── */
 .menu-section {
   margin-bottom: 3.5rem;
   opacity: 0;
   transform: translateY(20px);
   transition: opacity 0.55s ease, transform 0.55s ease;
-  scroll-margin-top: 265px;
-  /* Evita que la cabecera pegajosa tape el título al saltar */
+  scroll-margin-top: var(--scroll-offset, 90px);
 }
+.menu-section.visible { opacity: 1; transform: translateY(0); }
 
-.menu-section.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* ─── SECTION TITLE ─── */
+/* ── SECTION TITLE ── */
 .section-title {
   font-family: 'Cormorant Garamond', serif;
   font-size: clamp(1.85rem, 4.5vw, 2.4rem);
   font-weight: 400;
-  color: var(--cream);
+  color: var(--color-text);
   letter-spacing: 0.02em;
   text-align: center;
   margin-bottom: 0.4rem;
+  transition: color 0.4s ease;
 }
 
-.wine-region-title {
-  color: var(--gold);
+.wine-region-title { color: var(--color-gold); }
+
+.wine-subregion {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.15rem;
+  font-weight: 400;
+  color: var(--color-gold);
+  letter-spacing: 0.08em;
+  margin: 1.6rem 0 0.6rem;
+  padding-left: 0.2rem;
+  border-left: 2px solid var(--color-gold-dim);
+  padding-left: 0.75rem;
+  transition: color 0.4s ease;
 }
 
 .section-note {
@@ -318,36 +383,37 @@ main {
   font-size: 0.8rem;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--muted);
+  color: var(--color-text-muted);
   margin-bottom: 0.6rem;
+  transition: color 0.4s ease;
 }
 
-/* ─── SECTION RULE ─── */
+.section-note strong { color: var(--color-gold); font-weight: 500; }
+
+/* ── SECTION RULE ── */
 .section-rule {
   display: flex;
   align-items: center;
   gap: 10px;
   margin-bottom: 1.4rem;
 }
-
 .section-rule::before,
 .section-rule::after {
   content: '';
   flex: 1;
   height: 1px;
-  background: var(--border-gold);
+  background: var(--color-gold-dim);
+  transition: background 0.4s ease;
 }
-
 .section-rule span {
-  color: var(--gold);
+  color: var(--color-gold);
   font-size: 0.7rem;
   letter-spacing: 0.1em;
+  transition: color 0.4s ease;
 }
 
-/* ─── ITEM LIST ─── */
-.item-list {
-  list-style: none;
-}
+/* ── ITEM LIST ── */
+.item-list { list-style: none; }
 
 .item {
   display: grid;
@@ -356,15 +422,11 @@ main {
   gap: 1rem;
   padding: 1rem 1.1rem;
   border-radius: var(--radius-sm);
-  border-bottom: 1px solid var(--border);
+  border-bottom: 1px solid var(--color-border);
   transition: background 0.2s ease, border-color 0.2s ease;
   cursor: default;
 }
-
-.item:last-child {
-  border-bottom: none;
-}
-
+.item:last-child { border-bottom: none; }
 .item:hover {
   background: var(--gold-bg);
   border-bottom-color: transparent;
@@ -373,16 +435,30 @@ main {
 .item-name {
   font-size: 1.05rem;
   font-weight: 300;
-  color: rgba(245, 240, 232, 0.85);
+  color: var(--color-text);
   line-height: 1.55;
+  opacity: 0.88;
+  transition: color 0.4s ease;
 }
 
 .item-note {
   font-style: italic;
   font-size: 0.88rem;
-  color: var(--muted);
+  color: var(--color-text-muted);
 }
 
+.item-price {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--color-price);
+  white-space: nowrap;
+  padding-top: 0.1rem;
+  letter-spacing: 0.02em;
+  transition: color 0.4s ease;
+}
+
+/* ── ALÉRGENOS ── */
 .allergens {
   display: inline-flex;
   gap: 3px;
@@ -390,7 +466,6 @@ main {
   vertical-align: middle;
   margin-left: 5px;
 }
-
 .allergens img {
   width: 18px;
   height: 18px;
@@ -398,41 +473,46 @@ main {
   filter: invert(1) sepia(0.3) saturate(0.5);
   vertical-align: middle;
 }
-
-.item-price {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 1.15rem;
-  font-weight: 500;
-  color: var(--gold);
-  white-space: nowrap;
-  padding-top: 0.1rem;
+html.day-mode .allergens img {
+  filter: invert(0.3) sepia(0.5) saturate(0.8);
 }
 
-/* ─── ALLERGEN LEGEND ─── */
+/* ── DESCRIPCIÓN DE UVA ── */
+.wine-grape {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 0.8rem;
+  color: var(--color-gold);
+  opacity: 0.82;
+  display: block;
+  margin-top: 0.2rem;
+  font-weight: 300;
+  letter-spacing: 0.02em;
+  transition: color 0.4s ease;
+}
+
+/* ── ALLERGEN LEGEND ── */
 .allergen-legend {
-  background: var(--surface);
-  border: 1px solid var(--border-gold);
+  background: var(--color-surface);
+  border: 1px solid var(--color-gold-dim);
   border-radius: var(--radius);
   padding: 1.75rem;
   margin-top: 1rem;
   opacity: 0;
   transform: translateY(20px);
-  transition: opacity 0.55s ease, transform 0.55s ease;
+  transition: opacity 0.55s ease, transform 0.55s ease, background 0.4s ease;
 }
-
-.allergen-legend.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
+.allergen-legend.visible { opacity: 1; transform: translateY(0); }
 
 .allergen-legend h3 {
   font-family: 'Cormorant Garamond', serif;
   font-size: 1.2rem;
   font-weight: 400;
-  color: var(--cream);
+  color: var(--color-text);
   text-align: center;
   letter-spacing: 0.05em;
   margin-bottom: 1.4rem;
+  transition: color 0.4s ease;
 }
 
 .allergen-grid {
@@ -446,28 +526,28 @@ main {
   align-items: center;
   gap: 9px;
   font-size: 0.87rem;
-  color: var(--muted);
+  color: var(--color-text-muted);
+  transition: color 0.4s ease;
 }
-
 .allergen-item img {
   width: 22px;
   height: 22px;
   filter: invert(1) sepia(0.3) saturate(0.5);
   opacity: 0.65;
 }
+html.day-mode .allergen-item img {
+  filter: invert(0.3) sepia(0.5) saturate(0.8);
+}
 
-/* ─── FOOTER ─── */
+/* ── FOOTER ── */
 .footer {
-  background: var(--surface);
-  border-top: 1px solid var(--border);
+  background: var(--color-footer-bg);
+  border-top: 1px solid var(--color-border);
   text-align: center;
   padding: 3rem 1.5rem 2.5rem;
+  transition: background 0.4s ease;
 }
-
-.footer-inner {
-  max-width: 860px;
-  margin: 0 auto;
-}
+.footer-inner { max-width: 860px; margin: 0 auto; }
 
 .footer-ornament {
   display: flex;
@@ -476,22 +556,8 @@ main {
   gap: 8px;
   margin-bottom: 1.75rem;
 }
-
-.f-line {
-  width: 40px;
-  height: 1px;
-  background: var(--gold-dim);
-  display: block;
-}
-
-.f-dot {
-  width: 4px;
-  height: 4px;
-  border-radius: 50%;
-  background: var(--gold);
-  opacity: 0.6;
-  display: block;
-}
+.f-line { width: 40px; height: 1px; background: var(--gold-dim); display: block; }
+.f-dot  { width: 4px; height: 4px; border-radius: 50%; background: var(--color-gold); opacity: 0.6; display: block; }
 
 .footer-links {
   display: flex;
@@ -501,7 +567,6 @@ main {
   flex-wrap: wrap;
   margin-bottom: 1.5rem;
 }
-
 .footer-link {
   display: flex;
   align-items: center;
@@ -509,101 +574,94 @@ main {
   font-size: 0.87rem;
   font-weight: 400;
   letter-spacing: 0.04em;
-  color: var(--muted);
+  color: var(--color-text-muted);
   text-decoration: none;
   transition: color 0.2s;
 }
-
-.footer-link:hover {
-  color: var(--gold);
-}
-
-.footer-link svg {
-  opacity: 0.6;
-  flex-shrink: 0;
-}
-
+.footer-link:hover { color: var(--color-gold); }
+.footer-link svg { opacity: 0.6; flex-shrink: 0; }
 .footer-copy {
   font-size: 0.7rem;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: var(--faint);
+  color: var(--color-text-muted);
+  opacity: 0.5;
 }
 
-/* ─── ANIMATIONS ─── */
+/* ── ANIMACIONES ── */
 @keyframes fadeDown {
-  from {
-    opacity: 0;
-    transform: translateY(-14px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(-14px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
 
-/* ─── REDUCED MOTION ─── */
+/* ── MOTION REDUCE ── */
 @media (prefers-reduced-motion: reduce) {
-
-  *,
-  *::before,
-  *::after {
+  *, *::before, *::after {
     animation-duration: 0.01ms !important;
     transition-duration: 0.01ms !important;
   }
 }
 
-/* ─── RESPONSIVE ─── */
+/* ── RESPONSIVE ── */
 @media (max-width: 600px) {
-  .hero-inner {
-    padding: 2rem 1rem 1.5rem;
-  }
-
-  main {
-    padding: 2rem 0.75rem 5rem;
-  }
-
-  .item {
-    padding: 0.9rem 0.5rem;
-  }
-
-  .item-name {
-    font-size: 1rem;
-  }
-
-  .item-price {
-    font-size: 1.1rem;
-  }
-
-  .section-title {
-    font-size: 1.75rem;
-  }
-
-  .allergen-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .footer-links {
-    flex-direction: column;
-    gap: 1rem;
-  }
-
-  .nav-tab {
-    padding: 0.55rem 1.4rem;
-    font-size: 0.78rem;
-  }
-
-  .menu-section {
-    scroll-margin-top: 225px;
-  }
-
-  .subnav-wrap {
-    margin-top: 0.6rem;
-  }
-
-  .subnav-link {
-    padding: 0.35rem 0.75rem;
-    font-size: 0.68rem;
-  }
+  .hero-inner { padding: 2rem 1rem 1.5rem; }
+  main { padding: 2rem 0.75rem 5rem; padding-top: calc(var(--nav-bar-height, 44px) + 1.5rem); }
+  .item { padding: 0.9rem 0.5rem; }
+  .item-name { font-size: 0.98rem; }
+  .item-price { font-size: 1.15rem; }
+  .section-title { font-size: 1.75rem; }
+  .allergen-grid { grid-template-columns: repeat(2, 1fr); }
+  .footer-links { flex-direction: column; gap: 1rem; }
+  .nav-tab { padding: 0.55rem 1.4rem; font-size: 0.78rem; }
+  .theme-toggle { bottom: 1rem; right: 1rem; width: 2.75rem; height: 2.75rem; font-size: 1.1rem; }
 }
+
+/* ── AJUSTES MODO DÍA ── */
+html.day-mode .item-name        { opacity: 1; color: #1e1208; }
+html.day-mode .item:hover       { background: rgba(124,45,45,0.06); }
+html.day-mode .section-title    { color: #1e1208; }
+html.day-mode .hero-logo        { color: #1e1208; }
+html.day-mode .hero-sub         { color: #7c2d2d; }
+html.day-mode .footer           { border-top-color: rgba(124,45,45,0.18); }
+html.day-mode .footer-link      { color: rgba(40,22,6,0.55); }
+html.day-mode .footer-link:hover{ color: #7c2d2d; }
+html.day-mode .allergen-legend  { background: #faf5ec; border-color: rgba(124,45,45,0.22); }
+html.day-mode .allergen-legend h3 { color: #1e1208; }
+html.day-mode .allergen-item    { color: rgba(40,22,6,0.55); }
+html.day-mode .section-note     { color: rgba(40,22,6,0.52); }
+html.day-mode .nav-tabs         { background: #ede5d6; border-color: rgba(124,45,45,0.18); }
+html.day-mode .nav-tab          { color: #7c2d2d; }
+html.day-mode .nav-tab.active   { background: #7c2d2d; color: #f5efe2; }
+html.day-mode .wine-grape       { color: #7c2d2d; }
+html.day-mode .wine-subregion   { color: #7c2d2d; border-left-color: rgba(124,45,45,0.35); }
+html.day-mode .section-rule::before,
+html.day-mode .section-rule::after { background: rgba(124,45,45,0.28); }
+html.day-mode .section-rule span { color: #7c2d2d; }
+html.day-mode .item-note        { color: rgba(40,22,6,0.45); }
+html.day-mode .footer-copy      { color: rgba(40,22,6,0.40); }
+
+/* ── FALLBACK: secciones muy largas siempre visibles ── */
+/* Ribera del Duero y similares tienen +100 items y el observer
+   puede no dispararse si la sección ocupa más del viewport */
+#ribera-del-duero,
+#blancos-gallegos {
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+/* ── ICONOS SOL / LUNA ── */
+.theme-toggle { color: var(--color-gold); }
+
+.icon-moon,
+.icon-sun {
+  position: absolute;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Noche: se ve la luna, el sol oculto */
+.icon-moon { opacity: 1; transform: rotate(0deg) scale(1); }
+.icon-sun  { opacity: 0; transform: rotate(90deg) scale(0.6); }
+
+/* Día: se ve el sol, la luna oculta */
+html.day-mode .icon-moon { opacity: 0; transform: rotate(-90deg) scale(0.6); }
+html.day-mode .icon-sun  { opacity: 1; transform: rotate(0deg) scale(1); }
