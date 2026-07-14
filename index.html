@@ -1,43 +1,35 @@
 <!DOCTYPE html>
-<html lang="es" class="day-mode">
 
+<html class="day-mode" lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>O Tunel — Tapería y Vinoteca en Ponteareas, Galicia</title>
-
-  <!-- ── SEO BÁSICO ── -->
-  <meta name="description"
-    content="Carta y carta de vinos de O Tunel, tapería y vinoteca en Ponteareas (Galicia). Tapas caseras, vinos gallegos, Ribera del Duero, Riojas y más. Reservas: +34 986 641 757.">
-  <meta name="keywords"
-    content="tapería Ponteareas, vinoteca Ponteareas, restaurante Ponteareas, tapas Galicia, vinos gallegos, albariño, ribera del duero, carta vinos, O Tunel">
-  <meta name="author" content="O Tunel Ponteareas">
-  <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://www.otunelponteareas.net/">
-
-  <!-- ── OPEN GRAPH (WhatsApp, Facebook, redes sociales) ── -->
-  <meta property="og:type" content="restaurant">
-  <meta property="og:title" content="O Tunel — Tapería y Vinoteca en Ponteareas">
-  <meta property="og:description"
-    content="Tapas caseras y una de las mejores selecciones de vinos de la zona. Ven a descubrir O Tunel en Ponteareas.">
-  <meta property="og:url" content="https://www.otunelponteareas.net/">
-  <meta property="og:locale" content="es_ES">
-  <meta property="og:site_name" content="O Tunel Ponteareas">
-  <meta property="og:image" content="https://otunelponteareas.net/logo-otunel.png">
-  <meta property="og:image:width" content="600">
-  <meta property="og:image:height" content="600">
-  <meta property="og:image:alt" content="Logo O Tunel Tapas — Desde 1947, Ponteareas">
-
-  <!-- Twitter imagen -->
-  <meta name="twitter:image" content="https://otunelponteareas.net/logo-otunel.png">
-
-  <!-- ── TWITTER / X ── -->
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="O Tunel — Tapería y Vinoteca en Ponteareas">
-  <meta name="twitter:description" content="Tapas caseras y una de las mejores selecciones de vinos de Galicia.">
-
-  <!-- ── DATOS ESTRUCTURADOS (Google entiende que es un restaurante) ── -->
-  <script type="application/ld+json">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>O Tunel — Tapería y Vinoteca en Ponteareas, Galicia</title>
+<!-- ── SEO BÁSICO ── -->
+<meta content="Carta y carta de vinos de O Tunel, tapería y vinoteca en Ponteareas (Galicia). Tapas caseras, vinos gallegos, Ribera del Duero, Riojas y más. Reservas: +34 986 641 757." name="description"/>
+<meta content="tapería Ponteareas, vinoteca Ponteareas, restaurante Ponteareas, tapas Galicia, vinos gallegos, albariño, ribera del duero, carta vinos, O Tunel" name="keywords"/>
+<meta content="O Tunel Ponteareas" name="author"/>
+<meta content="index, follow" name="robots"/>
+<link href="https://www.otunelponteareas.net/" rel="canonical"/>
+<!-- ── OPEN GRAPH (WhatsApp, Facebook, redes sociales) ── -->
+<meta content="restaurant" property="og:type"/>
+<meta content="O Tunel — Tapería y Vinoteca en Ponteareas" property="og:title"/>
+<meta content="Tapas caseras y una de las mejores selecciones de vinos de Galicia. Ven a descubrir O Tunel en Ponteareas." property="og:description"/>
+<meta content="https://www.otunelponteareas.net/" property="og:url"/>
+<meta content="es_ES" property="og:locale"/>
+<meta content="O Tunel Ponteareas" property="og:site_name"/>
+<meta content="https://otunelponteareas.net/logo-otunel.png" property="og:image"/>
+<meta content="600" property="og:image:width"/>
+<meta content="600" property="og:image:height"/>
+<meta content="Logo O Tunel Tapas — Desde 1947, Ponteareas" property="og:image:alt"/>
+<!-- Twitter imagen -->
+<meta content="https://otunelponteareas.net/logo-otunel.png" name="twitter:image"/>
+<!-- ── TWITTER / X ── -->
+<meta content="summary" name="twitter:card"/>
+<meta content="O Tunel — Tapería y Vinoteca en Ponteareas" name="twitter:title"/>
+<meta content="Tapas caseras y una de las mejores selecciones de vinos de Galicia." name="twitter:description"/>
+<!-- ── DATOS ESTRUCTURADOS (Google entiende que es un restaurante) ── -->
+<script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "Restaurant",
@@ -59,1289 +51,1596 @@
   ]
 }
 </script>
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@300;400;500&display=swap"
-    rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
-  <style>
-    /* Solo lo que depende de JS en tiempo real */
-    [data-section] {
-      scroll-margin-top: var(--scroll-offset, 90px);
-    }
-  </style>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&amp;family=Inter:wght@300;400;500&amp;display=swap" rel="stylesheet"/>
+<link href="style.css" rel="stylesheet"/>
+<style>
+/* Solo lo que depende de JS en tiempo real */
+[data-section] { scroll-margin-top: var(--scroll-offset, 90px); }
+</style>
 </head>
-
 <body class="page-carta">
+<button aria-label="Cambiar modo día/noche" class="theme-toggle" id="themeToggle" title="Modo día / noche">
+<!-- Icono luna (modo noche activo) -->
+<svg class="icon-moon" fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewbox="0 0 24 24" width="18" xmlns="http://www.w3.org/2000/svg">
+<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+</svg>
+<!-- Icono sol (modo día activo) -->
+<svg class="icon-sun" fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewbox="0 0 24 24" width="18" xmlns="http://www.w3.org/2000/svg">
+<circle cx="12" cy="12" r="5"></circle>
+<line x1="12" x2="12" y1="1" y2="3"></line>
+<line x1="12" x2="12" y1="21" y2="23"></line>
+<line x1="4.22" x2="5.64" y1="4.22" y2="5.64"></line>
+<line x1="18.36" x2="19.78" y1="18.36" y2="19.78"></line>
+<line x1="1" x2="3" y1="12" y2="12"></line>
+<line x1="21" x2="23" y1="12" y2="12"></line>
+<line x1="4.22" x2="5.64" y1="19.78" y2="18.36"></line>
+<line x1="18.36" x2="19.78" y1="5.64" y2="4.22"></line>
+</svg>
+</button>
+<header class="hero">
+<div class="hero-inner">
+<div class="hero-ornament">
+<div class="hero-line"></div>
+<div class="hero-diamond"></div>
+<div class="hero-line"></div>
+</div>
+<h1 class="hero-logo">O Tunel</h1>
+<p class="hero-sub">Ponteareas  ·  Tapas &amp; Vinos</p>
+<nav class="nav-wrap">
+<div class="nav-tabs">
+<button class="nav-tab active" data-page="carta">Carta</button>
+<button class="nav-tab" data-page="vinos">Vinos</button>
+</div>
+</nav>
+</div>
+</header>
+<div class="section-nav-bar" id="sectionNavBar">
+<nav aria-label="Secciones de la carta" class="section-nav is-visible" data-page-nav="carta">
+<div class="section-nav-track">
+<button class="section-nav-btn" data-target="tablas">Tablas</button>
+<span aria-hidden="true" class="nav-sep">✦</span>
+<button class="section-nav-btn" data-target="tostas">Tostas</button>
+<span aria-hidden="true" class="nav-sep">✦</span>
+<button class="section-nav-btn" data-target="del-corral">Del Corral</button>
+<span aria-hidden="true" class="nav-sep">✦</span>
+<button class="section-nav-btn" data-target="los-fritos">Los Fritos</button>
+<span aria-hidden="true" class="nav-sep">✦</span>
+<button class="section-nav-btn" data-target="seguimos-picando">Seguimos picando</button>
+<span aria-hidden="true" class="nav-sep">✦</span>
+<button class="section-nav-btn" data-target="ensaladas">Ensaladas</button>
+<span aria-hidden="true" class="nav-sep">✦</span>
+<button class="section-nav-btn" data-target="del-mar">Del Mar</button>
+<span aria-hidden="true" class="nav-sep">✦</span>
+<button class="section-nav-btn" data-target="de-la-tierra">De la Tierra</button>
+<span aria-hidden="true" class="nav-sep">✦</span>
+<button class="section-nav-btn" data-target="veganos-vegetarianos">Veganos</button>
+<span aria-hidden="true" class="nav-sep">✦</span>
+<button class="section-nav-btn" data-target="despedida-dulce">Postres</button>
+<span aria-hidden="true" class="nav-indicator"></span>
+</div>
+</nav>
+<nav aria-label="Secciones de vinos" class="section-nav" data-page-nav="vinos">
+<div class="section-nav-track">
+<button class="section-nav-btn" data-target="blancos-gallegos">Blancos Gallegos</button>
+<span aria-hidden="true" class="nav-sep">✦</span>
+<button class="section-nav-btn" data-target="tintos-gallegos">Tintos Gallegos</button>
+<span aria-hidden="true" class="nav-sep">✦</span>
+<button class="section-nav-btn" data-target="champanes">Champanes</button>
+<span aria-hidden="true" class="nav-sep">✦</span>
+<button class="section-nav-btn" data-target="ribera-del-duero">Ribera del Duero</button>
+<span aria-hidden="true" class="nav-sep">✦</span>
+<button class="section-nav-btn" data-target="toro">Toro</button>
+<span aria-hidden="true" class="nav-sep">✦</span>
+<button class="section-nav-btn" data-target="castilla-leon">Castilla y León</button>
+<span aria-hidden="true" class="nav-sep">✦</span>
+<button class="section-nav-btn" data-target="riojas">Riojas</button>
+<span aria-hidden="true" class="nav-indicator"></span>
+</div>
+</nav>
+</div>
+<main>
+<!-- ═══════════════ CARTA ═══════════════ -->
+<div class="page active" id="carta">
+<section class="menu-section" data-section="" id="tablas">
+<h2 class="section-title">Tablas</h2>
+<div class="section-rule"><span>✦</span></div>
+<ul class="item-list">
+<li class="item"><span class="item-name">Jamón Ibérico</span><span class="item-price">19,50</span></li>
+<li class="item">
+<span class="item-name">Jamón Ibérico con queso semicurado <span class="allergens"><img alt="Lácteos" src="/alergenos/simbolo alergeno lacteos.png"/><img alt="Soja" src="/alergenos/simbolo alergeno soja.png"/></span></span>
+<span class="item-price">22,00</span>
+</li>
+<li class="item"><span class="item-name">De Ibéricos (Jamón, chorizo, salchichón y lomo)</span><span class="item-price">19,50</span></li>
+<li class="item">
+<span class="item-name">De Quesos (Tetilla, semicurado, San Simón con almendras y membrillo) <span class="allergens"><img alt="Lácteos" src="/alergenos/simbolo alergeno lacteos.png"/><img alt="Soja" src="/alergenos/simbolo alergeno soja.png"/></span></span>
+<span class="item-price">17,50</span>
+</li>
+</ul>
+</section>
+<section class="menu-section" data-section="" id="tostas">
+<h2 class="section-title">Tostas</h2>
+<div class="section-rule"><span>✦</span></div>
+<ul class="item-list">
+<li class="item">
+<span class="item-name">Rulo de cabra, cebolla caramelizada, beicon y nueces, salsa sweet chili y módena <span class="allergens"><img alt="Soja" src="/alergenos/simbolo alergeno soja.png"/><img alt="Frutos secos" src="/alergenos/simbolo alergeno frutos secos.png"/><img alt="Lácteos" src="/alergenos/simbolo alergeno lacteos.png"/></span></span>
+<span class="item-price">9,00</span>
+</li>
+<li class="item">
+<span class="item-name">Atún, pimientos de piquillo confitados, salsa de pimientos y módena <span class="allergens"><img alt="Pescado" src="/alergenos/simbolo pescado alergenos.png"/></span></span>
+<span class="item-price">9,00</span>
+</li>
+<li class="item">
+<span class="item-name">Salmón ahumado, queso fresco, brotes de ensalada, salsa de pimientos y módena <span class="allergens"><img alt="Pescado" src="/alergenos/simbolo pescado alergenos.png"/><img alt="Lácteos" src="/alergenos/simbolo alergeno lacteos.png"/></span></span>
+<span class="item-price">9,00</span>
+</li>
+<li class="item">
+<span class="item-name">Sobrasada mallorquina, brie, cebolla crujiente, salsa de pimientos y módena <span class="allergens"><img alt="Lácteos" src="/alergenos/simbolo alergeno lacteos.png"/><img alt="Cereales" src="/alergenos/simbolo alergeno cereales.png"/><img alt="Huevos" src="/alergenos/simbolo alergeno huevos.png"/></span></span>
+<span class="item-price">9,00</span>
+</li>
+<li class="item">
+<span class="item-name">Anchoas, mermelada de pimientos, tetilla y pimientos de piquillo <span class="allergens"><img alt="Altramuces" src="/alergenos/simbolo alergeno altramuces.png"/><img alt="Lácteos" src="/alergenos/simbolo alergeno lacteos.png"/></span></span>
+<span class="item-price">9,50</span>
+</li>
+<li class="item"><span class="item-name">Setas, jamón y tomate con aceite y perejil, salsa de pimientos y módena</span><span class="item-price">9,00</span></li>
+</ul>
+</section>
+<section class="menu-section" data-section="" id="del-corral">
+<h2 class="section-title">Del Corral</h2>
+<div class="section-rule"><span>✦</span></div>
+<ul class="item-list">
+<li class="item"><span class="item-name">Huevos de corral con jamón y patatas</span><span class="item-price">11,00</span></li>
+<li class="item"><span class="item-name">Huevos de corral con choricitos y patatas <span class="allergens"><img alt="Huevos" src="/alergenos/simbolo alergeno huevos.png"/></span></span><span class="item-price">11,00</span></li>
+<li class="item"><span class="item-name">Huevos de corral con solomillo de cerdo ibérico, patatas y salsa de setas <span class="allergens"><img alt="Cereales" src="/alergenos/simbolo alergeno cereales.png"/><img alt="Lácteos" src="/alergenos/simbolo alergeno lacteos.png"/><img alt="Huevos" src="/alergenos/simbolo alergeno huevos.png"/></span></span><span class="item-price">12,50</span></li>
+<li class="item"><span class="item-name">Huevos de corral con secreto ibérico, patatas y jamón <span class="allergens"><img alt="Huevos" src="/alergenos/simbolo alergeno huevos.png"/></span></span><span class="item-price">12,50</span></li>
+<li class="item"><span class="item-name">Revuelto de setas con gambones <span class="allergens"><img alt="Crustáceos" src="/alergenos/simbolo alergeno crustaceo.png"/><img alt="Huevos" src="/alergenos/simbolo alergeno huevos.png"/></span></span><span class="item-price">9,75</span></li>
+<li class="item"><span class="item-name">Revuelto de bacalao con piquillo <span class="allergens"><img alt="Huevos" src="/alergenos/simbolo alergeno huevos.png"/><img alt="Pescado" src="/alergenos/simbolo pescado alergenos.png"/></span></span><span class="item-price">9,75</span></li>
+<li class="item"><span class="item-name">Revuelto de gulas y gambas <span class="allergens"><img alt="Crustáceos" src="/alergenos/simbolo alergeno crustaceo.png"/><img alt="Huevos" src="/alergenos/simbolo alergeno huevos.png"/></span></span><span class="item-price">10,00</span></li>
+</ul>
+</section>
+<section class="menu-section" data-section="" id="los-fritos">
+<h2 class="section-title">Los Fritos</h2>
+<div class="section-rule"><span>✦</span></div>
+<ul class="item-list">
+<li class="item"><span class="item-name">Chipirones en fritura de harina de maíz y ali-oli de ajo negro <span class="allergens"><img alt="Cereales" src="/alergenos/simbolo alergeno cereales.png"/><img alt="Frutos secos" src="/alergenos/simbolo alergeno frutos secos.png"/></span></span><span class="item-price">12,75</span></li>
+<li class="item"><span class="item-name">Croquetas caseras (consultar variedad) <span class="allergens"><img alt="Cereales" src="/alergenos/simbolo alergeno cereales.png"/><img alt="Huevos" src="/alergenos/simbolo alergeno huevos.png"/><img alt="Lácteos" src="/alergenos/simbolo alergeno lacteos.png"/><img alt="Sésamo" src="/alergenos/simbolo alergeno sesamo.png"/></span></span><span class="item-price">9,00</span></li>
+<li class="item"><span class="item-name">Langostinos crujientes en panko con mayonesa agridulce <span class="allergens"><img alt="Cereales" src="/alergenos/simbolo alergeno cereales.png"/><img alt="Crustáceos" src="/alergenos/simbolo alergeno crustaceo.png"/><img alt="Huevos" src="/alergenos/simbolo alergeno huevos.png"/></span></span><span class="item-price">10,75</span></li>
+<li class="item"><span class="item-name">Alitas de pollo con salsa de mostaza y miel <span class="allergens"><img alt="Cereales" src="/alergenos/simbolo alergeno cereales.png"/><img alt="Huevos" src="/alergenos/simbolo alergeno huevos.png"/><img alt="Mostaza" src="/alergenos/simbolo alergeno mostaza.png"/></span></span><span class="item-price">9,00</span></li>
+<li class="item"><span class="item-name">Dados de pollo salteados, manzana, salsa teriyaki, cebolla caramelizada y patatas <span class="allergens"><img alt="Sésamo" src="/alergenos/simbolo alergeno sesamo.png"/><img alt="Soja" src="/alergenos/simbolo alergeno soja.png"/></span></span><span class="item-price">12,00</span></li>
+<li class="item"><span class="item-name">Patatas bravas y ali-oli <span class="allergens"><img alt="Huevos" src="/alergenos/simbolo alergeno huevos.png"/></span></span><span class="item-price">5,75</span></li>
+<li class="item"><span class="item-name">Choquitos a la plancha, aceite de ajo y perejil y ali-oli de pimientos <span class="allergens"><img alt="Huevos" src="/alergenos/simbolo alergeno huevos.png"/><img alt="Lácteos" src="/alergenos/simbolo alergeno lacteos.png"/><img alt="Moluscos" src="/alergenos/simbolo alergeno moluscos.png"/></span></span><span class="item-price">13,50</span></li>
+<li class="item"><span class="item-name">Tortilla de patatas <span class="allergens"><img alt="Huevos" src="/alergenos/simbolo alergeno huevos.png"/></span></span><span class="item-price">9,75</span></li>
+</ul>
+</section>
+<section class="menu-section" data-section="" id="seguimos-picando">
+<h2 class="section-title">Seguimos picando…</h2>
+<div class="section-rule"><span>✦</span></div>
+<ul class="item-list">
+<li class="item"><span class="item-name">Salteado de setas y gambas <span class="allergens"><img alt="Crustáceos" src="/alergenos/simbolo alergeno crustaceo.png"/><img alt="Sésamo" src="/alergenos/simbolo alergeno sesamo.png"/><img alt="Soja" src="/alergenos/simbolo alergeno soja.png"/></span></span><span class="item-price">13,00</span></li>
+<li class="item"><span class="item-name">Anchoas del Cantábrico sobre tomate rallado y orégano <span class="allergens"><img alt="Crustáceos" src="/alergenos/simbolo alergeno crustaceo.png"/><img alt="Pescado" src="/alergenos/simbolo pescado alergenos.png"/></span></span><span class="item-price">16,00</span></li>
+<li class="item"><span class="item-name">Vieras del Pacífico a la plancha con aliño de ajo y perejil <span class="allergens"><img alt="Crustáceos" src="/alergenos/simbolo alergeno crustaceo.png"/><img alt="Moluscos" src="/alergenos/simbolo alergeno moluscos.png"/></span></span><span class="item-price">18,00</span></li>
+<li class="item"><span class="item-name">Cazuelita de setas y gambas al ajillo <span class="allergens"><img alt="Crustáceos" src="/alergenos/simbolo alergeno crustaceo.png"/><img alt="Sésamo" src="/alergenos/simbolo alergeno sesamo.png"/><img alt="Soja" src="/alergenos/simbolo alergeno soja.png"/></span></span><span class="item-price">14,75</span></li>
+</ul>
+</section>
+<section class="menu-section" data-section="" id="ensaladas">
+<h2 class="section-title">Ensaladas</h2>
+<p class="section-note">Con aceite de oliva y vinagre de módena</p>
+<div class="section-rule"><span>✦</span></div>
+<ul class="item-list">
+<li class="item"><span class="item-name">De hojas tiernas, piquillos y ventresca de bonito y espárragos <span class="allergens"><img alt="Pescado" src="/alergenos/simbolo pescado alergenos.png"/></span></span><span class="item-price">14,00</span></li>
+<li class="item"><span class="item-name">Mezclum de lechugas (con queso camembert frito y mermelada de higos) <span class="allergens"><img alt="Cacahuetes" src="/alergenos/simbolo alergeno cacahuetes.png"/><img alt="Lácteos" src="/alergenos/simbolo alergeno lacteos.png"/></span></span><span class="item-price">11,50</span></li>
+<li class="item"><span class="item-name">De jamón, queso semicurado y frutos secos <span class="allergens"><img alt="Frutos secos" src="/alergenos/simbolo alergeno frutos secos.png"/><img alt="Lácteos" src="/alergenos/simbolo alergeno lacteos.png"/></span></span><span class="item-price">12,00</span></li>
+<li class="item"><span class="item-name">Templada de vieiras del Atlántico y langostinos con frutos secos <span class="allergens"><img alt="Moluscos" src="/alergenos/simbolo alergeno moluscos.png"/><img alt="Crustáceos" src="/alergenos/simbolo alergeno crustaceo.png"/></span></span><span class="item-price">17,50</span></li>
+</ul>
+</section>
+<section class="menu-section" data-section="" id="del-mar">
+<h2 class="section-title">Del Mar</h2>
+<div class="section-rule"><span>✦</span></div>
+<ul class="item-list">
+<li class="item"><span class="item-name">Bacalao al horno con setas y castañas <span class="allergens"><img alt="Pescado" src="/alergenos/simbolo pescado alergenos.png"/></span></span><span class="item-price">23,50</span></li>
+<li class="item"><span class="item-name">Bacalao a la parrilla con salteado de verduras al wok <span class="allergens"><img alt="Pescado" src="/alergenos/simbolo pescado alergenos.png"/></span></span><span class="item-price">21,50</span></li>
+<li class="item"><span class="item-name">Lomo de merluza a la plancha con ensalada de temporada <span class="allergens"><img alt="Moluscos" src="/alergenos/simbolo alergeno moluscos.png"/><img alt="Pescado" src="/alergenos/simbolo pescado alergenos.png"/></span></span><span class="item-price">16,50</span></li>
+<li class="item"><span class="item-name">Tentáculo de pulpo a la parrilla <span class="allergens"><img alt="Moluscos" src="/alergenos/simbolo alergeno moluscos.png"/><img alt="Pescado" src="/alergenos/simbolo pescado alergenos.png"/></span></span><span class="item-price">19,75</span></li>
+</ul>
+</section>
+<section class="menu-section" data-section="" id="de-la-tierra">
+<h2 class="section-title">De la Tierra</h2>
+<div class="section-rule"><span>✦</span></div>
+<ul class="item-list">
+<li class="item"><span class="item-name">Picaña de vacuno a la parrilla</span><span class="item-price">19,75</span></li>
+<li class="item"><span class="item-name">Entrecot de ternera gallega a la parrilla con salsa a la pimienta <span class="allergens"><img alt="Apio" src="/alergenos/simbolo alergeno apio.png"/><img alt="Cereales" src="/alergenos/simbolo alergeno cereales.png"/><img alt="Huevos" src="/alergenos/simbolo alergeno huevos.png"/><img alt="Lácteos" src="/alergenos/simbolo alergeno lacteos.png"/><img alt="Soja" src="/alergenos/simbolo alergeno soja.png"/></span></span><span class="item-price">19,75</span></li>
+<li class="item"><span class="item-name">Secreto de cerdo ibérico con salsa BBQ <span class="allergens"><img alt="Apio" src="/alergenos/simbolo alergeno apio.png"/><img alt="Mostaza" src="/alergenos/simbolo alergeno mostaza.png"/></span></span><span class="item-price">15,50</span></li>
+<li class="item"><span class="item-name">Chuletón de vacuno mayor <em class="item-note">(por encargo)</em></span><span class="item-price">S/Peso</span></li>
+<li class="item"><span class="item-name">Variado de carnes: Entrecot, secreto y picaña <em class="item-note">(mín. 2 personas)</em></span><span class="item-price">43,50</span></li>
+<li class="item"><span class="item-name">Hamburguesa de buey con queso cheddar, beicon y lechuga <span class="allergens"><img alt="Cereales" src="/alergenos/simbolo alergeno cereales.png"/><img alt="Frutos secos" src="/alergenos/simbolo alergeno frutos secos.png"/><img alt="Huevos" src="/alergenos/simbolo alergeno huevos.png"/><img alt="Lácteos" src="/alergenos/simbolo alergeno lacteos.png"/><img alt="Sésamo" src="/alergenos/simbolo alergeno sesamo.png"/><img alt="Sulfitos" src="/alergenos/simbolo alergeno sulfitos.png"/></span></span><span class="item-price">9,75</span></li>
+<li class="item"><span class="item-name">Pan por persona</span><span class="item-price">0,85</span></li>
+</ul>
+</section>
+<section class="menu-section" data-section="" id="veganos-vegetarianos">
+<h2 class="section-title">Veganos y Vegetarianos</h2>
+<div class="section-rule"><span>✦</span></div>
+<ul class="item-list">
+<li class="item"><span class="item-name">Verduras a la plancha (tomate, cebolla, pimientos, calabacín y setas)</span><span class="item-price">12,75</span></li>
+<li class="item"><span class="item-name">Salteado de verduras (tomate, cebolla, pimientos, calabacín, berenjena, setas, ajo y perejil)</span><span class="item-price">13,75</span></li>
+</ul>
+</section>
+<section class="menu-section" data-section="" id="despedida-dulce">
+<h2 class="section-title">Despedida Dulce</h2>
+<div class="section-rule"><span>✦</span></div>
+<ul class="item-list">
+<li class="item"><span class="item-name">Arroz con leche <span class="allergens"><img alt="Cereales" src="/alergenos/simbolo alergeno cereales.png"/><img alt="Frutos secos" src="/alergenos/simbolo alergeno frutos secos.png"/><img alt="Lácteos" src="/alergenos/simbolo alergeno lacteos.png"/></span></span><span class="item-price">4,50</span></li>
+<li class="item"><span class="item-name">Coulant de chocolate con helado de vainilla <span class="allergens"><img alt="Cereales" src="/alergenos/simbolo alergeno cereales.png"/><img alt="Frutos secos" src="/alergenos/simbolo alergeno frutos secos.png"/><img alt="Lácteos" src="/alergenos/simbolo alergeno lacteos.png"/><img alt="Huevos" src="/alergenos/simbolo alergeno huevos.png"/><img alt="Sésamo" src="/alergenos/simbolo alergeno sesamo.png"/><img alt="Soja" src="/alergenos/simbolo alergeno soja.png"/></span></span><span class="item-price">5,75</span></li>
+<li class="item"><span class="item-name">Tarta de queso semifría con mermelada de fresa <span class="allergens"><img alt="Cereales" src="/alergenos/simbolo alergeno cereales.png"/><img alt="Lácteos" src="/alergenos/simbolo alergeno lacteos.png"/><img alt="Soja" src="/alergenos/simbolo alergeno soja.png"/></span></span><span class="item-price">4,75</span></li>
+<li class="item"><span class="item-name">Tiramisú <span class="allergens"><img alt="Cereales" src="/alergenos/simbolo alergeno cereales.png"/><img alt="Frutos secos" src="/alergenos/simbolo alergeno frutos secos.png"/><img alt="Lácteos" src="/alergenos/simbolo alergeno lacteos.png"/><img alt="Huevos" src="/alergenos/simbolo alergeno huevos.png"/><img alt="Sésamo" src="/alergenos/simbolo alergeno sesamo.png"/><img alt="Soja" src="/alergenos/simbolo alergeno soja.png"/></span></span><span class="item-price">6,75</span></li>
+<li class="item"><span class="item-name">Tarta de la abuela <span class="allergens"><img alt="Cereales" src="/alergenos/simbolo alergeno cereales.png"/><img alt="Frutos secos" src="/alergenos/simbolo alergeno frutos secos.png"/><img alt="Lácteos" src="/alergenos/simbolo alergeno lacteos.png"/><img alt="Huevos" src="/alergenos/simbolo alergeno huevos.png"/></span></span><span class="item-price">5,75</span></li>
+<li class="item"><span class="item-name">Flan de café <span class="allergens"><img alt="Lácteos" src="/alergenos/simbolo alergeno lacteos.png"/><img alt="Huevos" src="/alergenos/simbolo alergeno huevos.png"/></span></span><span class="item-price">4,50</span></li>
+</ul>
+</section>
+<div class="allergen-legend" data-section="">
+<h3>Referencia de Alérgenos</h3>
+<div class="allergen-grid">
+<div class="allergen-item"><img alt="" src="/alergenos/simbolo alergeno altramuces.png"/>Altramuces</div>
+<div class="allergen-item"><img alt="" src="/alergenos/simbolo alergeno apio.png"/>Apio</div>
+<div class="allergen-item"><img alt="" src="/alergenos/simbolo alergeno cacahuetes.png"/>Cacahuetes</div>
+<div class="allergen-item"><img alt="" src="/alergenos/simbolo alergeno cereales.png"/>Cereales con gluten</div>
+<div class="allergen-item"><img alt="" src="/alergenos/simbolo alergeno crustaceo.png"/>Crustáceos</div>
+<div class="allergen-item"><img alt="" src="/alergenos/simbolo alergeno frutos secos.png"/>Frutos secos</div>
+<div class="allergen-item"><img alt="" src="/alergenos/simbolo alergeno huevos.png"/>Huevos</div>
+<div class="allergen-item"><img alt="" src="/alergenos/simbolo alergeno lacteos.png"/>Lácteos</div>
+<div class="allergen-item"><img alt="" src="/alergenos/simbolo alergeno moluscos.png"/>Moluscos</div>
+<div class="allergen-item"><img alt="" src="/alergenos/simbolo alergeno mostaza.png"/>Mostaza</div>
+<div class="allergen-item"><img alt="" src="/alergenos/simbolo alergeno sesamo.png"/>Sésamo</div>
+<div class="allergen-item"><img alt="" src="/alergenos/simbolo alergeno soja.png"/>Soja</div>
+<div class="allergen-item"><img alt="" src="/alergenos/simbolo alergeno sulfitos.png"/>Sulfitos</div>
+<div class="allergen-item"><img alt="" src="/alergenos/simbolo pescado alergenos.png"/>Pescado</div>
+</div>
+</div>
+</div><!-- /carta -->
+<!-- ═══════════════ VINOS ═══════════════ -->
+<div class="page" id="vinos">
+<!-- BLANCOS GALLEGOS -->
+<section class="menu-section" data-section="" id="blancos-gallegos">
+<h2 class="section-title wine-region-title">Blancos Gallegos</h2>
+<div class="section-rule"><span>✦</span></div>
+<h3 class="wine-subregion">Monterrei</h3>
+<ul class="item-list">
 
-  <button class="theme-toggle" id="themeToggle" aria-label="Cambiar modo día/noche" title="Modo día / noche">
-    <!-- Icono luna (modo noche activo) -->
-    <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
-      stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-      <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
-    </svg>
-    <!-- Icono sol (modo día activo) -->
-    <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
-      stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-      <circle cx="12" cy="12" r="5" />
-      <line x1="12" y1="1" x2="12" y2="3" />
-      <line x1="12" y1="21" x2="12" y2="23" />
-      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
-      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
-      <line x1="1" y1="12" x2="3" y2="12" />
-      <line x1="21" y1="12" x2="23" y2="12" />
-      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
-      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
-    </svg>
-  </button>
 
-  <header class="hero">
-    <div class="hero-inner">
-      <div class="hero-ornament">
-        <div class="hero-line"></div>
-        <div class="hero-diamond"></div>
-        <div class="hero-line"></div>
-      </div>
-      <h1 class="hero-logo">O Tunel</h1>
-      <p class="hero-sub">Ponteareas &nbsp;·&nbsp; Tapas &amp; Vinos</p>
-      <nav class="nav-wrap">
-        <div class="nav-tabs">
-          <button class="nav-tab active" data-page="carta">Carta</button>
-          <button class="nav-tab" data-page="vinos">Vinos</button>
-        </div>
-      </nav>
-    </div>
-  </header>
 
-  <div class="section-nav-bar" id="sectionNavBar">
-    <nav class="section-nav is-visible" data-page-nav="carta" aria-label="Secciones de la carta">
-      <div class="section-nav-track">
-        <button class="section-nav-btn" data-target="tablas">Tablas</button>
-        <span class="nav-sep" aria-hidden="true">✦</span>
-        <button class="section-nav-btn" data-target="tostas">Tostas</button>
-        <span class="nav-sep" aria-hidden="true">✦</span>
-        <button class="section-nav-btn" data-target="del-corral">Del Corral</button>
-        <span class="nav-sep" aria-hidden="true">✦</span>
-        <button class="section-nav-btn" data-target="los-fritos">Los Fritos</button>
-        <span class="nav-sep" aria-hidden="true">✦</span>
-        <button class="section-nav-btn" data-target="seguimos-picando">Seguimos picando</button>
-        <span class="nav-sep" aria-hidden="true">✦</span>
-        <button class="section-nav-btn" data-target="ensaladas">Ensaladas</button>
-        <span class="nav-sep" aria-hidden="true">✦</span>
-        <button class="section-nav-btn" data-target="del-mar">Del Mar</button>
-        <span class="nav-sep" aria-hidden="true">✦</span>
-        <button class="section-nav-btn" data-target="de-la-tierra">De la Tierra</button>
-        <span class="nav-sep" aria-hidden="true">✦</span>
-        <button class="section-nav-btn" data-target="veganos-vegetarianos">Veganos</button>
-        <span class="nav-sep" aria-hidden="true">✦</span>
-        <button class="section-nav-btn" data-target="despedida-dulce">Postres</button>
-        <span class="nav-indicator" aria-hidden="true"></span>
-      </div>
-    </nav>
-    <nav class="section-nav" data-page-nav="vinos" aria-label="Secciones de vinos">
-      <div class="section-nav-track">
-        <button class="section-nav-btn" data-target="blancos-gallegos">Blancos Gallegos</button>
-        <span class="nav-sep" aria-hidden="true">✦</span>
-        <button class="section-nav-btn" data-target="tintos-gallegos">Tintos Gallegos</button>
-        <span class="nav-sep" aria-hidden="true">✦</span>
-        <button class="section-nav-btn" data-target="champanes">Champanes</button>
-        <span class="nav-sep" aria-hidden="true">✦</span>
-        <button class="section-nav-btn" data-target="ribera-del-duero">Ribera del Duero</button>
-        <span class="nav-sep" aria-hidden="true">✦</span>
-        <button class="section-nav-btn" data-target="toro">Toro</button>
-        <span class="nav-sep" aria-hidden="true">✦</span>
-        <button class="section-nav-btn" data-target="castilla-leon">Castilla y León</button>
-        <span class="nav-sep" aria-hidden="true">✦</span>
-        <button class="section-nav-btn" data-target="riojas">Riojas</button>
-        <span class="nav-indicator" aria-hidden="true"></span>
-      </div>
-    </nav>
-  </div>
+<li class="item">
+<span class="item-name">Ladairo Godello<span class="wine-grape">Godello — elegante y untuoso, con acidez vibrante y fondo cítrico</span></span>
+<span class="item-price">16,00</span>
+</li><li class="item">
+<span class="item-name">Crego Monaguillo<span class="wine-grape">Godello — expresivo, con aromas a fruta de hueso y notas almendradas al final</span></span>
+<span class="item-price">16,00</span>
+</li><li class="item">
+<span class="item-name">3 Mentiras<span class="wine-grape">Godello, Doña Blanca, Treixadura — fresco y mineral con notas de hierba y flor blanca</span></span>
+<span class="item-price">17,50</span>
+</li></ul>
+<h3 class="wine-subregion">Valdeorras</h3>
+<ul class="item-list">
 
-  <main>
 
-    <!-- ═══════════════ CARTA ═══════════════ -->
-    <div id="carta" class="page active">
 
-      <section class="menu-section" id="tablas" data-section>
-        <h2 class="section-title">Tablas</h2>
-        <div class="section-rule"><span>✦</span></div>
-        <ul class="item-list">
-          <li class="item"><span class="item-name">Jamón Ibérico</span><span class="item-price">19,50</span></li>
-          <li class="item">
-            <span class="item-name">Jamón Ibérico con queso semicurado <span class="allergens"><img
-                  src="/alergenos/simbolo alergeno lacteos.png" alt="Lácteos"><img
-                  src="/alergenos/simbolo alergeno soja.png" alt="Soja"></span></span>
-            <span class="item-price">22,00</span>
-          </li>
-          <li class="item"><span class="item-name">De Ibéricos (Jamón, chorizo, salchichón y lomo)</span><span
-              class="item-price">19,50</span></li>
-          <li class="item">
-            <span class="item-name">De Quesos (Tetilla, semicurado, San Simón con almendras y membrillo) <span
-                class="allergens"><img src="/alergenos/simbolo alergeno lacteos.png" alt="Lácteos"><img
-                  src="/alergenos/simbolo alergeno soja.png" alt="Soja"></span></span>
-            <span class="item-price">17,50</span>
-          </li>
-        </ul>
-      </section>
 
-      <section class="menu-section" id="tostas" data-section>
-        <h2 class="section-title">Tostas</h2>
-        <div class="section-rule"><span>✦</span></div>
-        <ul class="item-list">
-          <li class="item">
-            <span class="item-name">Rulo de cabra, cebolla caramelizada, beicon y nueces, salsa sweet chili y módena
-              <span class="allergens"><img src="/alergenos/simbolo alergeno soja.png" alt="Soja"><img
-                  src="/alergenos/simbolo alergeno frutos secos.png" alt="Frutos secos"><img
-                  src="/alergenos/simbolo alergeno lacteos.png" alt="Lácteos"></span></span>
-            <span class="item-price">9,00</span>
-          </li>
-          <li class="item">
-            <span class="item-name">Atún, pimientos de piquillo confitados, salsa de pimientos y módena <span
-                class="allergens"><img src="/alergenos/simbolo pescado alergenos.png" alt="Pescado"></span></span>
-            <span class="item-price">9,00</span>
-          </li>
-          <li class="item">
-            <span class="item-name">Salmón ahumado, queso fresco, brotes de ensalada, salsa de pimientos y módena <span
-                class="allergens"><img src="/alergenos/simbolo pescado alergenos.png" alt="Pescado"><img
-                  src="/alergenos/simbolo alergeno lacteos.png" alt="Lácteos"></span></span>
-            <span class="item-price">9,00</span>
-          </li>
-          <li class="item">
-            <span class="item-name">Sobrasada mallorquina, brie, cebolla crujiente, salsa de pimientos y módena <span
-                class="allergens"><img src="/alergenos/simbolo alergeno lacteos.png" alt="Lácteos"><img
-                  src="/alergenos/simbolo alergeno cereales.png" alt="Cereales"><img
-                  src="/alergenos/simbolo alergeno huevos.png" alt="Huevos"></span></span>
-            <span class="item-price">9,00</span>
-          </li>
-          <li class="item">
-            <span class="item-name">Anchoas, mermelada de pimientos, tetilla y pimientos de piquillo <span
-                class="allergens"><img src="/alergenos/simbolo alergeno altramuces.png" alt="Altramuces"><img
-                  src="/alergenos/simbolo alergeno lacteos.png" alt="Lácteos"></span></span>
-            <span class="item-price">9,50</span>
-          </li>
-          <li class="item"><span class="item-name">Setas, jamón y tomate con aceite y perejil, salsa de pimientos y
-              módena</span><span class="item-price">9,00</span></li>
-        </ul>
-      </section>
 
-      <section class="menu-section" id="del-corral" data-section>
-        <h2 class="section-title">Del Corral</h2>
-        <div class="section-rule"><span>✦</span></div>
-        <ul class="item-list">
-          <li class="item"><span class="item-name">Huevos de corral con jamón y patatas</span><span
-              class="item-price">11,00</span></li>
-          <li class="item"><span class="item-name">Huevos de corral con choricitos y patatas <span
-                class="allergens"><img src="/alergenos/simbolo alergeno huevos.png" alt="Huevos"></span></span><span
-              class="item-price">11,00</span></li>
-          <li class="item"><span class="item-name">Huevos de corral con solomillo de cerdo ibérico, patatas y salsa de
-              setas <span class="allergens"><img src="/alergenos/simbolo alergeno cereales.png" alt="Cereales"><img
-                  src="/alergenos/simbolo alergeno lacteos.png" alt="Lácteos"><img
-                  src="/alergenos/simbolo alergeno huevos.png" alt="Huevos"></span></span><span
-              class="item-price">12,50</span></li>
-          <li class="item"><span class="item-name">Huevos de corral con secreto ibérico, patatas y jamón <span
-                class="allergens"><img src="/alergenos/simbolo alergeno huevos.png" alt="Huevos"></span></span><span
-              class="item-price">12,50</span></li>
-          <li class="item"><span class="item-name">Revuelto de setas con gambones <span class="allergens"><img
-                  src="/alergenos/simbolo alergeno crustaceo.png" alt="Crustáceos"><img
-                  src="/alergenos/simbolo alergeno huevos.png" alt="Huevos"></span></span><span
-              class="item-price">9,75</span></li>
-          <li class="item"><span class="item-name">Revuelto de bacalao con piquillo <span class="allergens"><img
-                  src="/alergenos/simbolo alergeno huevos.png" alt="Huevos"><img
-                  src="/alergenos/simbolo pescado alergenos.png" alt="Pescado"></span></span><span
-              class="item-price">9,75</span></li>
-          <li class="item"><span class="item-name">Revuelto de gulas y gambas <span class="allergens"><img
-                  src="/alergenos/simbolo alergeno crustaceo.png" alt="Crustáceos"><img
-                  src="/alergenos/simbolo alergeno huevos.png" alt="Huevos"></span></span><span
-              class="item-price">10,00</span></li>
-        </ul>
-      </section>
+<li class="item">
+<span class="item-name">Godeval<span class="wine-grape">Godello — referencia de la D.O., limpio y fresco con toques florales y mineral</span></span>
+<span class="item-price">17,50</span>
+</li><li class="item">
+<span class="item-name">O Luar do Sil<span class="wine-grape">Godello — amplio y elegante, con matices de fruta madura y mineral de pizarra</span></span>
+<span class="item-price">19,50</span>
+</li><li class="item">
+<span class="item-name">O Luar do Sil sobre Lías<span class="wine-grape">Godello — crianza sobre lías que aporta cremosidad, complejidad y gran persistencia</span></span>
+<span class="item-price">28,00</span>
+</li><li class="item">
+<span class="item-name">Godeval Cepas Vellas<span class="wine-grape">Godello — de viñas viejas, concentrado y complejo con larga crianza sobre lías</span></span>
+<span class="item-price">30,00</span>
+</li><li class="item">
+<span class="item-name">Godeval Revival<span class="wine-grape">Godello — añada especial de máxima expresión, amplio, profundo y de largo recorrido</span></span>
+<span class="item-price">42,00</span>
+</li></ul>
+<h3 class="wine-subregion">Bierzo</h3>
+<ul class="item-list">
+<li class="item">
+<span class="item-name">Valtuille El Val<span class="wine-grape">Godello — finca singular en el Bierzo, mineral y tenso con una acidez perfecta</span></span>
+<span class="item-price">45,00</span>
+</li>
+</ul>
+<h3 class="wine-subregion">Albariños</h3>
+<ul class="item-list">
 
-      <section class="menu-section" id="los-fritos" data-section>
-        <h2 class="section-title">Los Fritos</h2>
-        <div class="section-rule"><span>✦</span></div>
-        <ul class="item-list">
-          <li class="item"><span class="item-name">Chipirones en fritura de harina de maíz y ali-oli de ajo negro <span
-                class="allergens"><img src="/alergenos/simbolo alergeno cereales.png" alt="Cereales"><img
-                  src="/alergenos/simbolo alergeno frutos secos.png" alt="Frutos secos"></span></span><span
-              class="item-price">12,75</span></li>
-          <li class="item"><span class="item-name">Croquetas caseras (consultar variedad) <span class="allergens"><img
-                  src="/alergenos/simbolo alergeno cereales.png" alt="Cereales"><img
-                  src="/alergenos/simbolo alergeno huevos.png" alt="Huevos"><img
-                  src="/alergenos/simbolo alergeno lacteos.png" alt="Lácteos"><img
-                  src="/alergenos/simbolo alergeno sesamo.png" alt="Sésamo"></span></span><span
-              class="item-price">9,00</span></li>
-          <li class="item"><span class="item-name">Langostinos crujientes en panko con mayonesa agridulce <span
-                class="allergens"><img src="/alergenos/simbolo alergeno cereales.png" alt="Cereales"><img
-                  src="/alergenos/simbolo alergeno crustaceo.png" alt="Crustáceos"><img
-                  src="/alergenos/simbolo alergeno huevos.png" alt="Huevos"></span></span><span
-              class="item-price">10,75</span></li>
-          <li class="item"><span class="item-name">Alitas de pollo con salsa de mostaza y miel <span
-                class="allergens"><img src="/alergenos/simbolo alergeno cereales.png" alt="Cereales"><img
-                  src="/alergenos/simbolo alergeno huevos.png" alt="Huevos"><img
-                  src="/alergenos/simbolo alergeno mostaza.png" alt="Mostaza"></span></span><span
-              class="item-price">9,00</span></li>
-          <li class="item"><span class="item-name">Dados de pollo salteados, manzana, salsa teriyaki, cebolla
-              caramelizada y patatas <span class="allergens"><img src="/alergenos/simbolo alergeno sesamo.png"
-                  alt="Sésamo"><img src="/alergenos/simbolo alergeno soja.png" alt="Soja"></span></span><span
-              class="item-price">12,00</span></li>
-          <li class="item"><span class="item-name">Patatas bravas y ali-oli <span class="allergens"><img
-                  src="/alergenos/simbolo alergeno huevos.png" alt="Huevos"></span></span><span
-              class="item-price">5,75</span></li>
-          <li class="item"><span class="item-name">Choquitos a la plancha, aceite de ajo y perejil y ali-oli de
-              pimientos <span class="allergens"><img src="/alergenos/simbolo alergeno huevos.png" alt="Huevos"><img
-                  src="/alergenos/simbolo alergeno lacteos.png" alt="Lácteos"><img
-                  src="/alergenos/simbolo alergeno moluscos.png" alt="Moluscos"></span></span><span
-              class="item-price">13,50</span></li>
-          <li class="item"><span class="item-name">Tortilla de patatas <span class="allergens"><img
-                  src="/alergenos/simbolo alergeno huevos.png" alt="Huevos"></span></span><span
-              class="item-price">9,75</span></li>
-        </ul>
-      </section>
 
-      <section class="menu-section" id="seguimos-picando" data-section>
-        <h2 class="section-title">Seguimos picando…</h2>
-        <div class="section-rule"><span>✦</span></div>
-        <ul class="item-list">
-          <li class="item"><span class="item-name">Salteado de setas y gambas <span class="allergens"><img
-                  src="/alergenos/simbolo alergeno crustaceo.png" alt="Crustáceos"><img
-                  src="/alergenos/simbolo alergeno sesamo.png" alt="Sésamo"><img
-                  src="/alergenos/simbolo alergeno soja.png" alt="Soja"></span></span><span
-              class="item-price">13,00</span></li>
-          <li class="item"><span class="item-name">Anchoas del Cantábrico sobre tomate rallado y orégano <span
-                class="allergens"><img src="/alergenos/simbolo alergeno crustaceo.png" alt="Crustáceos"><img
-                  src="/alergenos/simbolo pescado alergenos.png" alt="Pescado"></span></span><span
-              class="item-price">16,00</span></li>
-          <li class="item"><span class="item-name">Vieras del Pacífico a la plancha con aliño de ajo y perejil <span
-                class="allergens"><img src="/alergenos/simbolo alergeno crustaceo.png" alt="Crustáceos"><img
-                  src="/alergenos/simbolo alergeno moluscos.png" alt="Moluscos"></span></span><span
-              class="item-price">18,00</span></li>
-          <li class="item"><span class="item-name">Cazuelita de setas y gambas al ajillo <span class="allergens"><img
-                  src="/alergenos/simbolo alergeno crustaceo.png" alt="Crustáceos"><img
-                  src="/alergenos/simbolo alergeno sesamo.png" alt="Sésamo"><img
-                  src="/alergenos/simbolo alergeno soja.png" alt="Soja"></span></span><span
-              class="item-price">14,75</span></li>
-        </ul>
-      </section>
 
-      <section class="menu-section" id="ensaladas" data-section>
-        <h2 class="section-title">Ensaladas</h2>
-        <p class="section-note">Con aceite de oliva y vinagre de módena</p>
-        <div class="section-rule"><span>✦</span></div>
-        <ul class="item-list">
-          <li class="item"><span class="item-name">De hojas tiernas, piquillos y ventresca de bonito y espárragos <span
-                class="allergens"><img src="/alergenos/simbolo pescado alergenos.png" alt="Pescado"></span></span><span
-              class="item-price">14,00</span></li>
-          <li class="item"><span class="item-name">Mezclum de lechugas (con queso camembert frito y mermelada de higos)
-              <span class="allergens"><img src="/alergenos/simbolo alergeno cacahuetes.png" alt="Cacahuetes"><img
-                  src="/alergenos/simbolo alergeno lacteos.png" alt="Lácteos"></span></span><span
-              class="item-price">11,50</span></li>
-          <li class="item"><span class="item-name">De jamón, queso semicurado y frutos secos <span
-                class="allergens"><img src="/alergenos/simbolo alergeno frutos secos.png" alt="Frutos secos"><img
-                  src="/alergenos/simbolo alergeno lacteos.png" alt="Lácteos"></span></span><span
-              class="item-price">12,00</span></li>
-          <li class="item"><span class="item-name">Templada de vieiras del Atlántico y langostinos con frutos secos
-              <span class="allergens"><img src="/alergenos/simbolo alergeno moluscos.png" alt="Moluscos"><img
-                  src="/alergenos/simbolo alergeno crustaceo.png" alt="Crustáceos"></span></span><span
-              class="item-price">17,50</span></li>
-        </ul>
-      </section>
 
-      <section class="menu-section" id="del-mar" data-section>
-        <h2 class="section-title">Del Mar</h2>
-        <div class="section-rule"><span>✦</span></div>
-        <ul class="item-list">
-          <li class="item"><span class="item-name">Bacalao al horno con setas y castañas <span class="allergens"><img
-                  src="/alergenos/simbolo pescado alergenos.png" alt="Pescado"></span></span><span
-              class="item-price">23,50</span></li>
-          <li class="item"><span class="item-name">Bacalao a la parrilla con salteado de verduras al wok <span
-                class="allergens"><img src="/alergenos/simbolo pescado alergenos.png" alt="Pescado"></span></span><span
-              class="item-price">21,50</span></li>
-          <li class="item"><span class="item-name">Lomo de merluza a la plancha con ensalada de temporada <span
-                class="allergens"><img src="/alergenos/simbolo alergeno moluscos.png" alt="Moluscos"><img
-                  src="/alergenos/simbolo pescado alergenos.png" alt="Pescado"></span></span><span
-              class="item-price">16,50</span></li>
-          <li class="item"><span class="item-name">Tentáculo de pulpo a la parrilla <span class="allergens"><img
-                  src="/alergenos/simbolo alergeno moluscos.png" alt="Moluscos"><img
-                  src="/alergenos/simbolo pescado alergenos.png" alt="Pescado"></span></span><span
-              class="item-price">19,75</span></li>
-        </ul>
-      </section>
 
-      <section class="menu-section" id="de-la-tierra" data-section>
-        <h2 class="section-title">De la Tierra</h2>
-        <div class="section-rule"><span>✦</span></div>
-        <ul class="item-list">
-          <li class="item"><span class="item-name">Picaña de vacuno a la parrilla</span><span
-              class="item-price">19,75</span></li>
-          <li class="item"><span class="item-name">Entrecot de ternera gallega a la parrilla con salsa a la pimienta
-              <span class="allergens"><img src="/alergenos/simbolo alergeno apio.png" alt="Apio"><img
-                  src="/alergenos/simbolo alergeno cereales.png" alt="Cereales"><img
-                  src="/alergenos/simbolo alergeno huevos.png" alt="Huevos"><img
-                  src="/alergenos/simbolo alergeno lacteos.png" alt="Lácteos"><img
-                  src="/alergenos/simbolo alergeno soja.png" alt="Soja"></span></span><span
-              class="item-price">19,75</span></li>
-          <li class="item"><span class="item-name">Secreto de cerdo ibérico con salsa BBQ <span class="allergens"><img
-                  src="/alergenos/simbolo alergeno apio.png" alt="Apio"><img
-                  src="/alergenos/simbolo alergeno mostaza.png" alt="Mostaza"></span></span><span
-              class="item-price">15,50</span></li>
-          <li class="item"><span class="item-name">Chuletón de vacuno mayor <em class="item-note">(por
-                encargo)</em></span><span class="item-price">S/Peso</span></li>
-          <li class="item"><span class="item-name">Variado de carnes: Entrecot, secreto y picaña <em
-                class="item-note">(mín. 2 personas)</em></span><span class="item-price">43,50</span></li>
-          <li class="item"><span class="item-name">Hamburguesa de buey con queso cheddar, beicon y lechuga <span
-                class="allergens"><img src="/alergenos/simbolo alergeno cereales.png" alt="Cereales"><img
-                  src="/alergenos/simbolo alergeno frutos secos.png" alt="Frutos secos"><img
-                  src="/alergenos/simbolo alergeno huevos.png" alt="Huevos"><img
-                  src="/alergenos/simbolo alergeno lacteos.png" alt="Lácteos"><img
-                  src="/alergenos/simbolo alergeno sesamo.png" alt="Sésamo"><img
-                  src="/alergenos/simbolo alergeno sulfitos.png" alt="Sulfitos"></span></span><span
-              class="item-price">9,75</span></li>
-        </ul>
-      </section>
 
-      <section class="menu-section" id="veganos-vegetarianos" data-section>
-        <h2 class="section-title">Veganos y Vegetarianos</h2>
-        <div class="section-rule"><span>✦</span></div>
-        <ul class="item-list">
-          <li class="item"><span class="item-name">Verduras a la plancha (tomate, cebolla, pimientos, calabacín y
-              setas)</span><span class="item-price">12,75</span></li>
-          <li class="item"><span class="item-name">Salteado de verduras (tomate, cebolla, pimientos, calabacín,
-              berenjena, setas, ajo y perejil)</span><span class="item-price">13,75</span></li>
-        </ul>
-      </section>
 
-      <section class="menu-section" id="despedida-dulce" data-section>
-        <h2 class="section-title">Despedida Dulce</h2>
-        <div class="section-rule"><span>✦</span></div>
-        <ul class="item-list">
-          <li class="item"><span class="item-name">Arroz con leche <span class="allergens"><img
-                  src="/alergenos/simbolo alergeno cereales.png" alt="Cereales"><img
-                  src="/alergenos/simbolo alergeno frutos secos.png" alt="Frutos secos"><img
-                  src="/alergenos/simbolo alergeno lacteos.png" alt="Lácteos"></span></span><span
-              class="item-price">4,50</span></li>
-          <li class="item"><span class="item-name">Coulant de chocolate con helado de vainilla <span
-                class="allergens"><img src="/alergenos/simbolo alergeno cereales.png" alt="Cereales"><img
-                  src="/alergenos/simbolo alergeno frutos secos.png" alt="Frutos secos"><img
-                  src="/alergenos/simbolo alergeno lacteos.png" alt="Lácteos"><img
-                  src="/alergenos/simbolo alergeno huevos.png" alt="Huevos"><img
-                  src="/alergenos/simbolo alergeno sesamo.png" alt="Sésamo"><img
-                  src="/alergenos/simbolo alergeno soja.png" alt="Soja"></span></span><span
-              class="item-price">5,75</span></li>
-          <li class="item"><span class="item-name">Tarta de queso semifría con mermelada de fresa <span
-                class="allergens"><img src="/alergenos/simbolo alergeno cereales.png" alt="Cereales"><img
-                  src="/alergenos/simbolo alergeno lacteos.png" alt="Lácteos"><img
-                  src="/alergenos/simbolo alergeno soja.png" alt="Soja"></span></span><span
-              class="item-price">4,75</span></li>
-          <li class="item"><span class="item-name">Tiramisú <span class="allergens"><img
-                  src="/alergenos/simbolo alergeno cereales.png" alt="Cereales"><img
-                  src="/alergenos/simbolo alergeno frutos secos.png" alt="Frutos secos"><img
-                  src="/alergenos/simbolo alergeno lacteos.png" alt="Lácteos"><img
-                  src="/alergenos/simbolo alergeno huevos.png" alt="Huevos"><img
-                  src="/alergenos/simbolo alergeno sesamo.png" alt="Sésamo"><img
-                  src="/alergenos/simbolo alergeno soja.png" alt="Soja"></span></span><span
-              class="item-price">6,75</span></li>
-          <li class="item"><span class="item-name">Tarta de la abuela <span class="allergens"><img
-                  src="/alergenos/simbolo alergeno cereales.png" alt="Cereales"><img
-                  src="/alergenos/simbolo alergeno frutos secos.png" alt="Frutos secos"><img
-                  src="/alergenos/simbolo alergeno lacteos.png" alt="Lácteos"><img
-                  src="/alergenos/simbolo alergeno huevos.png" alt="Huevos"></span></span><span
-              class="item-price">5,75</span></li>
-          <li class="item"><span class="item-name">Flan de café <span class="allergens"><img
-                  src="/alergenos/simbolo alergeno lacteos.png" alt="Lácteos"><img
-                  src="/alergenos/simbolo alergeno huevos.png" alt="Huevos"></span></span><span
-              class="item-price">4,50</span></li>
-        </ul>
 
-      </section>
 
-      <div>
-        <ul>
-          <li class="item"><span class="item-name">Pan por persona</span><span class="item-price">0,85</span></li>
 
-        </ul>
-      </div>
 
-      <div class="allergen-legend" data-section>
-        <h3>Referencia de Alérgenos</h3>
-        <div class="allergen-grid">
-          <div class="allergen-item"><img src="/alergenos/simbolo alergeno altramuces.png" alt="">Altramuces</div>
-          <div class="allergen-item"><img src="/alergenos/simbolo alergeno apio.png" alt="">Apio</div>
-          <div class="allergen-item"><img src="/alergenos/simbolo alergeno cacahuetes.png" alt="">Cacahuetes</div>
-          <div class="allergen-item"><img src="/alergenos/simbolo alergeno cereales.png" alt="">Cereales con gluten
-          </div>
-          <div class="allergen-item"><img src="/alergenos/simbolo alergeno crustaceo.png" alt="">Crustáceos</div>
-          <div class="allergen-item"><img src="/alergenos/simbolo alergeno frutos secos.png" alt="">Frutos secos</div>
-          <div class="allergen-item"><img src="/alergenos/simbolo alergeno huevos.png" alt="">Huevos</div>
-          <div class="allergen-item"><img src="/alergenos/simbolo alergeno lacteos.png" alt="">Lácteos</div>
-          <div class="allergen-item"><img src="/alergenos/simbolo alergeno moluscos.png" alt="">Moluscos</div>
-          <div class="allergen-item"><img src="/alergenos/simbolo alergeno mostaza.png" alt="">Mostaza</div>
-          <div class="allergen-item"><img src="/alergenos/simbolo alergeno sesamo.png" alt="">Sésamo</div>
-          <div class="allergen-item"><img src="/alergenos/simbolo alergeno soja.png" alt="">Soja</div>
-          <div class="allergen-item"><img src="/alergenos/simbolo alergeno sulfitos.png" alt="">Sulfitos</div>
-          <div class="allergen-item"><img src="/alergenos/simbolo pescado alergenos.png" alt="">Pescado</div>
-        </div>
-      </div>
 
-    </div><!-- /carta -->
 
-    <!-- ═══════════════ VINOS ═══════════════ -->
-    <div id="vinos" class="page">
 
-      <!-- BLANCOS GALLEGOS -->
-      <section class="menu-section" id="blancos-gallegos" data-section>
-        <h2 class="section-title wine-region-title">Blancos Gallegos</h2>
-        <div class="section-rule"><span>✦</span></div>
 
-        <h3 class="wine-subregion">Monterrei</h3>
-        <ul class="item-list">
-          <li class="item">
-            <span class="item-name">3 Mentiras<span class="wine-grape">Godello, Doña Blanca, Treixadura — fresco y
-                mineral con notas de hierba y flor blanca</span></span>
-            <span class="item-price">17,50</span>
-          </li>
-          <li class="item">
-            <span class="item-name">Ladairo Godello<span class="wine-grape">Godello — elegante y untuoso, con acidez
-                vibrante y fondo cítrico</span></span>
-            <span class="item-price">16,00</span>
-          </li>
-          <li class="item">
-            <span class="item-name">Crego Monaguillo<span class="wine-grape">Godello — expresivo, con aromas a fruta de
-                hueso y notas almendradas al final</span></span>
-            <span class="item-price">16,00</span>
-          </li>
-        </ul>
-        <h3 class="wine-subregion">Valdeorras</h3>
-        <ul class="item-list">
-          <li class="item">
-            <span class="item-name">O Luar do Sil<span class="wine-grape">Godello — amplio y elegante, con matices de
-                fruta madura y mineral de pizarra</span></span>
-            <span class="item-price">19,50</span>
-          </li>
-          <li class="item">
-            <span class="item-name">O Luar do Sil sobre Lías<span class="wine-grape">Godello — crianza sobre lías que
-                aporta cremosidad, complejidad y gran persistencia</span></span>
-            <span class="item-price">28,00</span>
-          </li>
-          <li class="item">
-            <span class="item-name">Godeval<span class="wine-grape">Godello — referencia de la D.O., limpio y fresco con
-                toques florales y mineral</span></span>
-            <span class="item-price">17,50</span>
-          </li>
-        </ul>
-        <h3 class="wine-subregion">Bierzo</h3>
-        <ul class="item-list">
-          <li class="item">
-            <span class="item-name">Valtuille El Val<span class="wine-grape">Godello — finca singular en el Bierzo,
-                mineral y tenso con una acidez perfecta</span></span>
-            <span class="item-price">45,00</span>
-          </li>
-        </ul>
-        <h3 class="wine-subregion">Albariños</h3>
-        <ul class="item-list">
-          <li class="item">
-            <span class="item-name">Goda<span class="wine-grape">Albariño — joven y atlántico, con notas cítricas,
-                melocotón y un toque salino</span></span>
-            <span class="item-price">19,00</span>
-          </li>
-          <li class="item">
-            <span class="item-name">Albamar Osebal<span class="wine-grape">Albariño — de O Salnés, muy frutal, fresco y
-                limpio con final persistente</span></span>
-            <span class="item-price">24,75</span>
-          </li>
-          <li class="item">
-            <span class="item-name">Davide<span class="wine-grape">Albariño — elegante y complejo, con crianza que le
-                aporta profundidad y carácter</span></span>
-            <span class="item-price">26,75</span>
-          </li>
-          <li class="item">
-            <span class="item-name">Sentidiño<span class="wine-grape">Albariño — fresco y aromático, fácil de beber con
-                buena relación calidad-precio</span></span>
-            <span class="item-price">17,50</span>
-          </li>
-          <li class="item">
-            <span class="item-name">Gran Novas<span class="wine-grape">Albariño — expresivo y frutal, con buena acidez y
-                fondo herbal</span></span>
-            <span class="item-price">21,00</span>
-          </li>
-          <li class="item">
-            <span class="item-name">Mar de Nudos<span class="wine-grape">Albariño — vino de entrada que transmite el
-                carácter atlántico de la D.O. Rías Baixas</span></span>
-            <span class="item-price">15,00</span>
-          </li>
-        </ul>
 
-        <h3 class="wine-subregion">Ribeiros</h3>
-        <ul class="item-list">
-          <li class="item">
-            <span class="item-name">Viña Costeira Treixadura<span class="wine-grape">Treixadura — variedad reina del
-                Ribeiro, fresca y floral con un final sutil y limpio</span></span>
-            <span class="item-price">16,50</span>
-          </li>
-          <li class="item">
-            <span class="item-name">Catro Ferrados<span class="wine-grape">Treixadura, Godello, Albariño — coupage de
-                variedades autóctonas del Ribeiro con mucha expresión</span></span>
-            <span class="item-price">20,00</span>
-          </li>
-          <li class="item">
-            <span class="item-name">Razamonde<span class="wine-grape">Treixadura — de viñas en ladera, vivo y mineral
-                con un toque de hierba aromática</span></span>
-            <span class="item-price">17,75</span>
-          </li>
-        </ul>
 
-        <h3 class="wine-subregion">Godello</h3>
-        <ul class="item-list">
-          <li class="item">
-            <span class="item-name">Valdesil Montenovo<span class="wine-grape">Godello — joven y directo, con la acidez
-                y mineralidad característica de Valdeorras</span></span>
-            <span class="item-price">19,75</span>
-          </li>
-          <li class="item">
-            <span class="item-name">La Llorona<span class="wine-grape">Godello — singular y de autor, con carácter
-                atlántico muy marcado y gran frescura</span></span>
-            <span class="item-price">35,00</span>
-          </li>
-          <li class="item">
-            <span class="item-name">Val de Sil 2023<span class="wine-grape">Godello — de Valdeorras, expresivo y tenso
-                con acidez vibrante y final mineral</span></span>
-            <span class="item-price">40,00</span>
-          </li>
-          <li class="item">
-            <span class="item-name">Louro<span class="wine-grape">Godello — crianza en barrica que aporta complejidad y
-                tostados elegantes</span></span>
-            <span class="item-price">27,50</span>
-            </li>
-        </ul>
-      </section>
 
-      <!-- TINTOS GALLEGOS -->
-      <section class="menu-section" id="tintos-gallegos" data-section>
-        <h2 class="section-title wine-region-title">Tintos Gallegos</h2>
-        <div class="section-rule"><span>✦</span></div>
+<li class="item">
+<span class="item-name">Mar de Nudos<span class="wine-grape">Albariño — vino de entrada que transmite el carácter atlántico de la D.O. Rías Baixas</span></span>
+<span class="item-price">15,00</span>
+</li><li class="item">
+<span class="item-name">Campillo Albariño<span class="wine-grape">Albariño — clásico de las Rías Baixas, frutal y floral con final cítrico</span></span>
+<span class="item-price">16,00</span>
+</li><li class="item">
+<span class="item-name">Pioneros<span class="wine-grape">Albariño — accesible y aromático, ideal para iniciarse en los grandes blancos gallegos</span></span>
+<span class="item-price">17,00</span>
+</li><li class="item">
+<span class="item-name">Sentidiño<span class="wine-grape">Albariño — fresco y aromático, fácil de beber con buena relación calidad-precio</span></span>
+<span class="item-price">17,50</span>
+</li><li class="item">
+<span class="item-name">Fusco<span class="wine-grape">Albariño — joven y vibrante, con buena acidez y notas de fruta blanca</span></span>
+<span class="item-price">18,50</span>
+</li><li class="item">
+<span class="item-name">Goda<span class="wine-grape">Albariño — joven y atlántico, con notas cítricas, melocotón y un toque salino</span></span>
+<span class="item-price">19,00</span>
+</li><li class="item">
+<span class="item-name">Terras Gauda<span class="wine-grape">Albariño, Loureiro, Caiño Blanco — coupage atlántico con gran complejidad aromática</span></span>
+<span class="item-price">19,00</span>
+</li><li class="item">
+<span class="item-name">Altos Torona Loureira<span class="wine-grape">Loureiro — variedad delicada y perfumada, con notas de lima, rosa y fruta tropical</span></span>
+<span class="item-price">19,50</span>
+</li><li class="item">
+<span class="item-name">Gran Novas<span class="wine-grape">Albariño — expresivo y frutal, con buena acidez y fondo herbal</span></span>
+<span class="item-price">21,00</span>
+</li><li class="item">
+<span class="item-name">Alto de Torona<span class="wine-grape">Albariño — fresco y mineral del Condado do Tea, con buena estructura y largo final</span></span>
+<span class="item-price">21,50</span>
+</li><li class="item">
+<span class="item-name">Lusco<span class="wine-grape">Albariño — intenso y concentrado, de viñas viejas del Condado do Tea</span></span>
+<span class="item-price">22,00</span>
+</li><li class="item">
+<span class="item-name">Corisca Ecológico<span class="wine-grape">Albariño ecológico — natural y vivo, con fruta limpia y tensión mineral</span></span>
+<span class="item-price">23,50</span>
+</li><li class="item">
+<span class="item-name">Pentecostes<span class="wine-grape">Albariño — de la subzona Soutomaior, floral y cítrico con retrogusto amargo típico de la uva</span></span>
+<span class="item-price">24,00</span>
+</li><li class="item">
+<span class="item-name">Pazo San Mauro<span class="wine-grape">Albariño — de la subzona Val do Salnés, elegante con notas de melocotón y flor de azahar</span></span>
+<span class="item-price">24,50</span>
+</li><li class="item">
+<span class="item-name">Fillaboa<span class="wine-grape">Albariño — suave y floral, con una textura sedosa y persistencia notable</span></span>
+<span class="item-price">24,50</span>
+</li><li class="item">
+<span class="item-name">Albamar Osebal<span class="wine-grape">Albariño — de O Salnés, muy frutal, fresco y limpio con final persistente</span></span>
+<span class="item-price">24,75</span>
+</li><li class="item">
+<span class="item-name">Davide<span class="wine-grape">Albariño — elegante y complejo, con crianza que le aporta profundidad y carácter</span></span>
+<span class="item-price">26,75</span>
+</li><li class="item">
+<span class="item-name">El Perfeccionista<span class="wine-grape">Albariño — selección de las mejores parcelas, máxima expresión de la variedad</span></span>
+<span class="item-price">65,00</span>
+</li></ul>
+<h3 class="wine-subregion">Ribeiros</h3>
+<ul class="item-list">
 
-        <h3 class="wine-subregion">Mencías y Tintos Gallegos</h3>
-        <ul class="item-list">
-          <li class="item">
-            <span class="item-name">Crego Monaguillo Monterrei<span class="wine-grape">Mencía — fresco y frutal, con
-                notas de cereza y violeta típicas de esta variedad galega</span></span>
-            <span class="item-price">16,00</span>
-          </li>
-          <li class="item">
-            <span class="item-name">Ladairo Monterrei<span class="wine-grape">Mencía — elegante y mineral, con taninos
-                suaves y un final largo y especiado</span></span>
-            <span class="item-price">16,00</span>
-          </li>
-          <li class="item">
-            <span class="item-name">3 Mentiras Monterrei<span class="wine-grape">Mencía — jugoso y accesible, con buena
-                fruta roja y fondo herbáceo de terroir</span></span>
-            <span class="item-price">16,00</span>
-          </li>
-          <li class="item">
-            <span class="item-name">Valtuille Bierzo<span class="wine-grape">Mencía — del Bierzo, floral y muy perfumado
-                con taninos sedosos y acidez vibrante</span></span>
-            <span class="item-price">18,50</span>
-          </li>
-          <li class="item">
-            <span class="item-name">Attis Souson Rías Baixas<span class="wine-grape">Sousón — variedad autóctona gallega
-                recuperada, intensa y compleja con gran carácter</span></span>
-            <span class="item-price">31,00</span>
-          </li>
-          <li class="item">
-            <span class="item-name">Cotarello Ribeiro <em class="item-note">(tinto)</em><span
-                class="wine-grape">Brancellao, Sousón, Ferrón — coupage de tintas autóctonas del Ribeiro, único y
-                expresivo</span></span>
-            <span class="item-price">19,75</span>
-          </li>
-          <li class="item">
-            <span class="item-name">Fulcro Alixe<span class="wine-grape">Mencía — de la Ribeira Sacra, mineral y
-                vertical con la elegancia del terroir de granito</span></span>
-            <span class="item-price">17,50</span>
-          </li>
-          <li class="item">
-            <span class="item-name">Pittacum Mencía<span class="wine-grape">Mencía — frescos aromas de fruta roja y
-                violeta con taninos elegantes del Bierzo</span></span>
-            <span class="item-price">18,75</span>
-          </li>
-          <li class="item">
-            <span class="item-name">Abeledos<span class="wine-grape">Mencía — de viñas en ladera de la Ribeira Sacra,
-                mineral y tenso con fruta concentrada</span></span>
-            <span class="item-price">18,00</span>
-          </li>
-          <li class="item">
-            <span class="item-name">AAA Tinto<span class="wine-grape">Mencía, Garnacha Tintorera — coupage potente y
-                expresivo con fruta negra madura</span></span>
-            <span class="item-price">25,00</span>
-          </li>
-          <li class="item">
-            <span class="item-name">Petalos del Bierzo<span class="wine-grape">Mencía — de Álvaro Palacios, floral y
-                elegante, considerado referencia mundial de la variedad</span></span>
-            <span class="item-price">25,50</span>
-          </li>
-          <li class="item">
-            <span class="item-name">Fusco<span class="wine-grape">Mencía — joven y goloso, con fruta fresca y taninos
-                suaves ideales para el aperitivo</span></span>
-            <span class="item-price">16,50</span>
-          </li>
-        </ul>
-      </section>
 
-      <!-- CHAMPANES -->
-      <section class="menu-section" id="champanes" data-section>
-        <h2 class="section-title wine-region-title">Champanes y Espumosos</h2>
-        <div class="section-rule"><span>✦</span></div>
-        <ul class="item-list">
-          <li class="item">
-            <span class="item-name">Heritage Blanc<span class="wine-grape">Chardonnay, Pinot Noir, Pinot Meunier —
-                champán de estilo clásico, fresco y equilibrado</span></span>
-            <span class="item-price">40,00</span>
-          </li>
-        </ul>
-      </section>
 
-      <!-- RIBERA DEL DUERO -->
-      <section class="menu-section" id="ribera-del-duero" data-section>
-        <h2 class="section-title wine-region-title">Ribera del Duero</h2>
-        <p class="section-note">Uva principal: <strong>Tempranillo</strong> (Tinto Fino) salvo indicación contraria</p>
-        <div class="section-rule"><span>✦</span></div>
-        <ul class="item-list">
-          <li class="item">
-            <span class="item-name">822<span class="wine-grape">Tinto Fino — vino de entrada de Bodegas Emilio Moro,
-                afrutado y de fácil bebida</span></span>
-            <span class="item-price">16,95</span>
-          </li>
-          <li class="item">
-            <span class="item-name">Aalto<span class="wine-grape">Tinto Fino — de viñas viejas, sedoso y elegante con
-                fruta negra y especias nobles</span></span>
-            <span class="item-price">46,00</span>
-          </li>
-          <li class="item">
-            <span class="item-name">Aalto PS<span class="wine-grape">Tinto Fino — Pago de Santa Cruz, icono de la
-                bodega, profundo y con gran potencial de guarda</span></span>
-            <span class="item-price">95,00</span>
-          </li>
-          <li class="item">
-            <span class="item-name">Abadía Retuerta Selección Especial<span class="wine-grape">Tempranillo, Cabernet
-                Sauvignon, Syrah — fuera D.O., elegante y complejo del pago de Sardón</span></span>
-            <span class="item-price">42,50</span>
-          </li>
-          <li class="item">
-            <span class="item-name">Altamimbre<span class="wine-grape">Tinto Fino — expresivo y concentrado, con crianza
-                en roble francés y americano</span></span>
-            <span class="item-price">32,00</span>
-          </li>
-          <li class="item">
-            <span class="item-name">A&amp;M Asenjo Manso<span class="wine-grape">Tinto Fino — proyecto familiar de viñas
-                centenarias, profundo e intenso</span></span>
-            <span class="item-price">45,00</span>
-          </li>
-          <li class="item">
-            <span class="item-name">Arzuaga Crianza<span class="wine-grape">Tinto Fino, Cabernet Sauvignon, Merlot —
-                clásico y equilibrado, con taninos bien integrados</span></span>
-            <span class="item-price">33,50</span>
-          </li>
-          <li class="item">
-            <span class="item-name">Arzuaga Reserva Especial 2018<span class="wine-grape">Tinto Fino — reserva de máxima
-                expresión, largo envejecimiento y gran complejidad aromática</span></span>
-            <span class="item-price">65,00</span>
-          </li>
-          <li class="item">
-            <span class="item-name">Cair Finca Aguilera<span class="wine-grape">Tinto Fino — de finca singular, mineral
-                y elegante con crianza en roble francés</span></span>
-            <span class="item-price">30,00</span>
-          </li>
-          <li class="item">
-            <span class="item-name">Cair Cuve Magnum<span class="wine-grape">Tinto Fino — misma cuvée en magnum, ideal
-                para compartir y con mejor evolución</span></span>
-            <span class="item-price">38,00</span>
-          </li>
-          <li class="item">
-            <span class="item-name">Capellanes Roble<span class="wine-grape">Tinto Fino — paso breve por roble, frutal y
-                accesible, de uno de los referentes de la D.O.</span></span>
-            <span class="item-price">19,50</span>
-          </li>
-          <li class="item">
-            <span class="item-name">Capellanes Crianza<span class="wine-grape">Tinto Fino — crianza clásica en roble
-                americano y francés, equilibrado y muy elegante</span></span>
-            <span class="item-price">30,00</span>
-          </li>
-          <li class="item">
-            <span class="item-name">Carmelo Rodero 9 Meses<span class="wine-grape">Tinto Fino — 9 meses en barrica,
-                potente y especiado con una gran personalidad</span></span>
-            <span class="item-price">20,00</span>
-          </li>
-          <li class="item">
-            <span class="item-name">Carmelo Rodero Crianza<span class="wine-grape">Tinto Fino, Cabernet Sauvignon —
-                crianza clásica con mucha estructura y largo final especiado</span></span>
-            <span class="item-price">30,00</span>
-          </li>
-          <li class="item">
-            <span class="item-name">Carramimbre Roble<span class="wine-grape">Tinto Fino — joven con paso por roble,
-                accesible y frutal con notas de madera bien integradas</span></span>
-            <span class="item-price">15,00</span>
-          </li>
-          <li class="item">
-            <span class="item-name">Ceres<span class="wine-grape">Tinto Fino — vino de terroir, mineral y fresco con una
-                buena acidez natural</span></span>
-            <span class="item-price">18,75</span>
-          </li>
-          <li class="item">
-            <span class="item-name">CLON 98<span class="wine-grape">Tinto Fino — de las añadas más longevas de la D.O.,
-                con fruta madura y buena guarda</span></span>
-            <span class="item-price">19,50</span>
-          </li>
-          <li class="item">
-            <span class="item-name">Conde de San Cristóbal<span class="wine-grape">Tinto Fino, Cabernet Sauvignon,
-                Merlot — moderno y aterciopelado con notas de fruta negra y especias</span></span>
-            <span class="item-price">26,50</span>
-          </li>
-          <li class="item">
-            <span class="item-name">Convento San Francisco 2019<span class="wine-grape">Tinto Fino — versión de mayor
-                crianza, complejo y mineral con largo final en boca</span></span>
-            <span class="item-price">32,00</span>
-          </li>
-          <li class="item">
-            <span class="item-name">Corimbo<span class="wine-grape">Tinto Fino — de Bodegas Rivera, potente y generoso
-                con fruta negra madura y roble bien integrado</span></span>
-            <span class="item-price">29,75</span>
-          </li>
-          <li class="item">
-            <span class="item-name">Coto Haya Centenario<span class="wine-grape">Tinto Fino — de viñas centenarias,
-                concentrado y profundo con mucha personalidad de terroir</span></span>
-            <span class="item-price">17,00</span>
-          </li>
-          <li class="item">
-            <span class="item-name">Dehesa Canónigos Solideo<span class="wine-grape">Tinto Fino — reserva especial con
-                larga crianza, elegante y complejo con final interminable</span></span>
-            <span class="item-price">46,50</span>
-          </li>
-          <li class="item">
-            <span class="item-name">Doroteo Pago de los Capellanes<span class="wine-grape">Tinto Fino — la máxima
-                expresión de Pago de los Capellanes, preguntar disponibilidad</span></span>
-            <span class="item-price">Consultar</span>
-          </li>
-          <li class="item">
-            <span class="item-name">Ébano Salvaje<span class="wine-grape">Tinto Fino — de viñas silvestres, carácter
-                salvaje y mineral con gran autenticidad</span></span>
-            <span class="item-price">19,50</span>
-          </li>
-          <li class="item">
-            <span class="item-name">Finca Resalso<span class="wine-grape">Tinto Fino — de Emilio Moro, de finca propia,
-                joven y concentrado con mucha fruta roja</span></span>
-            <span class="item-price">17,50</span>
-          </li>
-          <li class="item">
-            <span class="item-name">Francisco Barona<span class="wine-grape">Tinto Fino — selección de autor de viñas
-                viejas, potente y de gran personalidad</span></span>
-            <span class="item-price">43,00</span>
-          </li>
-          <li class="item">
-            <span class="item-name">Francisco Barona Finca Las Dueñas<span class="wine-grape">Tinto Fino — finca
-                singular, la máxima expresión de Francisco Barona, coleccionable</span></span>
-            <span class="item-price">85,00</span>
-          </li>
-          <li class="item">
-            <span class="item-name">Garmón 2019<span class="wine-grape">Tinto Fino — de Cillar de Silos, de viñas viejas
-                de Gumiel de Mercado, complejo y sedoso</span></span>
-            <span class="item-price">45,00</span>
-          </li>
-          <li class="item">
-            <span class="item-name">La Cebolleta<span class="wine-grape">Tinto Fino — de viña única centenaria,
-                concentrado y terroirista con mucha personalidad</span></span>
-            <span class="item-price">28,50</span>
-          </li>
-          <li class="item">
-            <span class="item-name">La Felisa Emilio Moro<span class="wine-grape">Tinto Fino — de finca propia de Emilio
-                Moro, elegante y mineral, un paso más en la colección</span></span>
-            <span class="item-price">35,00</span>
-          </li>
-          <li class="item">
-            <span class="item-name">La Pinnaleta<span class="wine-grape">Tinto Fino — de parcela única, expresivo y
-                singular con gran potencial de guarda</span></span>
-            <span class="item-price">38,50</span>
-          </li>
-          <li class="item">
-            <span class="item-name">Luis Sanz Gran RVA<span class="wine-grape">Tinto Fino — gran reserva de larga
-                crianza, complejo y evolucionado con gran elegancia</span></span>
-            <span class="item-price">125,00</span>
-          </li>
-          <li class="item">
-            <span class="item-name">Malleolus<span class="wine-grape">Tinto Fino — el gran vino de Emilio Moro, sedoso y
-                complejo con viñas viejas seleccionadas</span></span>
-            <span class="item-price">40,00</span>
-          </li>
-          <li class="item">
-            <span class="item-name">Malleolus Valderramiro<span class="wine-grape">Tinto Fino — de viña única centenaria
-                de Emilio Moro, uno de los grandes de España</span></span>
-            <span class="item-price">99,00</span>
-          </li>
-          <li class="item">
-            <span class="item-name">Martín Berdugo Barrica<span class="wine-grape">Tinto Fino — paso suave por barrica,
-                joven y frutal con carácter propio de la zona de Aranda</span></span>
-            <span class="item-price">16,00</span>
-          </li>
-          <li class="item">
-            <span class="item-name">Martín Berdugo Crianza<span class="wine-grape">Tinto Fino — crianza clásica,
-                equilibrado y muy versátil para acompañar carnes y quesos</span></span>
-            <span class="item-price">22,00</span>
-          </li>
-          <li class="item">
-            <span class="item-name">Pago Carraovejas<span class="wine-grape">Tinto Fino, Cabernet Sauvignon, Merlot —
-                uno de los grandes de la D.O., profundo y equilibrado</span></span>
-            <span class="item-price">45,00</span>
-          </li>
-          <li class="item">
-            <span class="item-name">Prios<span class="wine-grape">Tinto Fino — fresco y frutal de Bodegas Prios Maximus,
-                con buena relación calidad-precio</span></span>
-            <span class="item-price">17,50</span>
-          </li>
-          <li class="item">
-            <span class="item-name">Punto Geodésico<span class="wine-grape">Tinto Fino — de parcelas seleccionadas,
-                mineral y terroirista con gran precisión</span></span>
-            <span class="item-price">45,00</span>
-          </li>
-          <li class="item">
-            <span class="item-name">Raza Carmelo Rodero<span class="wine-grape">Tinto Fino — la máxima expresión de
-                Carmelo Rodero, selección de viñas viejas y gran añada</span></span>
-            <span class="item-price">45,00</span>
-          </li>
-          <li class="item">
-            <span class="item-name">Resalso Roble<span class="wine-grape">Tinto Fino — de Emilio Moro, paso por roble
-                con fruta muy viva y accesible</span></span>
-            <span class="item-price">17,50</span>
-          </li>
-          <li class="item">
-            <span class="item-name">Santa María<span class="wine-grape">Tinto Fino — de Convento San Francisco, joven y
-                accesible con notas de fruta fresca</span></span>
-            <span class="item-price">18,50</span>
-          </li>
-          <li class="item">
-            <span class="item-name">Sed de Caña<span class="wine-grape">Tinto Fino — icono de Bodegas Montecastro, de
-                viñas centenarias, potente y de guarda</span></span>
-            <span class="item-price">90,00</span>
-          </li>
-          <li class="item">
-            <span class="item-name">Silvanus<span class="wine-grape">Tinto Fino — de Bodegas Valduero, elegante y
-                mineral con una gran expresión del terroir</span></span>
-            <span class="item-price">25,00</span>
-          </li>
-          <li class="item">
-            <span class="item-name">Tamaral Roble<span class="wine-grape">Tinto Fino — paso por roble de Bodegas
-                Tamaral, fresco y frutal con toque especiado</span></span>
-            <span class="item-price">18,50</span>
-          </li>
-          <li class="item">
-            <span class="item-name">Tamaral Crianza<span class="wine-grape">Tinto Fino — crianza de Bodegas Tamaral,
-                equilibrado y gastronómico con buena estructura</span></span>
-            <span class="item-price">21,50</span>
-          </li>
-          <li class="item">
-            <span class="item-name">Teófilo Reyes<span class="wine-grape">Tinto Fino — crianza de autor con largas
-                maceraciones, potente y muy expresivo</span></span>
-            <span class="item-price">30,00</span>
-          </li>
-          <li class="item">
-            <span class="item-name">Tomás Postigo 3 Año<span class="wine-grape">Tinto Fino — 3 años de crianza total,
-                suave y elegante con final largo y notas de cedro</span></span>
-            <span class="item-price">43,00</span>
-          </li>
-          <li class="item">
-            <span class="item-name">Tomás Postigo 5º Año<span class="wine-grape">Tinto Fino — 5 años de crianza, uno de
-                los grandes del Duero, sedoso y profundo</span></span>
-            <span class="item-price">65,75</span>
-          </li>
-          <li class="item">
-            <span class="item-name">Tomás Postigo Magnum 3 Año<span class="wine-grape">Tinto Fino — crianza 3 años en
-                magnum para mayor evolución y expresión</span></span>
-            <span class="item-price">84,50</span>
-          </li>
-          <li class="item">
-            <span class="item-name">Tomás Postigo Rebollo Magnum<span class="wine-grape">Tinto Fino — de parcela
-                centenaria Rebollo, en magnum, el techo de la colección Postigo</span></span>
-            <span class="item-price">130,00</span>
-          </li>
-          <li class="item">
-            <span class="item-name">Tomás Postigo Vinificación Integral Magnum<span class="wine-grape">Tinto Fino —
-                vinificación integral en roble, máxima expresión de la bodega en magnum</span></span>
-            <span class="item-price">210,00</span>
-          </li>
-          <li class="item">
-            <span class="item-name">Un Sueño Pago de los Capellanes<span class="wine-grape">Tinto Fino — de parcelas
-                escogidas de Capellanes, elegante y con gran potencial de guarda</span></span>
-            <span class="item-price">55,00</span>
-          </li>
-          <li class="item">
-            <span class="item-name">Valbuena 5º<span class="wine-grape">Tinto Fino, Merlot — el hermano del mítico Vega
-                Sicilia, 5 años de crianza y enorme complejidad</span></span>
-            <span class="item-price">175,00</span>
-          </li>
-          <li class="item">
-            <span class="item-name">Valduero I Cepa<span class="wine-grape">Tinto Fino — de Bodegas Valduero, selección
-                de cepa única con gran estructura y elegancia</span></span>
-            <span class="item-price">43,00</span>
-          </li>
-          <li class="item">
-            <span class="item-name">Valduero Alta RVA<span class="wine-grape">Tinto Fino — alta reserva de Valduero,
-                larguísima crianza con una complejidad impresionante</span></span>
-            <span class="item-price">50,00</span>
-          </li>
-          <li class="item">
-            <span class="item-name">Valduero Gran RVA<span class="wine-grape">Tinto Fino — gran reserva de Valduero, un
-                referente de la D.O. con décadas de historia</span></span>
-            <span class="item-price">100,00</span>
-          </li>
-          <li class="item">
-            <span class="item-name">Valtravieso<span class="wine-grape">Tinto Fino, Cabernet Sauvignon, Merlot — moderno
-                y frutal con presencia internacional</span></span>
-            <span class="item-price">19,00</span>
-          </li>
-          <li class="item">
-            <span class="item-name">Viña Sastre<span class="wine-grape">Tinto Fino — de viñas viejas en La Horra,
-                elegante y terroirista con mucho carácter</span></span>
-            <span class="item-price">19,75</span>
-          </li>
-        </ul>
-      </section>
 
-      <!-- TORO -->
-      <section class="menu-section" id="toro" data-section>
-        <h2 class="section-title wine-region-title">Toro</h2>
-        <p class="section-note">Uva principal: <strong>Tinta de Toro</strong> (clon local del Tempranillo) salvo
-          indicación contraria</p>
-        <div class="section-rule"><span>✦</span></div>
-        <ul class="item-list">
-          <li class="item">
-            <span class="item-name">La Rejadora<span class="wine-grape">Tinta de Toro — joven y potente, con fruta
-                oscura madura y el carácter robusto de la zona</span></span>
-            <span class="item-price">15,00</span>
-          </li>
-          <li class="item">
-            <span class="item-name">Prima<span class="wine-grape">Tinta de Toro — de Bodegas Tardencuba, estructurado y
-                con personalidad, paso por roble</span></span>
-            <span class="item-price">20,00</span>
-          </li>
-          <li class="item">
-            <span class="item-name">Pintia<span class="wine-grape">Tinta de Toro — de Vega Sicilia, la máxima expresión
-                elegante del Toro, complejo y fino</span></span>
-            <span class="item-price">75,00</span>
-          </li>
-          <li class="item">
-            <span class="item-name">Platón Divina<span class="wine-grape">Tinta de Toro — de Bodegas Divina, potente y
-                con gran concentración de fruta negra</span></span>
-            <span class="item-price">38,00</span>
-          </li>
-          <li class="item">
-            <span class="item-name">San Román<span class="wine-grape">Tinta de Toro — de Maurodos (Telmo Rodríguez),
-                viñas viejas con carácter intenso y mineral</span></span>
-            <span class="item-price">37,00</span>
-          </li>
-          <li class="item">
-            <span class="item-name">Cartago<span class="wine-grape">Tinta de Toro — de Bodegas Frontio, vino de gran
-                concentración y largo envejecimiento</span></span>
-            <span class="item-price">89,50</span>
-          </li>
-          <li class="item">
-            <span class="item-name">Latarce<span class="wine-grape">Tinta de Toro — de Bodegas Latarce, potente y con
-                fruta oscura madura y taninos maduros</span></span>
-            <span class="item-price">43,50</span>
-          </li>
-          <li class="item">
-            <span class="item-name">Lorca Malbec<span class="wine-grape">Malbec — variedad argentina implantada en Toro,
-                potente y con notas de ciruela y violeta</span></span>
-            <span class="item-price">25,00</span>
-          </li>
-          <li class="item">
-            <span class="item-name">Syrah Matasnos<span class="wine-grape">Syrah — expresión mediterránea de esta
-                variedad en Toro, especiada y con mucha fruta oscura</span></span>
-            <span class="item-price">45,00</span>
-          </li>
-        </ul>
-      </section>
 
-      <!-- CASTILLA Y LEÓN -->
-      <section class="menu-section" id="castilla-leon" data-section>
-        <h2 class="section-title wine-region-title">Castilla y León</h2>
-        <div class="section-rule"><span>✦</span></div>
-        <ul class="item-list">
-          <li class="item">
-            <span class="item-name">Albeniz Torre<span class="wine-grape">Tempranillo — de la zona de Cigales, potente y
-                estructurado con notas de fruta madura</span></span>
-            <span class="item-price">34,75</span>
-          </li>
-          <li class="item">
-            <span class="item-name">Alquez<span class="wine-grape">Garnacha — variedad autóctona de la Sierra de Gredos,
-                mineral y con fruta roja fresca</span></span>
-            <span class="item-price">18,50</span>
-          </li>
-          <li class="item">
-            <span class="item-name">Mauro<span class="wine-grape">Tempranillo, Garnacha — el icono fuera D.O. de Tudela
-                del Duero, potente y complejo</span></span>
-            <span class="item-price">55,00</span>
-          </li>
-          <li class="item">
-            <span class="item-name">Mauro VS<span class="wine-grape">Tempranillo, Garnacha — Vendimia Seleccionada de
-                viñas viejas, un vino monumental</span></span>
-            <span class="item-price">85,00</span>
-          </li>
-          <li class="item">
-            <span class="item-name">Museum RVA<span class="wine-grape">Tempranillo — reserva de Cigales, equilibrado y
-                clásico con buena estructura</span></span>
-            <span class="item-price">19,75</span>
-          </li>
-          <li class="item">
-            <span class="item-name">Sommos Colección Syrah<span class="wine-grape">Syrah — de Bodegas Sommos en Aragón,
-                intenso y especiado con gran concentración</span></span>
-            <span class="item-price">44,00</span>
-          </li>
-          <li class="item">
-            <span class="item-name">Terreus<span class="wine-grape">Tempranillo — de Mauro, el vino más exclusivo de la
-                bodega, de viñas antiguas y gran guarda</span></span>
-            <span class="item-price">112,00</span>
-          </li>
-        </ul>
-      </section>
 
-      <!-- RIOJAS -->
-      <section class="menu-section" id="riojas" data-section>
-        <h2 class="section-title wine-region-title">Riojas</h2>
-        <p class="section-note">Uva principal: <strong>Tempranillo</strong> salvo indicación contraria</p>
-        <div class="section-rule"><span>✦</span></div>
-        <ul class="item-list">
-          <li class="item">
-            <span class="item-name">Amador Medrano Los Sotillos<span class="wine-grape">Tempranillo — de parcelas
-                seleccionadas con mayor expresión de terroir y complejidad</span></span>
-            <span class="item-price">17,75</span>
-          </li>
-          <li class="item">
-            <span class="item-name">Amador Medrano Las Aguzaderas<span class="wine-grape">Tempranillo — de finca única
-                Las Aguzaderas, el vino de autor de la bodega, mineral y profundo</span></span>
-            <span class="item-price">20,75</span>
-          </li>
-          <li class="item">
-            <span class="item-name">Amaren<span class="wine-grape">Tempranillo, Graciano — clásico riojano moderno de
-                Abel Mendoza, elegante y equilibrado</span></span>
-            <span class="item-price">24,50</span>
-          </li>
-          <li class="item">
-            <span class="item-name">Bai Gorri<span class="wine-grape">Tempranillo — de la Rioja Alavesa, fresco y
-                mineral con taninos finos y buena acidez</span></span>
-            <span class="item-price">18,00</span>
-          </li>
-          <li class="item">
-            <span class="item-name">Beronia Edición Limitada<span class="wine-grape">Tempranillo, Mazuelo, Graciano —
-                edición especial con mayor complejidad y personalidad</span></span>
-            <span class="item-price">18,50</span>
-          </li>
-          <li class="item">
-            <span class="item-name">Colección Privada Beronia<span class="wine-grape">Tempranillo — selección especial
-                de Beronia, con más carácter y largo envejecimiento en roble</span></span>
-            <span class="item-price">30,00</span>
-          </li>
-          <li class="item">
-            <span class="item-name">El Maquinista<span class="wine-grape">Tempranillo — joven y frutal, vibrante y
-                accesible con el sello de la Rioja Alavesa</span></span>
-            <span class="item-price">16,00</span>
-          </li>
-          <li class="item">
-            <span class="item-name">La Montesa<span class="wine-grape">Garnacha, Tempranillo, Mazuelo — de Palacios
-                Remondo, garnacha riojana elegante y muy expresiva</span></span>
-            <span class="item-price">22,50</span>
-          </li>
-          <li class="item">
-            <span class="item-name">Los Sotillos<span class="wine-grape">Tempranillo — de parcela única de Amador
-                Medrano, la cima de la bodega con gran expresión</span></span>
-            <span class="item-price">37,00</span>
-          </li>
-          <li class="item">
-            <span class="item-name">Luis Cañas Reserva 2018<span class="wine-grape">Tempranillo, Graciano — reserva
-                elegante y evolucionada de una de las bodegas referentes</span></span>
-            <span class="item-price">28,50</span>
-          </li>
-          <li class="item">
-            <span class="item-name">Macán Oro<span class="wine-grape">Tempranillo — la cima de la colección Macán, vino
-                de añadas especiales, preguntar disponibilidad</span></span>
-            <span class="item-price">Consultar</span>
-          </li>
-          <li class="item">
-            <span class="item-name">Macán Clásico<span class="wine-grape">Tempranillo — versión más accesible de Macán,
-                frutal y elegante, preguntar disponibilidad</span></span>
-            <span class="item-price">Consultar</span>
-          </li>
-          <li class="item">
-            <span class="item-name">Murua Rioja<span class="wine-grape">Tempranillo, Graciano, Mazuelo — reserva clásica
-                de Bodegas Murua en la Rioja Alavesa</span></span>
-            <span class="item-price">29,75</span>
-          </li>
-          <li class="item">
-            <span class="item-name">Rioja Ondarre Crianza<span class="wine-grape">Tempranillo, Garnacha — crianza
-                riojana clásica y equilibrada de Bodegas Ondarre</span></span>
-            <span class="item-price">16,50</span>
-          </li>
-        </ul>
-      </section>
 
-    </div><!-- /vinos -->
 
-  </main>
 
-  <footer class="footer">
-    <div class="footer-inner">
-      <div class="footer-ornament">
-        <span class="f-line"></span><span class="f-dot"></span><span class="f-line"></span>
-      </div>
-      <div class="footer-links">
-        <a href="tel:+34986641757" class="footer-link">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
-            stroke-linecap="round" stroke-linejoin="round">
-            <path
-              d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.99 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.9 1.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9a16 16 0 0 0 6.29 6.29l1.05-1.05a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7a2 2 0 0 1 1.72 2.03z" />
-          </svg>
-          +34 986 641 757
-        </a>
-        <a href="https://www.facebook.com/Otuneltapas/?locale=es_ES" target="_blank" class="footer-link">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
-          </svg>
-          O Tunel Ponteareas
-        </a>
-        <a href="https://www.instagram.com/otuneltapasponteareas" target="_blank" class="footer-link">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
-            stroke-linecap="round" stroke-linejoin="round">
-            <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
-            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
-            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
-          </svg>
-          @otuneltapasponteareas
-        </a>
-      </div>
-      <p class="footer-copy">O Tunel · Ponteareas · Galicia</p>
-    </div>
-  </footer>
 
-  <script src="main.js"></script>
-  <script>
-    (function () {
-      var navBar = document.getElementById('sectionNavBar');
-      if (!navBar) return;
 
-      /* ── Mapa de navs por página ── */
-      var navsByPage = {};
-      navBar.querySelectorAll('[data-page-nav]').forEach(function (nav) {
-        navsByPage[nav.dataset.pageNav] = nav;
-      });
 
-      /* ── Activa un botón y mueve el indicador ── */
-      function setActiveButton(nav, btn) {
-        nav.querySelectorAll('.section-nav-btn').forEach(function (b) { b.classList.remove('is-active'); });
-        if (btn) btn.classList.add('is-active');
-      }
+<li class="item">
+<span class="item-name">Lulo<span class="wine-grape">Treixadura — ligero y fresco, de fácil bebida con buenas notas frutales</span></span>
+<span class="item-price">16,00</span>
+</li><li class="item">
+<span class="item-name">Viña Costeira Treixadura<span class="wine-grape">Treixadura — variedad reina del Ribeiro, fresca y floral con un final sutil y limpio</span></span>
+<span class="item-price">16,50</span>
+</li><li class="item">
+<span class="item-name">Finca as Regadas<span class="wine-grape">Treixadura — de finca única, con carácter mineral y gran tensión en boca</span></span>
+<span class="item-price">16,50</span>
+</li><li class="item">
+<span class="item-name">7 Cupos<span class="wine-grape">Treixadura, Albariño, Godello — mezcla de varietales gallegos con buena acidez y frescura</span></span>
+<span class="item-price">16,50</span>
+</li><li class="item">
+<span class="item-name">Razamonde<span class="wine-grape">Treixadura — de viñas en ladera, vivo y mineral con un toque de hierba aromática</span></span>
+<span class="item-price">17,75</span>
+</li><li class="item">
+<span class="item-name">Ramón do Casar<span class="wine-grape">Treixadura, Torrontés, Godello — clásico del Ribeiro, equilibrado y muy aromático</span></span>
+<span class="item-price">17,75</span>
+</li><li class="item">
+<span class="item-name">Formigo<span class="wine-grape">Treixadura — floral y frutal, con acidez equilibrada y final persistente</span></span>
+<span class="item-price">18,50</span>
+</li><li class="item">
+<span class="item-name">Vilerma<span class="wine-grape">Treixadura, Godello, Loureiro — coupage aromático con gran frescura y personalidad</span></span>
+<span class="item-price">18,75</span>
+</li><li class="item">
+<span class="item-name">Casal de Armán<span class="wine-grape">Treixadura — intenso y mineral, con notas de fruta blanca y hierba fresca</span></span>
+<span class="item-price">19,50</span>
+</li><li class="item">
+<span class="item-name">Cotarelo<span class="wine-grape">Treixadura — expresivo y frutal, uno de los blancos más representativos del Ribeiro</span></span>
+<span class="item-price">19,75</span>
+</li><li class="item">
+<span class="item-name">Catro Ferrados<span class="wine-grape">Treixadura, Godello, Albariño — coupage de variedades autóctonas del Ribeiro con mucha expresión</span></span>
+<span class="item-price">20,00</span>
+</li><li class="item">
+<span class="item-name">Louro<span class="wine-grape">Godello — crianza en barrica que aporta complejidad y tostados elegantes</span></span>
+<span class="item-price">27,50</span>
+</li></ul>
+<h3 class="wine-subregion">Rías Baixas — otros</h3>
+<ul class="item-list">
 
-      function updateIndicator(nav) {
-        if (!nav) return;
-        var track = nav.querySelector('.section-nav-track');
-        var indicator = nav.querySelector('.nav-indicator');
-        var active = track ? track.querySelector('.section-nav-btn.is-active') : null;
-        if (!track || !indicator || !active) return;
-        var tR = track.getBoundingClientRect();
-        var bR = active.getBoundingClientRect();
-        indicator.style.width = bR.width + 'px';
-        indicator.style.transform = 'translateX(' + (bR.left - tR.left) + 'px)';
-      }
 
-      /* ── Inicia con el primer botón de cada nav activo ── */
-      Object.keys(navsByPage).forEach(function (key) {
-        var firstBtn = navsByPage[key].querySelector('.section-nav-btn');
-        setActiveButton(navsByPage[key], firstBtn);
-      });
 
-      /* ── Muestra la nav de la página activa y oculta las demás ── */
-      function showNavFor(page) {
-        Object.keys(navsByPage).forEach(function (key) {
-          navsByPage[key].classList.toggle('is-visible', key === page);
-        });
-        requestAnimationFrame(function () { updateIndicator(navsByPage[page]); });
-      }
 
-      /* Página inicial */
-      var activePage = document.querySelector('.page.active');
-      showNavFor(activePage ? activePage.id : 'carta');
 
-      /* Sincroniza con el cambio de pestaña principal */
-      document.querySelectorAll('.nav-tab').forEach(function (tab) {
-        tab.addEventListener('click', function () {
-          if (tab.dataset.page) showNavFor(tab.dataset.page);
-        });
-      });
 
-      /* ── Cálculo del offset del navbar ── */
-      function computeScrollOffset() {
-        var heroEl = document.querySelector('.hero');
-        var heroH = heroEl ? heroEl.offsetHeight : 0;
-        var navBarH = navBar.offsetHeight;
-        document.documentElement.style.setProperty('--nav-bar-height', navBarH + 'px');
-        document.documentElement.style.setProperty('--scroll-offset', (heroH + navBarH + 16) + 'px');
-      }
+
+
+
+
+
+
+<li class="item">
+<span class="item-name">Valmiñor<span class="wine-grape">Albariño — de la subzona O Rosal, floral y frutal con buena acidez</span></span>
+<span class="item-price">15,00</span>
+</li><li class="item">
+<span class="item-name">Abadía San Campio<span class="wine-grape">Albariño — producción de Terras Gauda, fresco y cítrico con fondo salino</span></span>
+<span class="item-price">16,00</span>
+</li><li class="item">
+<span class="item-name">Abadía Tortoreos<span class="wine-grape">Albariño — atlántico y fresco, con notas de limón, pera y toques de azahar</span></span>
+<span class="item-price">16,50</span>
+</li><li class="item">
+<span class="item-name">Torroxal<span class="wine-grape">Albariño — de viñas en O Condado do Tea, con estructura y carácter más cálido</span></span>
+<span class="item-price">16,50</span>
+</li><li class="item">
+<span class="item-name">Alto de Torona Albariño<span class="wine-grape">Albariño — cítrico y floral, con la típica acidez refrescante de las Rías Baixas</span></span>
+<span class="item-price">16,50</span>
+</li><li class="item">
+<span class="item-name">El Pulpo<span class="wine-grape">Albariño — fresco y juguetón, con fruta blanca y un final salino y marino</span></span>
+<span class="item-price">16,50</span>
+</li><li class="item">
+<span class="item-name">Algueira Brandán<span class="wine-grape">Godello — de la Ribeira Sacra, floral y fresco con notas de fruta de pepita</span></span>
+<span class="item-price">18,75</span>
+</li><li class="item">
+<span class="item-name">Valdesil Montenovo<span class="wine-grape">Godello — joven y directo, con la acidez y mineralidad característica de Valdeorras</span></span>
+<span class="item-price">19,75</span>
+</li><li class="item">
+<span class="item-name">O Cotarelo Alba Ferm<span class="wine-grape">Albariño — fermentado en barrica, untuoso y complejo con madera muy bien integrada</span></span>
+<span class="item-price">28,50</span>
+</li><li class="item">
+<span class="item-name">O Llorona<span class="wine-grape">Albariño — singular y de autor, con carácter atlántico muy marcado y gran frescura</span></span>
+<span class="item-price">35,00</span>
+</li><li class="item">
+<span class="item-name">Con da Moura<span class="wine-grape">Albariño — de viticultura cuidada, concentrado y mineral, largo final salino</span></span>
+<span class="item-price">40,00</span>
+</li><li class="item">
+<span class="item-name">Val de Sil 2023<span class="wine-grape">Godello — de Valdeorras, expresivo y tenso con acidez vibrante y final mineral</span></span>
+<span class="item-price">40,00</span>
+</li></ul>
+<h3 class="wine-subregion">Godello — otras D.O.</h3>
+<ul class="item-list">
+
+
+
+
+
+
+
+
+
+
+
+<li class="item">
+<span class="item-name">Rebolledo Godello<span class="wine-grape">Godello — del Bierzo, fresco y mineral con notas de flores blancas y fruta de hueso</span></span>
+<span class="item-price">15,00</span>
+</li><li class="item">
+<span class="item-name">Tapias Godello<span class="wine-grape">Godello — de Monterrei, fresco y aromático con buena estructura para la gastronomía</span></span>
+<span class="item-price">15,00</span>
+</li><li class="item">
+<span class="item-name">Ladairo Godello<span class="wine-grape">Godello — de Monterrei, elegante y untuoso con acidez vibrante y fondo cítrico</span></span>
+<span class="item-price">16,00</span>
+</li><li class="item">
+<span class="item-name">Polvorete Godello<span class="wine-grape">Godello — de viñas en la Ribeira Sacra, con tensión y carácter mineral muy marcado</span></span>
+<span class="item-price">17,50</span>
+</li><li class="item">
+<span class="item-name">Sangarida Godello<span class="wine-grape">Godello — fresco y limpio, con notas herbáceas y cítricas características de la variedad</span></span>
+<span class="item-price">17,50</span>
+</li><li class="item">
+<span class="item-name">Rectoral Monaguillo<span class="wine-grape">Godello, Treixadura — coupage clásico del Ribeiro, equilibrado y muy aromático</span></span>
+<span class="item-price">17,50</span>
+</li><li class="item">
+<span class="item-name">Abeledos Godello<span class="wine-grape">Godello — de la Ribeira Sacra, fermentado en depósito para preservar la frescura varietal</span></span>
+<span class="item-price">18,00</span>
+</li><li class="item">
+<span class="item-name">Luar do Sil Godello<span class="wine-grape">Godello — amplio y profundo, con mineral de pizarra y fruta madura muy expresiva</span></span>
+<span class="item-price">19,50</span>
+</li><li class="item">
+<span class="item-name">Lusco Godello<span class="wine-grape">Godello — fusión entre la elegancia del Godello y el terroir de las Rías Baixas</span></span>
+<span class="item-price">21,50</span>
+</li><li class="item">
+<span class="item-name">Valtuille Godello<span class="wine-grape">Godello — del Bierzo, fino y elegante con una acidez que lo hace muy gastronómico</span></span>
+<span class="item-price">22,50</span>
+</li><li class="item">
+<span class="item-name">Valtuille El Val Godello<span class="wine-grape">Godello — finca singular del Bierzo, de máxima expresión con crianza sobre lías</span></span>
+<span class="item-price">45,00</span>
+</li></ul>
+</section>
+<!-- TINTOS GALLEGOS -->
+<section class="menu-section" data-section="" id="tintos-gallegos">
+<h2 class="section-title wine-region-title">Tintos Gallegos</h2>
+<div class="section-rule"><span>✦</span></div>
+<h3 class="wine-subregion">Mencías y Tintos Gallegos</h3>
+<ul class="item-list">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="item">
+<span class="item-name">Crego Monaguillo Monterrei<span class="wine-grape">Mencía — fresco y frutal, con notas de cereza y violeta típicas de esta variedad galega</span></span>
+<span class="item-price">16,00</span>
+</li><li class="item">
+<span class="item-name">Ladairo Monterrei<span class="wine-grape">Mencía — elegante y mineral, con taninos suaves y un final largo y especiado</span></span>
+<span class="item-price">16,00</span>
+</li><li class="item">
+<span class="item-name">3 Mentiras Monterrei<span class="wine-grape">Mencía — jugoso y accesible, con buena fruta roja y fondo herbáceo de terroir</span></span>
+<span class="item-price">16,00</span>
+</li><li class="item">
+<span class="item-name">Viña Peón<span class="wine-grape">Mencía — accesible y frutal, buena relación calidad-precio para descubrir la variedad</span></span>
+<span class="item-price">16,50</span>
+</li><li class="item">
+<span class="item-name">Fusco<span class="wine-grape">Mencía — joven y goloso, con fruta fresca y taninos suaves ideales para el aperitivo</span></span>
+<span class="item-price">16,50</span>
+</li><li class="item">
+<span class="item-name">Quinta de Tapias Treixadura<span class="wine-grape">Mencía, Treixadura tinta — singular coupage donde la variedad blanca aporta aroma y frescura</span></span>
+<span class="item-price">16,50</span>
+</li><li class="item">
+<span class="item-name">Fulcro Alixe<span class="wine-grape">Mencía — de la Ribeira Sacra, mineral y vertical con la elegancia del terroir de granito</span></span>
+<span class="item-price">17,50</span>
+</li><li class="item">
+<span class="item-name">Abeledos<span class="wine-grape">Mencía — de viñas en ladera de la Ribeira Sacra, mineral y tenso con fruta concentrada</span></span>
+<span class="item-price">18,00</span>
+</li><li class="item">
+<span class="item-name">Valtuille Bierzo<span class="wine-grape">Mencía — del Bierzo, floral y muy perfumado con taninos sedosos y acidez vibrante</span></span>
+<span class="item-price">18,50</span>
+</li><li class="item">
+<span class="item-name">Vilerma <em class="item-note">(tinto)</em><span class="wine-grape">Mencía, Brancellao — tinto gallego de carácter, frutal y con buena estructura tánica</span></span>
+<span class="item-price">18,50</span>
+</li><li class="item">
+<span class="item-name">Pittacum Mencía<span class="wine-grape">Mencía — frescos aromas de fruta roja y violeta con taninos elegantes del Bierzo</span></span>
+<span class="item-price">18,75</span>
+</li><li class="item">
+<span class="item-name">Pittacum Val Osa Mencía<span class="wine-grape">Mencía — de finca única en el Bierzo Bajo, estructurado y de largo envejecimiento en roble</span></span>
+<span class="item-price">19,50</span>
+</li><li class="item">
+<span class="item-name">Cotarello Ribeiro <em class="item-note">(tinto)</em><span class="wine-grape">Brancellao, Sousón, Ferrón — coupage de tintas autóctonas del Ribeiro, único y expresivo</span></span>
+<span class="item-price">19,75</span>
+</li><li class="item">
+<span class="item-name">Imalia 3 Parcelas<span class="wine-grape">Mencía — ensamblaje de tres parcelas distintas que expresan la diversidad del Bierzo</span></span>
+<span class="item-price">22,50</span>
+</li><li class="item">
+<span class="item-name">AAA Tinto<span class="wine-grape">Mencía, Garnacha Tintorera — coupage potente y expresivo con fruta negra madura</span></span>
+<span class="item-price">25,00</span>
+</li><li class="item">
+<span class="item-name">Petalos del Bierzo<span class="wine-grape">Mencía — de Álvaro Palacios, floral y elegante, considerado referencia mundial de la variedad</span></span>
+<span class="item-price">25,50</span>
+</li><li class="item">
+<span class="item-name">Attis Souson Rías Baixas<span class="wine-grape">Sousón — variedad autóctona gallega recuperada, intensa y compleja con gran carácter</span></span>
+<span class="item-price">31,00</span>
+</li><li class="item">
+<span class="item-name">Ladairo José L. Vilela<span class="wine-grape">Mencía — selección especial de autor, profunda y compleja con largo envejecimiento</span></span>
+<span class="item-price">38,00</span>
+</li></ul>
+</section>
+<!-- CHAMPANES -->
+<section class="menu-section" data-section="" id="champanes">
+<h2 class="section-title wine-region-title">Champanes y Espumosos</h2>
+<div class="section-rule"><span>✦</span></div>
+<ul class="item-list">
+
+
+
+
+
+<li class="item">
+<span class="item-name">Altun Rosé<span class="wine-grape">Garnacha, Viura — espumoso rosado fresco y frutal, con notas de frambuesa y fresa</span></span>
+<span class="item-price">18,50</span>
+</li><li class="item">
+<span class="item-name">Heritage Blanc<span class="wine-grape">Chardonnay, Pinot Noir, Pinot Meunier — champán de estilo clásico, fresco y equilibrado</span></span>
+<span class="item-price">40,00</span>
+</li><li class="item">
+<span class="item-name">Gramona<span class="wine-grape">Xarel·lo, Macabeo — cava de larga crianza con burbuja fina y notas de levadura y manzana</span></span>
+<span class="item-price">41,50</span>
+</li><li class="item">
+<span class="item-name">Champán Bollinger<span class="wine-grape">Pinot Noir, Chardonnay, Pinot Meunier — grande maison, potente y vinoso con larga crianza</span></span>
+<span class="item-price">85,00</span>
+</li><li class="item">
+<span class="item-name">Laurent Perrier Blanc de Blancs<span class="wine-grape">Chardonnay — 100% chardonnay de gran finura, con burbuja elegante y notas de brioche y limón</span></span>
+<span class="item-price">120,00</span>
+</li></ul>
+</section>
+<!-- RIBERA DEL DUERO -->
+<section class="menu-section" data-section="" id="ribera-del-duero">
+<h2 class="section-title wine-region-title">Ribera del Duero</h2>
+<p class="section-note">Uva principal: <strong>Tempranillo</strong> (Tinto Fino) salvo indicación contraria</p>
+<div class="section-rule"><span>✦</span></div>
+<ul class="item-list">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="item">
+<span class="item-name">Aicara<span class="wine-grape">Tinto Fino — joven y afrutado, vino de entrada con notas de cereza y toque de roble</span></span>
+<span class="item-price">13,00</span>
+</li><li class="item">
+<span class="item-name">Viña Mayor Roble<span class="wine-grape">Tinto Fino — vino de entrada de Viña Mayor, joven y frutal de gran popularidad</span></span>
+<span class="item-price">13,00</span>
+</li><li class="item">
+<span class="item-name">La Poda<span class="wine-grape">Tinto Fino — vino joven de entrada, frutal y directo, fácil de beber y muy asequible</span></span>
+<span class="item-price">14,00</span>
+</li><li class="item">
+<span class="item-name">Pinna Fidelis Roble<span class="wine-grape">Tinto Fino — joven con paso por roble, muy afrutado y de fácil disfrute</span></span>
+<span class="item-price">14,75</span>
+</li><li class="item">
+<span class="item-name">Cantamuda<span class="wine-grape">Tinto Fino — de Dehesa de los Canónigos, joven y frutal con buena relación calidad-precio</span></span>
+<span class="item-price">15,00</span>
+</li><li class="item">
+<span class="item-name">Carramimbre Roble<span class="wine-grape">Tinto Fino — joven con paso por roble, accesible y frutal con notas de madera bien integradas</span></span>
+<span class="item-price">15,00</span>
+</li><li class="item">
+<span class="item-name">Portia<span class="wine-grape">Tinto Fino — de Bodegas Portia (Federico Paternina), moderno y muy frutal</span></span>
+<span class="item-price">15,00</span>
+</li><li class="item">
+<span class="item-name">13 Cántaros<span class="wine-grape">Tinto Fino — joven y frutal, accesible con buena fruta roja y final limpio</span></span>
+<span class="item-price">16,00</span>
+</li><li class="item">
+<span class="item-name">César Príncipe<span class="wine-grape">Tinto Fino — de la zona de Cigales-Ribera, joven y frutal con taninos redondos</span></span>
+<span class="item-price">16,00</span>
+</li><li class="item">
+<span class="item-name">Convento San Francisco Roble<span class="wine-grape">Tinto Fino — paso suave por roble americano, vino de entrada de Pago de los Capellanes</span></span>
+<span class="item-price">16,00</span>
+</li><li class="item">
+<span class="item-name">Ébano 6<span class="wine-grape">Tinto Fino — 6 meses en roble, fácil y frutal con notas de fruta roja y ligero tostado</span></span>
+<span class="item-price">16,00</span>
+</li><li class="item">
+<span class="item-name">Martín Berdugo Barrica<span class="wine-grape">Tinto Fino — paso suave por barrica, joven y frutal con carácter propio de la zona de Aranda</span></span>
+<span class="item-price">16,00</span>
+</li><li class="item">
+<span class="item-name">Sire<span class="wine-grape">Tinto Fino — joven y accesible, fruta roja y buen cuerpo para acompañar carnes</span></span>
+<span class="item-price">16,00</span>
+</li><li class="item">
+<span class="item-name">Trus Roble<span class="wine-grape">Tinto Fino — joven de Bodegas Trus, fruta roja y buen cuerpo con paso suave por roble</span></span>
+<span class="item-price">16,00</span>
+</li><li class="item">
+<span class="item-name">Altos del Enebro<span class="wine-grape">Tinto Fino — fresco y frutal, de Bodegas Tamaral, con buena acidez y final especiado</span></span>
+<span class="item-price">16,50</span>
+</li><li class="item">
+<span class="item-name">Melior<span class="wine-grape">Tinto Fino — de Matarromera, vino de entrada con fruta madura y toque suave de roble</span></span>
+<span class="item-price">16,50</span>
+</li><li class="item">
+<span class="item-name">Sembro 4<span class="wine-grape">Tinto Fino — 4 meses en roble, joven y frutal de Bodegas Sembro, muy bebible</span></span>
+<span class="item-price">16,50</span>
+</li><li class="item">
+<span class="item-name">Valparaíso Roble<span class="wine-grape">Tinto Fino — paso por roble en un vino accesible con buena fruta y cuerpo medio</span></span>
+<span class="item-price">16,50</span>
+</li><li class="item">
+<span class="item-name">822<span class="wine-grape">Tinto Fino — vino de entrada de Bodegas Emilio Moro, afrutado y de fácil bebida</span></span>
+<span class="item-price">16,95</span>
+</li><li class="item">
+<span class="item-name">Cair Cuve<span class="wine-grape">Tinto Fino — versión más accesible de Cair, fruta roja fresca y buena relación calidad-precio</span></span>
+<span class="item-price">17,00</span>
+</li><li class="item">
+<span class="item-name">Coto Haya Centenario<span class="wine-grape">Tinto Fino — de viñas centenarias, concentrado y profundo con mucha personalidad de terroir</span></span>
+<span class="item-price">17,00</span>
+</li><li class="item">
+<span class="item-name">Erial<span class="wine-grape">Tinto Fino — de tierras de páramo, mineral y austero con fruta concentrada y buena guarda</span></span>
+<span class="item-price">17,00</span>
+</li><li class="item">
+<span class="item-name">El Ilusionista<span class="wine-grape">Tinto Fino — joven y moderno, fácil de beber con notas de frutas del bosque</span></span>
+<span class="item-price">17,50</span>
+</li><li class="item">
+<span class="item-name">Finca Resalso<span class="wine-grape">Tinto Fino — de Emilio Moro, de finca propia, joven y concentrado con mucha fruta roja</span></span>
+<span class="item-price">17,50</span>
+</li><li class="item">
+<span class="item-name">Hito<span class="wine-grape">Tinto Fino — de Cillar de Silos, joven con paso por roble, fresco y con fruta muy viva</span></span>
+<span class="item-price">17,50</span>
+</li><li class="item">
+<span class="item-name">Prios<span class="wine-grape">Tinto Fino — fresco y frutal de Bodegas Prios Maximus, con buena relación calidad-precio</span></span>
+<span class="item-price">17,50</span>
+</li><li class="item">
+<span class="item-name">Resalso Roble<span class="wine-grape">Tinto Fino — de Emilio Moro, paso por roble con fruta muy viva y accesible</span></span>
+<span class="item-price">17,50</span>
+</li><li class="item">
+<span class="item-name">Nobbis<span class="wine-grape">Tinto Fino — de viñas jóvenes, fresco y accesible con notas de frutas del bosque</span></span>
+<span class="item-price">18,00</span>
+</li><li class="item">
+<span class="item-name">Valdehermoso 9 Meses<span class="wine-grape">Tinto Fino — de Cillar de Silos, 9 meses en roble con una fruta limpia y un final goloso</span></span>
+<span class="item-price">18,00</span>
+</li><li class="item">
+<span class="item-name">Santa María<span class="wine-grape">Tinto Fino — de Convento San Francisco, joven y accesible con notas de fruta fresca</span></span>
+<span class="item-price">18,50</span>
+</li><li class="item">
+<span class="item-name">Sembro 12 Meses<span class="wine-grape">Tinto Fino — 12 meses en barrica, más complejo y estructurado que la versión de 4 meses</span></span>
+<span class="item-price">18,50</span>
+</li><li class="item">
+<span class="item-name">Tamaral Roble<span class="wine-grape">Tinto Fino — paso por roble de Bodegas Tamaral, fresco y frutal con toque especiado</span></span>
+<span class="item-price">18,50</span>
+</li><li class="item">
+<span class="item-name">Ceres<span class="wine-grape">Tinto Fino — vino de terroir, mineral y fresco con una buena acidez natural</span></span>
+<span class="item-price">18,75</span>
+</li><li class="item">
+<span class="item-name">Figuero 4<span class="wine-grape">Tinto Fino — 4 meses en barrica, joven y frutal de García Figuero, muy bebible y fresco</span></span>
+<span class="item-price">19,00</span>
+</li><li class="item">
+<span class="item-name">Valtravieso<span class="wine-grape">Tinto Fino, Cabernet Sauvignon, Merlot — moderno y frutal con presencia internacional</span></span>
+<span class="item-price">19,00</span>
+</li><li class="item">
+<span class="item-name">Bardos<span class="wine-grape">Tinto Fino — joven y vibrante con notas de mora y cereza, fácil de disfrutar</span></span>
+<span class="item-price">19,50</span>
+</li><li class="item">
+<span class="item-name">Capellanes Roble<span class="wine-grape">Tinto Fino — paso breve por roble, frutal y accesible, de uno de los referentes de la D.O.</span></span>
+<span class="item-price">19,50</span>
+</li><li class="item">
+<span class="item-name">Casa Rojo<span class="wine-grape">Tinto Fino — moderno y accesible de Bodegas Emilio Moro, frutal y con carácter propio</span></span>
+<span class="item-price">19,50</span>
+</li><li class="item">
+<span class="item-name">CL 98<span class="wine-grape">Tinto Fino — de las añadas más longevas de la D.O., con fruta madura y buena guarda</span></span>
+<span class="item-price">19,50</span>
+</li><li class="item">
+<span class="item-name">Ébano Salvaje<span class="wine-grape">Tinto Fino — de viñas silvestres, carácter salvaje y mineral con gran autenticidad</span></span>
+<span class="item-price">19,50</span>
+</li><li class="item">
+<span class="item-name">Quinta Generación<span class="wine-grape">Tinto Fino — de Bodegas González Puras, joven y expresivo de viticultura familiar</span></span>
+<span class="item-price">19,50</span>
+</li><li class="item">
+<span class="item-name">Viña Sastre<span class="wine-grape">Tinto Fino — de viñas viejas en La Horra, elegante y terroirista con mucho carácter</span></span>
+<span class="item-price">19,75</span>
+</li><li class="item">
+<span class="item-name">Carmelo Rodero 9 Meses<span class="wine-grape">Tinto Fino — 9 meses en barrica, potente y especiado con una gran personalidad</span></span>
+<span class="item-price">20,00</span>
+</li><li class="item">
+<span class="item-name">Carramimbre Crianza<span class="wine-grape">Tinto Fino — crianza tradicional con buena estructura tánica y notas de vainilla y cuero</span></span>
+<span class="item-price">20,00</span>
+</li><li class="item">
+<span class="item-name">Tamaral Crianza<span class="wine-grape">Tinto Fino — crianza de Bodegas Tamaral, equilibrado y gastronómico con buena estructura</span></span>
+<span class="item-price">21,50</span>
+</li><li class="item">
+<span class="item-name">Martín Berdugo Crianza<span class="wine-grape">Tinto Fino — crianza clásica, equilibrado y muy versátil para acompañar carnes y quesos</span></span>
+<span class="item-price">22,00</span>
+</li><li class="item">
+<span class="item-name">Relatos<span class="wine-grape">Tinto Fino — de parcelas antiguas, expresivo y con carácter propio bien definido</span></span>
+<span class="item-price">22,50</span>
+</li><li class="item">
+<span class="item-name">Silvanus<span class="wine-grape">Tinto Fino — de Bodegas Valduero, elegante y mineral con una gran expresión del terroir</span></span>
+<span class="item-price">25,00</span>
+</li><li class="item">
+<span class="item-name">Tintafina<span class="wine-grape">Tinto Fino — de Bodegas Dominio del Águila, elegante y de gran expresión varietal</span></span>
+<span class="item-price">25,00</span>
+</li><li class="item">
+<span class="item-name">Conde de San Cristóbal<span class="wine-grape">Tinto Fino, Cabernet Sauvignon, Merlot — moderno y aterciopelado con notas de fruta negra y especias</span></span>
+<span class="item-price">26,50</span>
+</li><li class="item">
+<span class="item-name">La Cebolleta<span class="wine-grape">Tinto Fino — de viña única centenaria, concentrado y terroirista con mucha personalidad</span></span>
+<span class="item-price">28,50</span>
+</li><li class="item">
+<span class="item-name">Tomás Postigo Blanco<span class="wine-grape">Albillo Mayor — blanco singular de Ribera del Duero, mineral y de largo recorrido</span></span>
+<span class="item-price">28,50</span>
+</li><li class="item">
+<span class="item-name">Pinna Fidelis Magnum<span class="wine-grape">Tinto Fino — en magnum, más evolución y presencia para compartir en mesa</span></span>
+<span class="item-price">28,75</span>
+</li><li class="item">
+<span class="item-name">Corimbo<span class="wine-grape">Tinto Fino — de Bodegas Rivera, potente y generoso con fruta negra madura y roble bien integrado</span></span>
+<span class="item-price">29,75</span>
+</li><li class="item">
+<span class="item-name">Astrales<span class="wine-grape">Tinto Fino — de viñas viejas seleccionadas, intenso y con una textura aterciopelada</span></span>
+<span class="item-price">30,00</span>
+</li><li class="item">
+<span class="item-name">Cair Finca Aguilera<span class="wine-grape">Tinto Fino — de finca singular, mineral y elegante con crianza en roble francés</span></span>
+<span class="item-price">30,00</span>
+</li><li class="item">
+<span class="item-name">Capellanes Crianza<span class="wine-grape">Tinto Fino — crianza clásica en roble americano y francés, equilibrado y muy elegante</span></span>
+<span class="item-price">30,00</span>
+</li><li class="item">
+<span class="item-name">Carmelo Rodero Crianza<span class="wine-grape">Tinto Fino, Cabernet Sauvignon — crianza clásica con mucha estructura y largo final especiado</span></span>
+<span class="item-price">30,00</span>
+</li><li class="item">
+<span class="item-name">Cruz de Alba<span class="wine-grape">Tinto Fino — mineral y fresco, con crianza equilibrada y buena estructura para la guarda</span></span>
+<span class="item-price">30,00</span>
+</li><li class="item">
+<span class="item-name">Emilio Moro<span class="wine-grape">Tinto Fino — la referencia de la bodega familiar, equilibrado, frutal y muy gastronómico</span></span>
+<span class="item-price">30,00</span>
+</li><li class="item">
+<span class="item-name">Magnum Altos del Enebro<span class="wine-grape">Tinto Fino — en magnum, ideal para compartir con mayor evolución en botella</span></span>
+<span class="item-price">30,00</span>
+</li><li class="item">
+<span class="item-name">Teófilo Reyes<span class="wine-grape">Tinto Fino — crianza de autor con largas maceraciones, potente y muy expresivo</span></span>
+<span class="item-price">30,00</span>
+</li><li class="item">
+<span class="item-name">Altamimbre<span class="wine-grape">Tinto Fino — expresivo y concentrado, con crianza en roble francés y americano</span></span>
+<span class="item-price">32,00</span>
+</li><li class="item">
+<span class="item-name">Carramimbre Magnum<span class="wine-grape">Tinto Fino — crianza en magnum con mayor potencial de guarda y expresión</span></span>
+<span class="item-price">32,00</span>
+</li><li class="item">
+<span class="item-name">Convento San Francisco 2019<span class="wine-grape">Tinto Fino — versión de mayor crianza, complejo y mineral con largo final en boca</span></span>
+<span class="item-price">32,00</span>
+</li><li class="item">
+<span class="item-name">Magnum Sembro<span class="wine-grape">Tinto Fino — Sembro en magnum, fresco y frutal con buena estructura para compartir</span></span>
+<span class="item-price">32,00</span>
+</li><li class="item">
+<span class="item-name">Cepa 21 Magnum<span class="wine-grape">Tinto Fino — de Emilio Moro, intenso y concentrado, en magnum para celebraciones especiales</span></span>
+<span class="item-price">33,00</span>
+</li><li class="item">
+<span class="item-name">Arzuaga Crianza<span class="wine-grape">Tinto Fino, Cabernet Sauvignon, Merlot — clásico y equilibrado, con taninos bien integrados</span></span>
+<span class="item-price">33,50</span>
+</li><li class="item">
+<span class="item-name">Magnum Resalso<span class="wine-grape">Tinto Fino — Finca Resalso de Emilio Moro en magnum, concentrado y muy frutal</span></span>
+<span class="item-price">34,00</span>
+</li><li class="item">
+<span class="item-name">Prios Magnum<span class="wine-grape">Tinto Fino — mismo vino en magnum, más expresivo y con mayor potencial de evolución</span></span>
+<span class="item-price">34,50</span>
+</li><li class="item">
+<span class="item-name">Alexander VS Ham Factory<span class="wine-grape">Tinto Fino — envejecido en barricas de jamón, curioso y original con notas ahumadas únicas</span></span>
+<span class="item-price">35,00</span>
+</li><li class="item">
+<span class="item-name">La Felisa Emilio Moro<span class="wine-grape">Tinto Fino — de finca propia de Emilio Moro, elegante y mineral, un paso más en la colección</span></span>
+<span class="item-price">35,00</span>
+</li><li class="item">
+<span class="item-name">Magnum Roble Convento<span class="wine-grape">Tinto Fino — Convento San Francisco roble en magnum, perfecto para grupos y celebraciones</span></span>
+<span class="item-price">36,00</span>
+</li><li class="item">
+<span class="item-name">Matarromera Crianza<span class="wine-grape">Tinto Fino — crianza con roble americano y francés, elegante y de gran potencial</span></span>
+<span class="item-price">37,00</span>
+</li><li class="item">
+<span class="item-name">Cair Cuve Magnum<span class="wine-grape">Tinto Fino — misma cuvée en magnum, ideal para compartir y con mejor evolución</span></span>
+<span class="item-price">38,00</span>
+</li><li class="item">
+<span class="item-name">Carmelo Rodero 9 Meses Magnum<span class="wine-grape">Tinto Fino — mismo vino en magnum para mayor evolución y presencia en la mesa</span></span>
+<span class="item-price">38,00</span>
+</li><li class="item">
+<span class="item-name">La Pinnaleta<span class="wine-grape">Tinto Fino — de parcela única, expresivo y singular con gran potencial de guarda</span></span>
+<span class="item-price">38,50</span>
+</li><li class="item">
+<span class="item-name">Malleolus<span class="wine-grape">Tinto Fino — el gran vino de Emilio Moro, sedoso y complejo con viñas viejas seleccionadas</span></span>
+<span class="item-price">40,00</span>
+</li><li class="item">
+<span class="item-name">Preludio<span class="wine-grape">Tinto Fino — de Bodegas y Viñedos del Jaro, viñas viejas con crianza larga y gran elegancia</span></span>
+<span class="item-price">40,00</span>
+</li><li class="item">
+<span class="item-name">Abadía Retuerta Selección Especial<span class="wine-grape">Tempranillo, Cabernet Sauvignon, Syrah — fuera D.O., elegante y complejo del pago de Sardón</span></span>
+<span class="item-price">42,50</span>
+</li><li class="item">
+<span class="item-name">Francisco Barona<span class="wine-grape">Tinto Fino — selección de autor de viñas viejas, potente y de gran personalidad</span></span>
+<span class="item-price">43,00</span>
+</li><li class="item">
+<span class="item-name">Tomás Postigo 3 Año<span class="wine-grape">Tinto Fino — 3 años de crianza total, suave y elegante con final largo y notas de cedro</span></span>
+<span class="item-price">43,00</span>
+</li><li class="item">
+<span class="item-name">Valduero I Cepa<span class="wine-grape">Tinto Fino — de Bodegas Valduero, selección de cepa única con gran estructura y elegancia</span></span>
+<span class="item-price">43,00</span>
+</li><li class="item">
+<span class="item-name">A&amp;M Asenjo Manso<span class="wine-grape">Tinto Fino — proyecto familiar de viñas centenarias, profundo e intenso</span></span>
+<span class="item-price">45,00</span>
+</li><li class="item">
+<span class="item-name">Garmón 2019<span class="wine-grape">Tinto Fino — de Cillar de Silos, de viñas viejas de Gumiel de Mercado, complejo y sedoso</span></span>
+<span class="item-price">45,00</span>
+</li><li class="item">
+<span class="item-name">Pago Carraovejas<span class="wine-grape">Tinto Fino, Cabernet Sauvignon, Merlot — uno de los grandes de la D.O., profundo y equilibrado</span></span>
+<span class="item-price">45,00</span>
+</li><li class="item">
+<span class="item-name">Punto Geodésico<span class="wine-grape">Tinto Fino — de parcelas seleccionadas, mineral y terroirista con gran precisión</span></span>
+<span class="item-price">45,00</span>
+</li><li class="item">
+<span class="item-name">Raza Carmelo Rodero<span class="wine-grape">Tinto Fino — la máxima expresión de Carmelo Rodero, selección de viñas viejas y gran añada</span></span>
+<span class="item-price">45,00</span>
+</li><li class="item">
+<span class="item-name">Aalto<span class="wine-grape">Tinto Fino — de viñas viejas, sedoso y elegante con fruta negra y especias nobles</span></span>
+<span class="item-price">46,00</span>
+</li><li class="item">
+<span class="item-name">Dehesa Canónigos Solideo<span class="wine-grape">Tinto Fino — reserva especial con larga crianza, elegante y complejo con final interminable</span></span>
+<span class="item-price">46,50</span>
+</li><li class="item">
+<span class="item-name">Pandemonium Blanco<span class="wine-grape">Albillo Mayor — blanco singular de la Ribera del Duero, fresco y mineral con acidez elegante</span></span>
+<span class="item-price">47,00</span>
+</li><li class="item">
+<span class="item-name">Cuentaviñas<span class="wine-grape">Tinto Fino — de viñas muy antiguas, complejo y profundo con gran potencial de evolución</span></span>
+<span class="item-price">48,00</span>
+</li><li class="item">
+<span class="item-name">PSI 2021<span class="wine-grape">Tinto Fino — de Dominio de Pingus, de pequeños productores del corazón de la D.O.</span></span>
+<span class="item-price">49,00</span>
+</li><li class="item">
+<span class="item-name">Valduero Alta RVA<span class="wine-grape">Tinto Fino — alta reserva de Valduero, larguísima crianza con una complejidad impresionante</span></span>
+<span class="item-price">50,00</span>
+</li><li class="item">
+<span class="item-name">17 by Pinea<span class="wine-grape">Tinto Fino — selección especial de Bodegas Pinea, potente y complejo con crianza en roble</span></span>
+<span class="item-price">52,00</span>
+</li><li class="item">
+<span class="item-name">Un Sueño Pago de los Capellanes<span class="wine-grape">Tinto Fino — de parcelas escogidas de Capellanes, elegante y con gran potencial de guarda</span></span>
+<span class="item-price">55,00</span>
+</li><li class="item">
+<span class="item-name">El Nogal Capellanes<span class="wine-grape">Tinto Fino — de Pago de los Capellanes, vino de finca singular con gran concentración y elegancia</span></span>
+<span class="item-price">60,00</span>
+</li><li class="item">
+<span class="item-name">Korde<span class="wine-grape">Tinto Fino — de Bodegas y Viñedos Montecastro, ensamblaje de fincas antiguas de gran calidad</span></span>
+<span class="item-price">60,00</span>
+</li><li class="item">
+<span class="item-name">Arzuaga Reserva Especial 2018<span class="wine-grape">Tinto Fino — reserva de máxima expresión, largo envejecimiento y gran complejidad aromática</span></span>
+<span class="item-price">65,00</span>
+</li><li class="item">
+<span class="item-name">Tomás Postigo 5º Año<span class="wine-grape">Tinto Fino — 5 años de crianza, uno de los grandes del Duero, sedoso y profundo</span></span>
+<span class="item-price">65,75</span>
+</li><li class="item">
+<span class="item-name">Valduero I Cepa Magnum<span class="wine-grape">Tinto Fino — I Cepa en magnum para celebraciones y mayor potencial de desarrollo</span></span>
+<span class="item-price">70,00</span>
+</li><li class="item">
+<span class="item-name">D. Cair Las Matillas<span class="wine-grape">Tinto Fino — selección de parcela única, la cima de D. Cair, potente y de largo recorrido</span></span>
+<span class="item-price">74,00</span>
+</li><li class="item">
+<span class="item-name">Cair Cruz del Pendón<span class="wine-grape">Tinto Fino — selección de viñas viejas centenarias, icono de la bodega D. Cair</span></span>
+<span class="item-price">78,00</span>
+</li><li class="item">
+<span class="item-name">Tomás Postigo Magnum 3 Año<span class="wine-grape">Tinto Fino — crianza 3 años en magnum para mayor evolución y expresión</span></span>
+<span class="item-price">84,50</span>
+</li><li class="item">
+<span class="item-name">Francisco Barona Finca Las Dueñas<span class="wine-grape">Tinto Fino — finca singular, la máxima expresión de Francisco Barona, coleccionable</span></span>
+<span class="item-price">85,00</span>
+</li><li class="item">
+<span class="item-name">Arzuaga Reserva Especial Magnum<span class="wine-grape">Tinto Fino — misma reserva en formato magnum, con mayor potencial de evolución en botella</span></span>
+<span class="item-price">85,50</span>
+</li><li class="item">
+<span class="item-name">Sed de Caña<span class="wine-grape">Tinto Fino — icono de Bodegas Montecastro, de viñas centenarias, potente y de guarda</span></span>
+<span class="item-price">90,00</span>
+</li><li class="item">
+<span class="item-name">Aalto PS<span class="wine-grape">Tinto Fino — Pago de Santa Cruz, icono de la bodega, profundo y con gran potencial de guarda</span></span>
+<span class="item-price">95,00</span>
+</li><li class="item">
+<span class="item-name">Malleolus Valderramiro<span class="wine-grape">Tinto Fino — de viña única centenaria de Emilio Moro, uno de los grandes de España</span></span>
+<span class="item-price">99,00</span>
+</li><li class="item">
+<span class="item-name">Valduero Gran RVA<span class="wine-grape">Tinto Fino — gran reserva de Valduero, un referente de la D.O. con décadas de historia</span></span>
+<span class="item-price">100,00</span>
+</li><li class="item">
+<span class="item-name">Luis Sanz Gran RVA<span class="wine-grape">Tinto Fino — gran reserva de larga crianza, complejo y evolucionado con gran elegancia</span></span>
+<span class="item-price">125,00</span>
+</li><li class="item">
+<span class="item-name">Tomás Postigo Rebollo Magnum<span class="wine-grape">Tinto Fino — de parcela centenaria Rebollo, en magnum, el techo de la colección Postigo</span></span>
+<span class="item-price">130,00</span>
+</li><li class="item">
+<span class="item-name">Valbuena 5º<span class="wine-grape">Tinto Fino, Merlot — el hermano del mítico Vega Sicilia, 5 años de crianza y enorme complejidad</span></span>
+<span class="item-price">175,00</span>
+</li><li class="item">
+<span class="item-name">Tomás Postigo Vinificación Integral Magnum<span class="wine-grape">Tinto Fino — vinificación integral en roble, máxima expresión de la bodega en magnum</span></span>
+<span class="item-price">210,00</span>
+</li><li class="item">
+<span class="item-name">Doroteo Pago de los Capellanes<span class="wine-grape">Tinto Fino — la máxima expresión de Pago de los Capellanes, preguntar disponibilidad</span></span>
+<span class="item-price">Consultar</span>
+</li></ul>
+</section>
+<!-- TORO -->
+<section class="menu-section" data-section="" id="toro">
+<h2 class="section-title wine-region-title">Toro</h2>
+<p class="section-note">Uva principal: <strong>Tinta de Toro</strong> (clon local del Tempranillo) salvo indicación contraria</p>
+<div class="section-rule"><span>✦</span></div>
+<ul class="item-list">
+
+
+
+
+
+
+
+
+
+
+
+<li class="item">
+<span class="item-name">La Rejadora<span class="wine-grape">Tinta de Toro — joven y potente, con fruta oscura madura y el carácter robusto de la zona</span></span>
+<span class="item-price">15,00</span>
+</li><li class="item">
+<span class="item-name">Buen Rollo<span class="wine-grape">Tinta de Toro — moderno y accesible, fresco para la zona con buena fruta y poca madera</span></span>
+<span class="item-price">17,50</span>
+</li><li class="item">
+<span class="item-name">Prima<span class="wine-grape">Tinta de Toro — de Bodegas Tardencuba, estructurado y con personalidad, paso por roble</span></span>
+<span class="item-price">20,00</span>
+</li><li class="item">
+<span class="item-name">Lorca Malbec<span class="wine-grape">Malbec — variedad argentina implantada en Toro, potente y con notas de ciruela y violeta</span></span>
+<span class="item-price">25,00</span>
+</li><li class="item">
+<span class="item-name">San Román<span class="wine-grape">Tinta de Toro — de Maurodos (Telmo Rodríguez), viñas viejas con carácter intenso y mineral</span></span>
+<span class="item-price">37,00</span>
+</li><li class="item">
+<span class="item-name">Platón Divina<span class="wine-grape">Tinta de Toro — de Bodegas Divina, potente y con gran concentración de fruta negra</span></span>
+<span class="item-price">38,00</span>
+</li><li class="item">
+<span class="item-name">Matsu El Viejo<span class="wine-grape">Tinta de Toro — de viñas centenarias de Matsu, concentrado y mineral, biológico</span></span>
+<span class="item-price">42,95</span>
+</li><li class="item">
+<span class="item-name">Latarce<span class="wine-grape">Tinta de Toro — de Bodegas Latarce, potente y con fruta oscura madura y taninos maduros</span></span>
+<span class="item-price">43,50</span>
+</li><li class="item">
+<span class="item-name">Syrah Matasnos<span class="wine-grape">Syrah — expresión mediterránea de esta variedad en Toro, especiada y con mucha fruta oscura</span></span>
+<span class="item-price">45,00</span>
+</li><li class="item">
+<span class="item-name">Pintia<span class="wine-grape">Tinta de Toro — de Vega Sicilia, la máxima expresión elegante del Toro, complejo y fino</span></span>
+<span class="item-price">75,00</span>
+</li><li class="item">
+<span class="item-name">Cartago<span class="wine-grape">Tinta de Toro — de Bodegas Frontio, vino de gran concentración y largo envejecimiento</span></span>
+<span class="item-price">89,50</span>
+</li></ul>
+</section>
+<!-- CASTILLA Y LEÓN -->
+<section class="menu-section" data-section="" id="castilla-leon">
+<h2 class="section-title wine-region-title">Castilla y León</h2>
+<div class="section-rule"><span>✦</span></div>
+<ul class="item-list">
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="item">
+<span class="item-name">Alquez<span class="wine-grape">Garnacha — variedad autóctona de la Sierra de Gredos, mineral y con fruta roja fresca</span></span>
+<span class="item-price">18,50</span>
+</li><li class="item">
+<span class="item-name">Borsaq Shiraz<span class="wine-grape">Syrah (Shiraz) — expresión castellana de la variedad, especiada y con fruta oscura intensa</span></span>
+<span class="item-price">18,75</span>
+</li><li class="item">
+<span class="item-name">Enemigo Mío<span class="wine-grape">Tempranillo, Syrah — coupage moderno y accesible con mucha fruta y carácter propio</span></span>
+<span class="item-price">19,50</span>
+</li><li class="item">
+<span class="item-name">Museum RVA<span class="wine-grape">Tempranillo — reserva de Cigales, equilibrado y clásico con buena estructura</span></span>
+<span class="item-price">19,75</span>
+</li><li class="item">
+<span class="item-name">Tres Picos Garnacha<span class="wine-grape">Garnacha — de Borsao en el Campo de Borja, frutal y seductor con la golosa expresión de la garnacha</span></span>
+<span class="item-price">21,50</span>
+</li><li class="item">
+<span class="item-name">Relatos<span class="wine-grape">Tempranillo — de parcelas antiguas, expresivo con carácter propio bien definido</span></span>
+<span class="item-price">22,50</span>
+</li><li class="item">
+<span class="item-name">Sommos Merlot Colección<span class="wine-grape">Merlot — expresión aragonesa de la variedad bordelesa, suave y con fruta madura</span></span>
+<span class="item-price">29,50</span>
+</li><li class="item">
+<span class="item-name">Jardins d'Edina<span class="wine-grape">Tempranillo, Cabernet Sauvignon — de Bodegas Edina, elegante y moderno con crianza en roble</span></span>
+<span class="item-price">32,00</span>
+</li><li class="item">
+<span class="item-name">Albeniz Torre<span class="wine-grape">Tempranillo — de la zona de Cigales, potente y estructurado con notas de fruta madura</span></span>
+<span class="item-price">34,75</span>
+</li><li class="item">
+<span class="item-name">Sommos Colección Syrah<span class="wine-grape">Syrah — de Bodegas Sommos en Aragón, intenso y especiado con gran concentración</span></span>
+<span class="item-price">44,00</span>
+</li><li class="item">
+<span class="item-name">Mauro<span class="wine-grape">Tempranillo, Garnacha — el icono fuera D.O. de Tudela del Duero, potente y complejo</span></span>
+<span class="item-price">55,00</span>
+</li><li class="item">
+<span class="item-name">Mauro VS<span class="wine-grape">Tempranillo, Garnacha — Vendimia Seleccionada de viñas viejas, un vino monumental</span></span>
+<span class="item-price">85,00</span>
+</li><li class="item">
+<span class="item-name">Terreus<span class="wine-grape">Tempranillo — de Mauro, el vino más exclusivo de la bodega, de viñas antiguas y gran guarda</span></span>
+<span class="item-price">112,00</span>
+</li></ul>
+</section>
+<!-- RIOJAS -->
+<section class="menu-section" data-section="" id="riojas">
+<h2 class="section-title wine-region-title">Riojas</h2>
+<p class="section-note">Uva principal: <strong>Tempranillo</strong> salvo indicación contraria</p>
+<div class="section-rule"><span>✦</span></div>
+<ul class="item-list">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="item">
+<span class="item-name">Marqués de Vitoria<span class="wine-grape">Tempranillo — de Bodegas AGE, crianza asequible con notas de vainilla y fruta roja madura</span></span>
+<span class="item-price">14,00</span>
+</li><li class="item">
+<span class="item-name">Nivarius Rioja<span class="wine-grape">Tempranillo Blanco — rareza de la Rioja, variedad mutante blanca, floral y de gran frescura</span></span>
+<span class="item-price">15,00</span>
+</li><li class="item">
+<span class="item-name">Amador Medrano Terras<span class="wine-grape">Tempranillo — de entrada de Bodegas Amador Medrano, fresco y frutal con buena relación calidad-precio</span></span>
+<span class="item-price">15,50</span>
+</li><li class="item">
+<span class="item-name">Rioja Carabú<span class="wine-grape">Tempranillo — joven y afrutado, accesible y fresco ideal para el día a día</span></span>
+<span class="item-price">15,50</span>
+</li><li class="item">
+<span class="item-name">Beronia Crianza<span class="wine-grape">Tempranillo — crianza clásica riojana, equilibrado y con notas características de coco y vainilla</span></span>
+<span class="item-price">16,00</span>
+</li><li class="item">
+<span class="item-name">El Maquinista<span class="wine-grape">Tempranillo — joven y frutal, vibrante y accesible con el sello de la Rioja Alavesa</span></span>
+<span class="item-price">16,00</span>
+</li><li class="item">
+<span class="item-name">Gómez Cruzado<span class="wine-grape">Tempranillo — joven de la bodega histórica de Haro, fresco y directo con mucha fruta</span></span>
+<span class="item-price">16,00</span>
+</li><li class="item">
+<span class="item-name">Gómez Cruzado Crianza<span class="wine-grape">Tempranillo, Garnacha — crianza clásica de bodega histórica, equilibrado y muy gastronómico</span></span>
+<span class="item-price">16,00</span>
+</li><li class="item">
+<span class="item-name">Ramón Bilbao<span class="wine-grape">Tempranillo — joven y frutal de una de las bodegas más conocidas de Haro</span></span>
+<span class="item-price">16,00</span>
+</li><li class="item">
+<span class="item-name">Añares<span class="wine-grape">Tempranillo — de Bodegas Olarra, clásico y accesible con notas de vainilla y fruta roja</span></span>
+<span class="item-price">16,50</span>
+</li><li class="item">
+<span class="item-name">El Maquinista Crianza<span class="wine-grape">Tempranillo — crianza con más estructura y complejidad que el joven, taninos bien integrados</span></span>
+<span class="item-price">16,50</span>
+</li><li class="item">
+<span class="item-name">Rayo Uva<span class="wine-grape">Tempranillo — moderno y accesible, fruta roja viva con poca madera para beber joven</span></span>
+<span class="item-price">16,50</span>
+</li><li class="item">
+<span class="item-name">Rioja Ondarre Crianza<span class="wine-grape">Tempranillo, Garnacha — crianza riojana clásica y equilibrada de Bodegas Ondarre</span></span>
+<span class="item-price">16,50</span>
+</li><li class="item">
+<span class="item-name">Sierra Cantabria<span class="wine-grape">Tempranillo — de Eguren Ugarte, expresivo y de gran frescura con el sello de la Rioja Alavesa</span></span>
+<span class="item-price">16,50</span>
+</li><li class="item">
+<span class="item-name">Añares Crianza<span class="wine-grape">Tempranillo — crianza tradicional riojana con roble americano, equilibrado y muy gastronómico</span></span>
+<span class="item-price">16,75</span>
+</li><li class="item">
+<span class="item-name">Proelio Crianza<span class="wine-grape">Tempranillo — de Bodegas Proelio en la Rioja Alta, equilibrado y muy gastronómico</span></span>
+<span class="item-price">17,00</span>
+</li><li class="item">
+<span class="item-name">Ramón Bilbao Crianza<span class="wine-grape">Tempranillo — crianza con roble americano, clásico y equilibrado de gran popularidad</span></span>
+<span class="item-price">17,50</span>
+</li><li class="item">
+<span class="item-name">Amador Medrano Los Sotillos<span class="wine-grape">Tempranillo — de parcelas seleccionadas con mayor expresión de terroir y complejidad</span></span>
+<span class="item-price">17,75</span>
+</li><li class="item">
+<span class="item-name">Bai Gorri<span class="wine-grape">Tempranillo — de la Rioja Alavesa, fresco y mineral con taninos finos y buena acidez</span></span>
+<span class="item-price">18,00</span>
+</li><li class="item">
+<span class="item-name">Lindes Remelluri<span class="wine-grape">Tempranillo, Garnacha — de viñas jóvenes de la finca Remelluri, fresco y afrutado</span></span>
+<span class="item-price">18,00</span>
+</li><li class="item">
+<span class="item-name">Beronia Edición Limitada<span class="wine-grape">Tempranillo, Mazuelo, Graciano — edición especial con mayor complejidad y personalidad</span></span>
+<span class="item-price">18,50</span>
+</li><li class="item">
+<span class="item-name">Finca de los Lobos<span class="wine-grape">Tempranillo — de finca propia con carácter singular, fruta concentrada y buena guarda</span></span>
+<span class="item-price">18,50</span>
+</li><li class="item">
+<span class="item-name">Luis Cañas Crianza<span class="wine-grape">Tempranillo, Garnacha — crianza de Rioja Alavesa, equilibrado y con notas de fruta roja y especias</span></span>
+<span class="item-price">18,95</span>
+</li><li class="item">
+<span class="item-name">Amador Medrano Las Aguzaderas<span class="wine-grape">Tempranillo — de finca única Las Aguzaderas, el vino de autor de la bodega, mineral y profundo</span></span>
+<span class="item-price">20,75</span>
+</li><li class="item">
+<span class="item-name">Albiker<span class="wine-grape">Tempranillo — moderno y vibrante, con fruta roja fresca y acidez que lo hace muy gastronómico</span></span>
+<span class="item-price">22,50</span>
+</li><li class="item">
+<span class="item-name">La Montesa<span class="wine-grape">Garnacha, Tempranillo, Mazuelo — de Palacios Remondo, garnacha riojana elegante y muy expresiva</span></span>
+<span class="item-price">22,50</span>
+</li><li class="item">
+<span class="item-name">Amaren<span class="wine-grape">Tempranillo, Graciano — clásico riojano moderno de Abel Mendoza, elegante y equilibrado</span></span>
+<span class="item-price">24,50</span>
+</li><li class="item">
+<span class="item-name">Sierra Cantabria Cune<span class="wine-grape">Tempranillo — de CVNE y Eguren, frutal y moderno con la elegancia de ambas bodegas</span></span>
+<span class="item-price">25,00</span>
+</li><li class="item">
+<span class="item-name">Altún Villagardiel<span class="wine-grape">Tempranillo — de Bodegas Altún en Baños de Ebro, mineral y fino con crianza en barrica</span></span>
+<span class="item-price">25,00</span>
+</li><li class="item">
+<span class="item-name">Luis Cañas Reserva 2018<span class="wine-grape">Tempranillo, Graciano — reserva elegante y evolucionada de una de las bodegas referentes</span></span>
+<span class="item-price">28,50</span>
+</li><li class="item">
+<span class="item-name">Beronia Reserva 2019<span class="wine-grape">Tempranillo, Graciano, Mazuelo — reserva compleja y elegante, un clásico de la D.O. Ca. Rioja</span></span>
+<span class="item-price">29,50</span>
+</li><li class="item">
+<span class="item-name">Matalaz<span class="wine-grape">Tempranillo — de Bodegas Señorío de Matalaz, potente y concentrado con larga crianza</span></span>
+<span class="item-price">29,50</span>
+</li><li class="item">
+<span class="item-name">Murua Rioja<span class="wine-grape">Tempranillo, Graciano, Mazuelo — reserva clásica de Bodegas Murua en la Rioja Alavesa</span></span>
+<span class="item-price">29,75</span>
+</li><li class="item">
+<span class="item-name">Colección Privada Beronia<span class="wine-grape">Tempranillo — selección especial de Beronia, con más carácter y largo envejecimiento en roble</span></span>
+<span class="item-price">30,00</span>
+</li><li class="item">
+<span class="item-name">Marqués de Murrieta<span class="wine-grape">Tempranillo, Garnacha, Mazuelo, Graciano — reserva icónica de la Rioja, clásico y elegante</span></span>
+<span class="item-price">30,00</span>
+</li><li class="item">
+<span class="item-name">Carmelo Rodero Crianza<span class="wine-grape">Tempranillo — crianza en Rioja de Carmelo Rodero, equilibrado y con taninos bien integrados</span></span>
+<span class="item-price">30,00</span>
+</li><li class="item">
+<span class="item-name">Magnum Gómez Cruzado<span class="wine-grape">Tempranillo, Garnacha — crianza de Gómez Cruzado en magnum para compartir</span></span>
+<span class="item-price">31,00</span>
+</li><li class="item">
+<span class="item-name">Magnum Beronia<span class="wine-grape">Tempranillo — Beronia crianza en magnum, mejor evolución para celebraciones en mesa</span></span>
+<span class="item-price">32,00</span>
+</li><li class="item">
+<span class="item-name">Ondarre Crianza Magnum<span class="wine-grape">Tempranillo, Garnacha, Mazuelo — crianza clásica de Bodegas Ondarre en magnum</span></span>
+<span class="item-price">33,00</span>
+</li><li class="item">
+<span class="item-name">Altún La Cicatera<span class="wine-grape">Tempranillo — la selección especial de Altún de viñas viejas con gran concentración y elegancia</span></span>
+<span class="item-price">33,00</span>
+</li><li class="item">
+<span class="item-name">Los Sotillos<span class="wine-grape">Tempranillo — de parcela única de Amador Medrano, la cima de la bodega con gran expresión</span></span>
+<span class="item-price">37,00</span>
+</li><li class="item">
+<span class="item-name">Ahari<span class="wine-grape">Tempranillo — de Bodegas Altún en la Rioja Alavesa, elegante y mineral con carácter propio</span></span>
+<span class="item-price">39,00</span>
+</li><li class="item">
+<span class="item-name">Suzzane<span class="wine-grape">Tempranillo, Graciano — de Bodegas Sonsierra, selección especial con carácter y larga crianza</span></span>
+<span class="item-price">43,00</span>
+</li><li class="item">
+<span class="item-name">San Vicente<span class="wine-grape">Tempranillo Peludo — de Familia Eguren, variedad propia de San Vicente de la Sonsierra, singular</span></span>
+<span class="item-price">45,00</span>
+</li><li class="item">
+<span class="item-name">Valdegines (Artadi)<span class="wine-grape">Tempranillo — de Artadi, elegante y terroirista, referencia de la Rioja Alavesa moderna</span></span>
+<span class="item-price">48,75</span>
+</li><li class="item">
+<span class="item-name">Macán Rioja<span class="wine-grape">Tempranillo — proyecto de Vega Sicilia y Rothschild en Rioja, elegante y de gran distinción</span></span>
+<span class="item-price">79,50</span>
+</li><li class="item">
+<span class="item-name">Macán Oro<span class="wine-grape">Tempranillo — la cima de la colección Macán, vino de añadas especiales, preguntar disponibilidad</span></span>
+<span class="item-price">Consultar</span>
+</li><li class="item">
+<span class="item-name">Macán Clásico<span class="wine-grape">Tempranillo — versión más accesible de Macán, frutal y elegante, preguntar disponibilidad</span></span>
+<span class="item-price">Consultar</span>
+</li></ul>
+</section>
+</div><!-- /vinos -->
+</main>
+<footer class="footer">
+<div class="footer-inner">
+<div class="footer-ornament">
+<span class="f-line"></span><span class="f-dot"></span><span class="f-line"></span>
+</div>
+<div class="footer-links">
+<a class="footer-link" href="tel:+34986641757">
+<svg fill="none" height="15" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewbox="0 0 24 24" width="15">
+<path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.99 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.9 1.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9a16 16 0 0 0 6.29 6.29l1.05-1.05a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7a2 2 0 0 1 1.72 2.03z"></path>
+</svg>
+        +34 986 641 757
+      </a>
+<a class="footer-link" href="https://www.facebook.com/Otuneltapas/?locale=es_ES" target="_blank">
+<svg fill="currentColor" height="15" viewbox="0 0 24 24" width="15"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+        O Tunel Ponteareas
+      </a>
+<a class="footer-link" href="https://www.instagram.com/otuneltapasponteareas" target="_blank">
+<svg fill="none" height="15" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewbox="0 0 24 24" width="15">
+<rect height="20" rx="5" ry="5" width="20" x="2" y="2"></rect>
+<path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+<line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line>
+</svg>
+        @otuneltapasponteareas
+      </a>
+</div>
+<p class="footer-copy">O Tunel · Ponteareas · Galicia</p>
+<button class="footer-privacy-link" id="openPrivacy" type="button">Aviso de privacidad</button>
+</div>
+</footer>
+<!-- ── MODAL AVISO DE PRIVACIDAD ── -->
+<div class="privacy-overlay" id="privacyOverlay">
+<div class="privacy-modal">
+<button aria-label="Cerrar" class="privacy-close" id="closePrivacy">×</button>
+<h3>Aviso de privacidad</h3>
+<p>Esta web no utiliza cookies de seguimiento, análisis ni publicidad. El único dato que se guarda en tu dispositivo es tu preferencia de modo de visualización (día o noche), almacenada localmente en tu navegador mediante <em>localStorage</em>.</p>
+<p>Esta información no se comparte con terceros, no se envía a ningún servidor y puedes eliminarla en cualquier momento borrando los datos de navegación de tu navegador.</p>
+<p>Para cualquier consulta sobre privacidad puedes contactar con nosotros en el +34 986 641 757.</p>
+</div>
+</div>
+<script src="main.js"></script>
+<script>
+(function () {
+  var navBar = document.getElementById('sectionNavBar');
+  if (!navBar) return;
+
+  /* ── Mapa de navs por página ── */
+  var navsByPage = {};
+  navBar.querySelectorAll('[data-page-nav]').forEach(function (nav) {
+    navsByPage[nav.dataset.pageNav] = nav;
+  });
+
+  /* ── Activa un botón y mueve el indicador ── */
+  function setActiveButton(nav, btn) {
+    nav.querySelectorAll('.section-nav-btn').forEach(function (b) { b.classList.remove('is-active'); });
+    if (btn) btn.classList.add('is-active');
+  }
+
+  function updateIndicator(nav) {
+    if (!nav) return;
+    var track     = nav.querySelector('.section-nav-track');
+    var indicator = nav.querySelector('.nav-indicator');
+    var active    = track ? track.querySelector('.section-nav-btn.is-active') : null;
+    if (!track || !indicator || !active) return;
+    var tR = track.getBoundingClientRect();
+    var bR = active.getBoundingClientRect();
+    indicator.style.width     = bR.width + 'px';
+    indicator.style.transform = 'translateX(' + (bR.left - tR.left) + 'px)';
+  }
+
+  /* ── Inicia con el primer botón de cada nav activo ── */
+  Object.keys(navsByPage).forEach(function (key) {
+    var firstBtn = navsByPage[key].querySelector('.section-nav-btn');
+    setActiveButton(navsByPage[key], firstBtn);
+  });
+
+  /* ── Muestra la nav de la página activa y oculta las demás ── */
+  function showNavFor(page) {
+    Object.keys(navsByPage).forEach(function (key) {
+      navsByPage[key].classList.toggle('is-visible', key === page);
+    });
+    requestAnimationFrame(function () { updateIndicator(navsByPage[page]); });
+  }
+
+  /* Página inicial */
+  var activePage = document.querySelector('.page.active');
+  showNavFor(activePage ? activePage.id : 'carta');
+
+  /* Sincroniza con el cambio de pestaña principal */
+  document.querySelectorAll('.nav-tab').forEach(function (tab) {
+    tab.addEventListener('click', function () {
+      if (tab.dataset.page) showNavFor(tab.dataset.page);
+    });
+  });
+
+  /* ── Cálculo del offset del navbar ── */
+  function computeScrollOffset() {
+    var heroEl  = document.querySelector('.hero');
+    var heroH   = heroEl ? heroEl.offsetHeight : 0;
+    var navBarH = navBar.offsetHeight;
+    document.documentElement.style.setProperty('--nav-bar-height', navBarH + 'px');
+    document.documentElement.style.setProperty('--scroll-offset', (heroH + navBarH + 16) + 'px');
+  }
+  computeScrollOffset();
+  window.addEventListener('resize', function () {
+    computeScrollOffset();
+    Object.keys(navsByPage).forEach(function (key) {
+      if (navsByPage[key].classList.contains('is-visible')) updateIndicator(navsByPage[key]);
+    });
+  });
+  window.addEventListener('orientationchange', computeScrollOffset);
+
+  /* ── Clicks en botones de sección ── */
+  navBar.querySelectorAll('.section-nav-btn').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var nav    = btn.closest('.section-nav');
+      var target = document.getElementById(btn.dataset.target);
+      setActiveButton(nav, btn);
+      updateIndicator(nav);
+      if (!target) return;
       computeScrollOffset();
-      window.addEventListener('resize', function () {
-        computeScrollOffset();
-        Object.keys(navsByPage).forEach(function (key) {
-          if (navsByPage[key].classList.contains('is-visible')) updateIndicator(navsByPage[key]);
-        });
-      });
-      window.addEventListener('orientationchange', computeScrollOffset);
+      /* Offset real = hero + barra de secciones + margen extra */
+      var heroEl  = document.querySelector('.hero');
+      var heroH   = heroEl ? heroEl.getBoundingClientRect().height : 0;
+      var navBarH = navBar.getBoundingClientRect().height;
+      var totalOffset = heroH + navBarH + 16;
+      var top = target.getBoundingClientRect().top + window.scrollY - totalOffset;
+      window.scrollTo({ top: top, behavior: 'smooth' });
+    });
+  });
 
-      /* ── Clicks en botones de sección ── */
-      navBar.querySelectorAll('.section-nav-btn').forEach(function (btn) {
-        btn.addEventListener('click', function () {
-          var nav = btn.closest('.section-nav');
-          var target = document.getElementById(btn.dataset.target);
-          setActiveButton(nav, btn);
-          updateIndicator(nav);
-          if (!target) return;
-          computeScrollOffset();
-          /* Offset real = hero + barra de secciones + margen extra */
-          var heroEl = document.querySelector('.hero');
-          var heroH = heroEl ? heroEl.getBoundingClientRect().height : 0;
-          var navBarH = navBar.getBoundingClientRect().height;
-          var totalOffset = heroH + navBarH + 16;
-          var top = target.getBoundingClientRect().top + window.scrollY - totalOffset;
-          window.scrollTo({ top: top, behavior: 'smooth' });
-        });
-      });
+  /* ── ScrollSpy: resalta el botón según la sección visible ── */
+  var sections = document.querySelectorAll('[data-section][id]');
+  var observer = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (!entry.isIntersecting) return;
+      var btn = navBar.querySelector('.section-nav-btn[data-target="' + entry.target.id + '"]');
+      if (!btn) return;
+      var nav = btn.closest('.section-nav');
+      if (!nav.classList.contains('is-visible')) return; /* solo la nav activa */
+      setActiveButton(nav, btn);
+      updateIndicator(nav);
+      btn.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+    });
+  }, { rootMargin: '-20% 0px -65% 0px', threshold: 0 });
 
-      /* ── ScrollSpy: resalta el botón según la sección visible ── */
-      var sections = document.querySelectorAll('[data-section][id]');
-      var observer = new IntersectionObserver(function (entries) {
-        entries.forEach(function (entry) {
-          if (!entry.isIntersecting) return;
-          var btn = navBar.querySelector('.section-nav-btn[data-target="' + entry.target.id + '"]');
-          if (!btn) return;
-          var nav = btn.closest('.section-nav');
-          if (!nav.classList.contains('is-visible')) return; /* solo la nav activa */
-          setActiveButton(nav, btn);
-          updateIndicator(nav);
-          btn.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
-        });
-      }, { rootMargin: '-20% 0px -65% 0px', threshold: 0 });
+  sections.forEach(function (sec) { observer.observe(sec); });
+})();
 
-      sections.forEach(function (sec) { observer.observe(sec); });
-    })();
+/* ── MODAL AVISO DE PRIVACIDAD ── */
+(function () {
+  var openBtn  = document.getElementById('openPrivacy');
+  var closeBtn = document.getElementById('closePrivacy');
+  var overlay  = document.getElementById('privacyOverlay');
+  if (!openBtn || !overlay) return;
 
-    /* ── MODO DÍA / NOCHE ── */
-    (function () {
-      var btn = document.getElementById('themeToggle');
-      var html = document.documentElement;
-      var saved = localStorage.getItem('otunel-theme');
-      if (saved === 'night') html.classList.remove('day-mode');
+  function open()  { overlay.classList.add('is-visible'); }
+  function close() { overlay.classList.remove('is-visible'); }
 
-      btn.addEventListener('click', function () {
-        var isDay = html.classList.toggle('day-mode');
-        localStorage.setItem('otunel-theme', isDay ? 'day' : 'night');
-      });
-    })();
-  </script>
+  openBtn.addEventListener('click', open);
+  closeBtn.addEventListener('click', close);
+  overlay.addEventListener('click', function (e) {
+    if (e.target === overlay) close();
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') close();
+  });
+})();
+
+/* ── MODO DÍA / NOCHE ── */
+(function () {
+  var btn = document.getElementById('themeToggle');
+  var html = document.documentElement;
+  var saved = localStorage.getItem('otunel-theme');
+  if (saved === 'night') html.classList.remove('day-mode');
+
+  btn.addEventListener('click', function () {
+    var isDay = html.classList.toggle('day-mode');
+    localStorage.setItem('otunel-theme', isDay ? 'day' : 'night');
+  });
+})();
+</script>
 </body>
-
 </html>
