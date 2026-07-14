@@ -467,14 +467,15 @@ main {
   margin-left: 5px;
 }
 .allergens img {
-  width: 18px;
-  height: 18px;
-  opacity: 0.6;
-  filter: invert(1) sepia(0.3) saturate(0.5);
+  width: 22px;
+  height: 22px;
+  opacity: 1;
+  filter: none;
   vertical-align: middle;
 }
 html.day-mode .allergens img {
-  filter: invert(0.3) sepia(0.5) saturate(0.8);
+  filter: none;
+  opacity: 1;
 }
 
 /* ── DESCRIPCIÓN DE UVA ── */
@@ -536,13 +537,14 @@ html.day-mode .allergens img {
   transition: color 0.4s ease;
 }
 .allergen-item img {
-  width: 22px;
-  height: 22px;
-  filter: invert(1) sepia(0.3) saturate(0.5);
-  opacity: 0.65;
+  width: 26px;
+  height: 26px;
+  filter: none;
+  opacity: 1;
 }
 html.day-mode .allergen-item img {
-  filter: invert(0.3) sepia(0.5) saturate(0.8);
+  filter: none;
+  opacity: 1;
 }
 
 /* ── FOOTER ── */
@@ -671,3 +673,84 @@ html.day-mode .footer-copy      { color: rgba(40,22,6,0.40); }
 /* Día: se ve el sol, la luna oculta */
 html.day-mode .icon-moon { opacity: 0; transform: rotate(-90deg) scale(0.6); }
 html.day-mode .icon-sun  { opacity: 1; transform: rotate(0deg) scale(1); }
+
+/* ── AVISO DE PRIVACIDAD ── */
+.footer-privacy-link {
+  background: none;
+  border: none;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  opacity: 0.6;
+  cursor: pointer;
+  margin-top: 0.6rem;
+  padding: 0;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: opacity 0.2s ease, color 0.4s ease;
+}
+.footer-privacy-link:hover { opacity: 1; color: var(--color-gold); }
+
+.privacy-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 3000;
+  background: rgba(0,0,0,0.65);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+.privacy-overlay.is-visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.privacy-modal {
+  position: relative;
+  max-width: 480px;
+  width: 100%;
+  background: var(--color-surface);
+  border: 1px solid var(--color-gold-dim);
+  border-radius: var(--radius);
+  padding: 2.2rem 2rem;
+  transform: translateY(12px);
+  transition: transform 0.3s ease;
+}
+.privacy-overlay.is-visible .privacy-modal { transform: translateY(0); }
+
+.privacy-modal h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.4rem;
+  font-weight: 400;
+  color: var(--color-text);
+  margin-bottom: 1rem;
+  letter-spacing: 0.02em;
+}
+
+.privacy-modal p {
+  font-size: 0.85rem;
+  line-height: 1.65;
+  color: var(--color-text-muted);
+  margin-bottom: 0.9rem;
+}
+.privacy-modal p:last-child { margin-bottom: 0; }
+
+.privacy-close {
+  position: absolute;
+  top: 0.9rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  font-size: 1.6rem;
+  line-height: 1;
+  color: var(--color-text-muted);
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+.privacy-close:hover { color: var(--color-gold); }
