@@ -754,3 +754,66 @@ html.day-mode .icon-sun  { opacity: 1; transform: rotate(0deg) scale(1); }
   transition: color 0.2s ease;
 }
 .privacy-close:hover { color: var(--color-gold); }
+
+/* ── SELECTOR DE IDIOMA ── */
+.lang-switcher {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  margin-bottom: 1.2rem;
+  animation: fadeDown 0.7s ease 0.25s both;
+}
+
+.lang-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  background: none;
+  border: 1px solid transparent;
+  border-radius: 100px;
+  padding: 0.25rem 0.65rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  color: var(--color-text-muted);
+}
+
+.lang-flag {
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lang-flag-svg {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+  display: block;
+}
+
+.lang-code {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.65rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.lang-btn:hover {
+  color: var(--color-text);
+  border-color: var(--color-gold-dim);
+}
+
+.lang-btn.active {
+  color: var(--color-gold);
+  border-color: var(--color-gold-dim);
+  background: var(--gold-bg);
+}
+
+html.day-mode .lang-btn.active {
+  color: #7c2d2d;
+  border-color: rgba(124,45,45,0.35);
+  background: rgba(124,45,45,0.06);
+}
