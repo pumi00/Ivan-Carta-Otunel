@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html class="day-mode" lang="es">
 <head>
 <meta charset="utf-8"/>
@@ -20,44 +19,79 @@
 <meta content="https://www.otunelponteareas.net/" property="og:url"/>
 <meta content="es_ES" property="og:locale"/>
 <meta content="O Tunel Ponteareas" property="og:site_name"/>
-<meta content="https://otunelponteareas.net/logo-otunel.png" property="og:image"/>
+<meta content="https://www.otunelponteareas.net/logo-otunel.png" property="og:image"/>
+<meta content="https://www.otunelponteareas.net/logo-otunel.png" property="og:image:secure_url"/>
+<meta content="image/png" property="og:image:type"/>
 <meta content="600" property="og:image:width"/>
 <meta content="600" property="og:image:height"/>
 <meta content="Logo O Tunel Tapas — Desde 1947, Ponteareas" property="og:image:alt"/>
 <!-- Twitter imagen -->
-<meta content="https://otunelponteareas.net/logo-otunel.png" name="twitter:image"/>
+<meta content="https://www.otunelponteareas.net/logo-otunel.png" name="twitter:image"/>
 <!-- ── TWITTER / X ── -->
 <meta content="summary" name="twitter:card"/>
 <meta content="O Tunel — Tapería y Vinoteca en Ponteareas" name="twitter:title"/>
 <meta content="Tapas caseras y una de las mejores selecciones de vinos de Galicia." name="twitter:description"/>
-<!-- ── DATOS ESTRUCTURADOS (Google entiende que es un restaurante) ── -->
+<!-- ── DATOS ESTRUCTURADOS (Google entiende que es un restaurante y vinoteca) ── -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "BarOrPub",
+  "@type": ["Restaurant", "BarOrPub"],
   "name": "O Tunel Tapas",
   "alternateName": ["O Tunel", "O Tunel Ponteareas", "Finca do Parrulo"],
   "description": "Tapería y vinoteca en Ponteareas desde 1947. Tapas caseras elaboradas con productos de temporada y una de las selecciones de vinos más completas de Galicia: albariños, godellos, mencías, Ribera del Duero, Riojas y champanes.",
   "url": "https://www.otunelponteareas.net/",
+  "logo": "https://www.otunelponteareas.net/logo-otunel.png",
+  "image": [
+    "https://www.otunelponteareas.net/logo-otunel.png",
+    "https://www.otunelponteareas.net/logo-otunel.jpg"
+  ],
   "telephone": "+34986641757",
   "foundingDate": "1947",
   "address": {
     "@type": "PostalAddress",
+    "streetAddress": "Praza Maior, 31",
     "addressLocality": "Ponteareas",
-    "addressRegion": "Galicia",
+    "addressRegion": "Pontevedra, Galicia",
     "postalCode": "36860",
     "addressCountry": "ES"
   },
   "geo": {
     "@type": "GeoCoordinates",
-    "latitude": 42.1735,
-    "longitude": -8.5027
+    "latitude": 42.1748,
+    "longitude": -8.5054
   },
   "servesCuisine": ["Tapas", "Vinos", "Cocina gallega", "Pintxos", "Mariscos"],
   "priceRange": "€€",
   "currenciesAccepted": "EUR",
   "paymentAccepted": "Cash, Credit Card",
-  "menu": "https://www.otunelponteareas.net/", "hasMap": "https://maps.google.com/?q=O+Tunel+Ponteareas",
+  "menu": "https://www.otunelponteareas.net/",
+  "hasMap": "https://maps.google.com/?q=O+Tunel+Tapas+Ponteareas",
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": "Monday",
+      "opens": "00:00",
+      "closes": "00:00"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": "Tuesday",
+      "opens": "17:00",
+      "closes": "23:59"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday",
+        "Sunday"
+      ],
+      "opens": "11:00",
+      "closes": "23:59"
+    }
+  ],
   "sameAs": [
     "https://www.facebook.com/Otuneltapas/",
     "https://www.instagram.com/otuneltapasponteareas"
@@ -100,7 +134,7 @@
 <div class="hero-line"></div>
 </div>
 <h1 class="hero-logo">O Tunel</h1>
-<p class="hero-sub">Ponteareas  ·  Tapas &amp; Vinos</p>
+<p class="hero-sub">Ponteareas  ·  Tapas &amp; Vinos</p>
 <div class="lang-switcher">
 <button class="lang-btn active" data-lang="es" title="Español">
 <span class="lang-flag">
@@ -184,7 +218,7 @@
 <button class="section-nav-btn" data-target="veganos-vegetarianos">Veganos</button>
 <span aria-hidden="true" class="nav-sep">✦</span>
 <button class="section-nav-btn" data-target="despedida-dulce">Postres</button>
-<span aria-hidden="true" class="nav-indicator"></span>
+<span aria-hidden="true" class="nav-sep">✦</span>
 </div>
 </nav>
 <nav aria-label="Secciones de vinos" class="section-nav" data-page-nav="vinos">
@@ -320,7 +354,6 @@
 <li class="item"><span class="item-name" data-i18n="item-name-40">Chuletón de vacuno mayor <em class="item-note">(por encargo)</em></span><span class="item-price">S/Peso</span></li>
 <li class="item"><span class="item-name" data-i18n="item-name-41">Variado de carnes: Entrecot, secreto y picaña <em class="item-note">(mín. 2 personas)</em></span><span class="item-price">43,50</span></li>
 <li class="item"><span class="item-name" data-i18n="item-name-42">Hamburguesa de buey con queso cheddar, beicon y lechuga <span class="allergens"><img alt="Cereales" src="/alergenos/simbolo alergeno cereales.png"/><img alt="Frutos secos" src="/alergenos/simbolo alergeno frutos secos.png"/><img alt="Huevos" src="/alergenos/simbolo alergeno huevos.png"/><img alt="Lácteos" src="/alergenos/simbolo alergeno lacteos.png"/><img alt="Sésamo" src="/alergenos/simbolo alergeno sesamo.png"/><img alt="Sulfitos" src="/alergenos/simbolo alergeno sulfitos.png"/></span></span><span class="item-price">9,75</span></li>
-<li class="item"><span class="item-name" data-i18n="item-name-43">Pan por persona</span><span class="item-price">0,85</span></li>
 </ul>
 </section>
 <section class="menu-section" data-section="" id="veganos-vegetarianos">
@@ -342,6 +375,14 @@
 <li class="item"><span class="item-name" data-i18n="item-name-50">Tarta de la abuela <span class="allergens"><img alt="Cereales" src="/alergenos/simbolo alergeno cereales.png"/><img alt="Frutos secos" src="/alergenos/simbolo alergeno frutos secos.png"/><img alt="Lácteos" src="/alergenos/simbolo alergeno lacteos.png"/><img alt="Huevos" src="/alergenos/simbolo alergeno huevos.png"/></span></span><span class="item-price">5,75</span></li>
 <li class="item"><span class="item-name" data-i18n="item-name-51">Flan de café <span class="allergens"><img alt="Lácteos" src="/alergenos/simbolo alergeno lacteos.png"/><img alt="Huevos" src="/alergenos/simbolo alergeno huevos.png"/></span></span><span class="item-price">4,50</span></li>
 </ul>
+</section>
+
+<section>
+  <div><ul class="item-list">
+<li class="item"><span class="item-name" data-i18n="item-name-43">Pan por persona</span><span class="item-price">0,85</span></li>
+</ul></div>
+</section>
+
 </section>
 <div class="allergen-legend" data-section="">
 <h3 data-i18n="allergen-legend-title">Referencia de Alérgenos</h3>
@@ -766,10 +807,10 @@
       'de': {carta:'Speisekarte',vinos:'Weine'}
     };
     var navMap = {
-      'es': {tablas:'Tablas',tostas:'Tostas','del-corral':'Del Corral','los-fritos':'Los Fritos','seguimos-picando':'Seguimos picando','ensaladas':'Ensaladas','del-mar':'Del Mar','de-la-tierra':'De la Tierra','veganos-vegetarianos':'Veganos','despedida-dulce':'Postres','blancos-gallegos':'Blancos Gallegos','tintos-gallegos':'Tintos Gallegos','champanes':'Champanes','ribera-del-duero':'Ribera del Duero','toro':'Toro','castilla-leon':'Castilla y León','riojas':'Riojas'},
-      'en': {tablas:'Charcuterie',tostas:'Toasts','del-corral':'From the Farm','los-fritos':'Fried Dishes','seguimos-picando':'Keep Snacking','ensaladas':'Salads','del-mar':'From the Sea','de-la-tierra':'From the Land','veganos-vegetarianos':'Vegan','despedida-dulce':'Desserts','blancos-gallegos':'Galician Whites','tintos-gallegos':'Galician Reds','champanes':'Champagnes','ribera-del-duero':'Ribera del Duero','toro':'Toro','castilla-leon':'Castile & León','riojas':'Riojas'},
-      'fr': {tablas:'Planches',tostas:'Toasts','del-corral':'De la Ferme','los-fritos':'Friture','seguimos-picando':'On Continue','ensaladas':'Salades','del-mar':'De la Mer','de-la-tierra':'De la Terre','veganos-vegetarianos':'Végétalien','despedida-dulce':'Desserts','blancos-gallegos':'Blancs Galiciens','tintos-gallegos':'Rouges Galiciens','champanes':'Champagnes','ribera-del-duero':'Ribera del Duero','toro':'Toro','castilla-leon':'Castille et León','riojas':'Riojas'},
-      'de': {tablas:'Bretter',tostas:'Toasts','del-corral':'Vom Hof','los-fritos':'Gebratenes','seguimos-picando':'Weiter Snacken','ensaladas':'Salate','del-mar':'Vom Meer','de-la-tierra':'Vom Land','veganos-vegetarianos':'Vegan','despedida-dulce':'Desserts','blancos-gallegos':'Galicische Weißweine','tintos-gallegos':'Galicische Rotweine','champanes':'Champagner','ribera-del-duero':'Ribera del Duero','toro':'Toro','castilla-leon':'Kastilien und León','riojas':'Riojas'}
+      'es': {tablas:'Tablas',tostas:'Tostas','del-corral':'Del Corral','los-fritos':'Los Fritos','seguimos-picando':'Seguimos picando','ensaladas':'Ensaladas','del-mar':'Del Mar','de-la-tierra':'De la Tierra','veganos-vegetarianos':'Veganos','despedida-dulce':'Postres','para-terminar':'Para Terminar','blancos-gallegos':'Blancos Gallegos','tintos-gallegos':'Tintos Gallegos','champanes':'Champanes','ribera-del-duero':'Ribera del Duero','toro':'Toro','castilla-leon':'Castilla y León','riojas':'Riojas'},
+      'en': {tablas:'Charcuterie',tostas:'Toasts','del-corral':'From the Farm','los-fritos':'Fried Dishes','seguimos-picando':'Keep Snacking','ensaladas':'Salads','del-mar':'From the Sea','de-la-tierra':'From the Land','veganos-vegetarianos':'Vegan','despedida-dulce':'Desserts','para-terminar':'To Finish','blancos-gallegos':'Galician Whites','tintos-gallegos':'Galician Reds','champanes':'Champagnes','ribera-del-duero':'Ribera del Duero','toro':'Toro','castilla-leon':'Castile & León','riojas':'Riojas'},
+      'fr': {tablas:'Planches',tostas:'Toasts','del-corral':'De la Ferme','los-fritos':'Friture','seguimos-picando':'On Continue','ensaladas':'Salades','del-mar':'De la Mer','de-la-tierra':'De la Terre','veganos-vegetarianos':'Végétalien','despedida-dulce':'Desserts','para-terminar':'Pour Finir','blancos-gallegos':'Blancs Galiciens','tintos-gallegos':'Rouges Galiciens','champanes':'Champagnes','ribera-del-duero':'Ribera del Duero','toro':'Toro','castilla-leon':'Castille et León','riojas':'Riojas'},
+      'de': {tablas:'Bretter',tostas:'Toasts','del-corral':'Vom Hof','los-fritos':'Gebratenes','seguimos-picando':'Weiter Snacken','ensaladas':'Salate','del-mar':'Vom Meer','de-la-tierra':'Vom Land','veganos-vegetarianos':'Vegan','despedida-dulce':'Desserts','para-terminar':'Zum Abschluss','blancos-gallegos':'Galicische Weißweine','tintos-gallegos':'Galicische Rotweine','champanes':'Champagner','ribera-del-duero':'Ribera del Duero','toro':'Toro','castilla-leon':'Kastilien und León','riojas':'Riojas'}
     };
     var subMap = {
       'es': 'Ponteareas · Tapas & Vinos',
