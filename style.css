@@ -93,13 +93,13 @@ body {
 body.page-carta {
   background-image:
     linear-gradient(rgba(13,13,13,0.82), rgba(13,13,13,0.82)),
-    url('images/bg-carta.png');
+    url('images/bg-carta.webp');
   background-color: #0d0d0d;
 }
 body.page-vinos {
   background-image:
     linear-gradient(rgba(13,13,13,0.82), rgba(13,13,13,0.82)),
-    url('images/bg-vinos.jpg');
+    url('images/bg-vinos-noche.webp');
   background-color: #0d0d0d;
 }
 
@@ -107,13 +107,13 @@ body.page-vinos {
 html.day-mode body.page-carta {
   background-image:
     linear-gradient(rgba(240,232,216,0.78), rgba(240,232,216,0.78)),
-    url('images/bg-tapas.png');
+    url('images/bg-tapas.webp');
   background-color: #f0e8d8;
 }
 html.day-mode body.page-vinos {
   background-image:
     linear-gradient(rgba(240,232,216,0.78), rgba(240,232,216,0.78)),
-    url('images/bg-vinos.png');
+    url('images/bg-vinos-dia.webp');
   background-color: #f0e8d8;
 }
 
@@ -346,10 +346,58 @@ main {
   margin-bottom: 3.5rem;
   opacity: 0;
   transform: translateY(20px);
-  transition: opacity 0.55s ease, transform 0.55s ease;
+  transition: opacity 0.55s ease, transform 0.55s ease, margin-bottom 0.4s ease;
   scroll-margin-top: var(--scroll-offset, 90px);
 }
 .menu-section.visible { opacity: 1; transform: translateY(0); }
+
+/* ── ACORDEÓN DE VINOS (evita el scroll interminable) ── */
+.wine-region { margin-bottom: 1.1rem; }
+.wine-region.is-open { margin-bottom: 3.5rem; }
+
+.wine-region-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding: 0.9rem 1rem 0.5rem;
+  border-radius: var(--radius-sm);
+  transition: background 0.25s ease;
+}
+.wine-region-header:hover,
+.wine-region-header:focus-visible {
+  background: var(--gold-bg);
+  outline: none;
+}
+.wine-region-header .section-title { margin-bottom: 0.3rem; }
+
+.wine-region-chevron {
+  flex: 0 0 auto;
+  width: 7px;
+  height: 7px;
+  margin-top: -3px;
+  border-right: 1.5px solid var(--color-gold-dim);
+  border-bottom: 1.5px solid var(--color-gold-dim);
+  transform: rotate(45deg);
+  transition: transform 0.4s cubic-bezier(.65,0,.35,1), border-color 0.3s ease;
+}
+.wine-region-header:hover .wine-region-chevron,
+.wine-region-header[aria-expanded="true"] .wine-region-chevron {
+  border-color: var(--color-gold);
+}
+.wine-region-header[aria-expanded="true"] .wine-region-chevron {
+  transform: rotate(-135deg);
+  margin-top: 2px;
+}
+
+.wine-region-collapse {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.5s cubic-bezier(.65,0,.35,1);
+}
+.wine-region-collapse.is-open { grid-template-rows: 1fr; }
+.wine-region-collapse-inner { overflow: hidden; min-height: 0; }
 
 /* ── SECTION TITLE ── */
 .section-title {
