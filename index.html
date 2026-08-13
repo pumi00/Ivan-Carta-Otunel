@@ -232,8 +232,6 @@
 <span aria-hidden="true" class="nav-sep">✦</span>
 <button class="section-nav-btn" data-target="tintos-gallegos">Tintos Gallegos</button>
 <span aria-hidden="true" class="nav-sep">✦</span>
-<button class="section-nav-btn" data-target="champanes">Champanes</button>
-<span aria-hidden="true" class="nav-sep">✦</span>
 <button class="section-nav-btn" data-target="ribera-del-duero">Ribera del Duero</button>
 <span aria-hidden="true" class="nav-sep">✦</span>
 <button class="section-nav-btn" data-target="toro">Toro</button>
@@ -242,6 +240,8 @@
 <span aria-hidden="true" class="nav-sep">✦</span>
 <button class="section-nav-btn" data-target="riojas">Riojas</button>
 <span aria-hidden="true" class="nav-indicator"></span>
+<button class="section-nav-btn" data-target="champanes">Champanes</button>
+<span aria-hidden="true" class="nav-sep">✦</span>
 </div>
 </nav>
 </div>
@@ -346,7 +346,7 @@
 <li class="item"><span class="item-name" data-i18n="item-name-33">Bacalao al horno con setas y castañas <span class="allergens"><img alt="Pescado" src="/alergenos/simbolo pescado alergenos.png"/></span></span><span class="item-price">23,50</span></li>
 <li class="item"><span class="item-name" data-i18n="item-name-34">Bacalao a la parrilla con salteado de verduras al wok <span class="allergens"><img alt="Pescado" src="/alergenos/simbolo pescado alergenos.png"/></span></span><span class="item-price">21,50</span></li>
 <li class="item"><span class="item-name" data-i18n="item-name-35">Lomo de merluza a la plancha con ensalada de temporada <span class="allergens"><img alt="Moluscos" src="/alergenos/simbolo alergeno moluscos.png"/><img alt="Pescado" src="/alergenos/simbolo pescado alergenos.png"/></span></span><span class="item-price">16,50</span></li>
-<li class="item"><span class="item-name" data-i18n="item-name-36">Tentáculo de pulpo a la parrilla <span class="allergens"><img alt="Moluscos" src="/alergenos/simbolo alergeno moluscos.png"/><img alt="Pescado" src="/alergenos/simbolo pescado alergenos.png"/></span></span><span class="item-price">19,75</span></li>
+<li class="item"><span class="item-name" data-i18n="item-name-36">Tentáculo de pulpo a la parrilla <span class="allergens"><img alt="Moluscos" src="/alergenos/simbolo alergeno moluscos.png"/><img alt="Pescado" src="/alergenos/simbolo pescado alergenos.png"/></span></span><span class="item-price">21,75</span></li>
 </ul>
 </section>
 <section class="menu-section" data-section="" id="de-la-tierra">
@@ -474,19 +474,6 @@
 </ul>
 </div></div>
 </section>
-<!-- CHAMPANES -->
-<section class="menu-section wine-region" data-section="" id="champanes">
-<div class="wine-region-header" role="button" tabindex="0" aria-expanded="false">
-<h2 class="section-title wine-region-title" data-i18n="section-title-12">Champanes y Espumosos</h2>
-<span class="wine-region-chevron" aria-hidden="true"></span>
-</div>
-<div class="section-rule"><span>✦</span></div>
-<div class="wine-region-collapse"><div class="wine-region-collapse-inner">
-<ul class="item-list">
-<li class="item"><span class="item-name" data-i18n="item-name-84">Heritage Blanc<span class="wine-grape" data-i18n="wine-grape-32">Chardonnay, Pinot Noir, Pinot Meunier — champán de estilo clásico, fresco y equilibrado</span></span><span class="item-price">40,00</span></li>
-</ul>
-</div></div>
-</section>
 <!-- RIBERA DEL DUERO -->
 <section class="menu-section wine-region" data-section="" id="ribera-del-duero">
 <div class="wine-region-header" role="button" tabindex="0" aria-expanded="false">
@@ -595,6 +582,19 @@
 </ul>
 </div></div>
 </section>
+<!-- CHAMPANES -->
+<section class="menu-section wine-region" data-section="" id="champanes">
+<div class="wine-region-header" role="button" tabindex="0" aria-expanded="false">
+<h2 class="section-title wine-region-title" data-i18n="section-title-12">Champanes y Espumosos</h2>
+<span class="wine-region-chevron" aria-hidden="true"></span>
+</div>
+<div class="section-rule"><span>✦</span></div>
+<div class="wine-region-collapse"><div class="wine-region-collapse-inner">
+<ul class="item-list">
+<li class="item"><span class="item-name" data-i18n="item-name-84">Heritage Blanc<span class="wine-grape" data-i18n="wine-grape-32">Chardonnay, Pinot Noir, Pinot Meunier — champán de estilo clásico, fresco y equilibrado</span></span><span class="item-price">40,00</span></li>
+</ul>
+</div></div>
+</section>
 </div><!-- /vinos --><!-- /vinos -->
 </main>
 <footer class="footer">
@@ -650,7 +650,27 @@
     if (!header) return;
     header.addEventListener('click', function () {
       var isOpen = header.getAttribute('aria-expanded') === 'true';
-      toggleWineRegion(region, !isOpen);
+      var willOpen = !isOpen;
+      /* Si hay otra región abierta POR ENCIMA de esta, se va a colapsar al
+         abrir la de ahora. Medimos cuánto va a encoger ANTES de tocar el
+         DOM: si no compensamos ese hueco, al acortarse la página el
+         navegador reancla el scroll a su nuevo final más corto, lo que se
+         nota como "me lleva al final de la página" cuando estabas viendo
+         el final de la región que se cierra. */
+      var deltaAbove = 0;
+      if (willOpen) {
+        var openRegion = winesPage.querySelector('.wine-region.is-open');
+        if (openRegion && openRegion !== region &&
+            (region.compareDocumentPosition(openRegion) & Node.DOCUMENT_POSITION_PRECEDING)) {
+          var openInner = openRegion.querySelector('.wine-region-collapse-inner');
+          /* scrollHeight, no getBoundingClientRect(): la altura "en pantalla"
+             depende de la animación en curso (grid-template-rows), scrollHeight
+             da la altura real del contenido sin importar en qué punto vaya. */
+          deltaAbove = openInner ? openInner.scrollHeight : 0;
+        }
+      }
+      toggleWineRegion(region, willOpen);
+      if (deltaAbove > 0) window.scrollTo({ top: window.scrollY - deltaAbove, behavior: 'instant' });
     });
     header.addEventListener('keydown', function (e) {
       if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); header.click(); }
@@ -739,8 +759,24 @@
       setActiveButton(nav, btn);
       updateIndicator(nav);
       if (!target) return;
-      if (nav.dataset.pageNav === 'vinos' && window.__openWineRegion) {
-        window.__openWineRegion(btn.dataset.target);
+      var isWineNav = nav.dataset.pageNav === 'vinos' && !!window.__openWineRegion;
+      /* Si otra región de vinos está abierta encima del destino, se va a
+         cerrar (colapsar) al abrir esta. Esa animación tarda 0.5s, así que
+         medimos AHORA cuánto va a encoger para descontarlo del scroll y no
+         calcular la posición con el layout todavía "viejo" (lo que hacía
+         que el scroll se pasara de largo, a veces hasta el final de la
+         página, cuando la sección destino era la última). */
+      var deltaAbove = 0;
+      if (isWineNav) {
+        var openRegion = document.querySelector('#vinos .wine-region.is-open');
+        if (openRegion && openRegion !== target &&
+            (target.compareDocumentPosition(openRegion) & Node.DOCUMENT_POSITION_PRECEDING)) {
+          var openInner = openRegion.querySelector('.wine-region-collapse-inner');
+          /* scrollHeight, no getBoundingClientRect(): la altura "en pantalla"
+             depende de la animación en curso, scrollHeight da la altura real
+             del contenido sin importar en qué punto vaya esa animación. */
+          deltaAbove = openInner ? openInner.scrollHeight : 0;
+        }
       }
       computeScrollOffset();
       /* Offset real = hero + barra de secciones + margen extra */
@@ -748,13 +784,37 @@
       var heroH   = heroEl ? heroEl.getBoundingClientRect().height : 0;
       var navBarH = navBar.getBoundingClientRect().height;
       var totalOffset = heroH + navBarH + 16;
-      var top = target.getBoundingClientRect().top + window.scrollY - totalOffset;
+      var top = target.getBoundingClientRect().top + window.scrollY - totalOffset - deltaAbove;
+      if (isWineNav) window.__openWineRegion(btn.dataset.target);
+      /* Ignora al ScrollSpy mientras dura este scroll programático, para
+         que no deshaga la selección que se acaba de hacer (ver comentario
+         junto al IntersectionObserver más abajo). */
+      suppressSpyDuring(900);
       window.scrollTo({ top: top, behavior: 'smooth' });
     });
   });
   /* ── ScrollSpy: resalta el botón según la sección visible ── */
+  /* Mientras el scroll hacia una sección lo ha disparado un clic (no el
+     usuario deslizando), el ScrollSpy se silencia: si no, mientras dura el
+     scroll suave + la animación del acordeón (que colapsa la región
+     anterior, ej. Blancos Gallegos), esa región todavía asoma en la franja
+     observada y el ScrollSpy la vuelve a marcar como activa, deshaciendo
+     la selección que acabas de hacer (ej. clicar Tintos Gallegos y que se
+     quede marcado/mostrado Blancos Gallegos). */
+  var suppressSpy = false;
+  var suppressSpyTimer = null;
+  function suppressSpyDuring(ms) {
+    suppressSpy = true;
+    clearTimeout(suppressSpyTimer);
+    suppressSpyTimer = setTimeout(function () { suppressSpy = false; }, ms);
+  }
+  window.addEventListener('scrollend', function () {
+    clearTimeout(suppressSpyTimer);
+    suppressSpy = false;
+  });
   var sections = document.querySelectorAll('[data-section][id]');
   var observer = new IntersectionObserver(function (entries) {
+    if (suppressSpy) return;
     entries.forEach(function (entry) {
       if (!entry.isIntersecting) return;
       var btn = navBar.querySelector('.section-nav-btn[data-target="' + entry.target.id + '"]');
