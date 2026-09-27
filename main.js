@@ -62,14 +62,20 @@ function staggerItems() {
 /* ─── STICKY HERO SHRINK ─── */
 const hero = document.querySelector('.hero-inner');
 let lastScroll = 0;
+let heroCompact = false;
 
 window.addEventListener('scroll', () => {
   const y = window.scrollY;
-  if (y > 60 && lastScroll <= 60) {
+  /* Histéresis: se encoge pasado 80px y solo vuelve a crecer por debajo
+     de 10px. Con un único umbral (60px) el cambio de altura del hero
+     movía el scroll y lo hacía cruzar el umbral una y otra vez → parpadeo. */
+  if (!heroCompact && y > 80) {
+    heroCompact = true;
     hero.style.paddingTop    = '1.2rem';
     hero.style.paddingBottom = '1rem';
     hero.style.transition    = 'padding 0.3s ease';
-  } else if (y <= 60 && lastScroll > 60) {
+  } else if (heroCompact && y < 10) {
+    heroCompact = false;
     hero.style.paddingTop    = '2.5rem';
     hero.style.paddingBottom = '1.8rem';
   }
